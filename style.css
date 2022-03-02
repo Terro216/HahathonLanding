@@ -34,7 +34,7 @@ ul {
 body > * {
   max-width: 1440px;
   width: 100%;
-  padding: 0 calc(100% - 1440px) 96px;
+  padding: 0 calc((100% - 1440px) / 2) 96px;
 }
 
 body > * > * {
@@ -47,6 +47,7 @@ button {
   outline: none;
   border: 2px solid white;
   transition: .1s;
+  cursor: pointer;
 }
 
 button:hover {
