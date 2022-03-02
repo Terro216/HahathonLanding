@@ -5,6 +5,7 @@
 /* Import blocks stiles */
 @import "styles/header.css";
 @import "styles/tasks.css";
+@import "styles/prises.css";
 
 /* Default layout settings*/
 * {

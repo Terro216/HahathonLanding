@@ -1,0 +1,43 @@
+/* Prises */
+#prises-section {
+  background: linear-gradient(to bottom, #660089, #030029);
+  padding-bottom: 96px;
+}
+
+#prises-section_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#prises-section_header > h2 {
+  width: 50%;
+}
+
+#prises-section_header > div {
+  width: 25%;
+  align-self: center;
+}
+
+#prises-section_header > div > img {
+  width: 80%;
+}
+
+#prises-section > img {
+  position: absolute;
+  margin-top: 100px;
+}
+
+#prises > li {
+  padding: 16px 0;
+  font-size: 56px;
+  text-align: end;
+}
+
+#prises > li:nth-child(3n - 1) {
+  padding-right: 15%;
+}
+
+#prises > li:nth-child(3n) {
+  padding-right: 30%;
+}

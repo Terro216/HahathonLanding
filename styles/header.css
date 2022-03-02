@@ -26,7 +26,7 @@ header > div > * {
 }
 
 #header_title-box > h1 {
-  background: url("../assets/MIREA_Gerb.svg") no-repeat;
+  background: url("../assets/logos/MIREA_Gerb.svg") no-repeat;
   background-size: contain;
   margin: 0;
   padding: 42px 0;
