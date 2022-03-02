@@ -3,3 +3,38 @@
   background: linear-gradient(to top, #36002b, #030029);
   padding-bottom: 48px;
 }
+
+#policy {
+  margin: 0;
+  font-size: 16px;
+  color: #909090;
+
+  padding-bottom: 200px;
+}
+
+#policy a {
+  color: #a5dbff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 0.52;
+  font-size: 16px;
+}
+
+footer > div > p {
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+  color: #a5dbff;
+}
+
+footer button {
+  padding: 8px 24px !important;
+}

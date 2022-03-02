@@ -39,7 +39,8 @@
 }
 
 .question-card input ~ p {
-  content: none;
+  font-size: 16px;
+
   margin: 0;
   padding: 0 36px;
   box-sizing: border-box;
