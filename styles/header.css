@@ -1,7 +1,6 @@
 /* Header */
 header {
   background: linear-gradient(to bottom, #4a0089, #1a0029);
-  padding-bottom: 96px !important;
 }
 
 header > ul { /* Menu */

@@ -1,7 +1,6 @@
 /* Prises */
 #prises-section {
   background: linear-gradient(to bottom, #660089, #030029);
-  padding-bottom: 96px;
 }
 
 #prises-section_header {
@@ -25,7 +24,7 @@
 
 #prises-section > img {
   position: absolute;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 #prises > li {
