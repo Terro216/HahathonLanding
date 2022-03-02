@@ -1,0 +1,41 @@
+/* Header */
+header {
+  background: linear-gradient(to bottom, #4a0089, #1a0029);
+  padding-bottom: 112px !important;
+}
+
+header > ul { /* Menu */
+  padding-top: 48px;
+  display: flex;
+  flex-direction: row;
+}
+
+header > ul > li {
+  padding-right: 5%;
+}
+
+header > div {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header > div > * {
+  width: 50%;
+}
+
+#title-box > h1 {
+  background: url("assets/MIREA_Gerb.svg") no-repeat;
+  background-size: contain;
+  margin: 0;
+  padding: 42px 0;
+}
+
+#image-box {
+  width: 40%;
+}
+
+#image-box > img {
+  width: 100%;
+}

@@ -1,0 +1,75 @@
+@import "fonts/AvenirNextCyr/stylesheet.css";
+@import "fonts/Helvetica/stylesheet.css";
+@import "styles/header.css";
+
+/* Default layout settings*/
+* {
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body > * {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 calc(100% - 1440px);
+}
+
+body > * > * {
+  padding: 0 10%;
+}
+
+button {
+  padding: 10px 76px;
+  background: transparent;
+  outline: none;
+  border: 2px solid white;
+  transition: .1s;
+}
+
+button:hover {
+  background: #FFFFFF22;
+  border-color: #FFFFFFBB;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active,
+
+/* Font settings */
+* {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+.text__header {
+  font-family: "Avenir Next Cyr", sans-serif;
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+}
+
+.text__bold {
+  font-weight: 600;
+}
