@@ -7,6 +7,8 @@
 @import "styles/tasks.css";
 @import "styles/prises.css";
 @import "styles/faq.css";
+@import "styles/registration.css";
+@import "styles/footer.css";
 
 /* Default layout settings*/
 * {
