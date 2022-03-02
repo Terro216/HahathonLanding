@@ -1,7 +1,7 @@
 /* Header */
 header {
   background: linear-gradient(to bottom, #4a0089, #1a0029);
-  padding-bottom: 112px !important;
+  padding-bottom: 96px !important;
 }
 
 header > ul { /* Menu */
@@ -25,17 +25,17 @@ header > div > * {
   width: 50%;
 }
 
-#title-box > h1 {
-  background: url("assets/MIREA_Gerb.svg") no-repeat;
+#header_title-box > h1 {
+  background: url("../assets/MIREA_Gerb.svg") no-repeat;
   background-size: contain;
   margin: 0;
   padding: 42px 0;
 }
 
-#image-box {
+#header_image-box {
   width: 40%;
 }
 
-#image-box > img {
+#header_image-box > img {
   width: 100%;
 }
