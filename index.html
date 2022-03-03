@@ -17,7 +17,7 @@
       <li><a href="#tasks-section">Задачи</a></li>
       <li><a href="#prises-section">Призы</a></li>
       <li><a href="#faq-section">FAQ</a></li>
-      <li><a href="#registration">Регистрация</a></li>
+      <li><a href="#registration-section">Регистрация</a></li>
     </ul>
 
     <div>
@@ -160,11 +160,37 @@
 <!--  Registration -->
   <section id="registration-section">
     <h2 class="text__header">Регистрация</h2>
+
+    <form action="javascript:submitRegistration()">
+      <h4>Заполните форму и укажите всех участников своей команды</h4>
+      <input type="text" id="captain-name" placeholder="ФИО капитана команды" minlength="3" required>
+      <input type="email" id="captain-email" placeholder="E-mail капитана команды" minlength="5" required>
+      <input type="text" id="captain-tg" placeholder="Telegram капитана команды" minlength="2" required>
+
+      <h5>Возраст капитана</h5>
+      <div>
+<!--        TODO specify age arrange-->
+        <button type="button" id="age-minus" tabindex="-1">&minus;</button>
+        <input type="number" min="18" max="99" placeholder="18" id="age" required>
+        <button type="button" id="age-plus" tabindex="-1">+</button>
+      </div>
+
+      <h4><label for="member-2">Участник 2 (ФИО и возраст)</label></h4>
+      <input type="text" id="member-2" placeholder="Киану Ривз, 37 лет" minlength="5" required>
+
+      <h4><label for="member-3">Участник 3 (ФИО и возраст)</label></h4>
+      <input type="text" id="member-3" placeholder="Киану Ривз, 37 лет">
+
+      <h4><label for="member-4">Участник 4 (ФИО и возраст)</label></h4>
+      <input type="text" id="member-4" placeholder="Киану Ривз, 37 лет">
+
+      <button type="submit">Отправить заявку</button>
+    </form>
   </section>
 
 <!-- Footer-->
   <div id="footer">
-    <p id="policy">Нажимая на кнопку «Отправить заявку» вы соглашаетесь на обработку персональных данных, в соответствии с <a>Политикой конфиденциальности</a></a></p>
+    <p id="policy">Нажимая на кнопку «Отправить заявку» вы соглашаетесь на обработку персональных данных, в соответствии с <a href="google.com">Политикой конфиденциальности</a></a></p>
 
     <footer>
       <div>
@@ -182,5 +208,7 @@
       </div>
     </footer>
   </div>
+
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

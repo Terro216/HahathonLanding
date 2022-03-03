@@ -3,3 +3,74 @@
   background: linear-gradient(to bottom, #004189, #030029);
   padding-bottom: 0 !important;
 }
+
+#registration-section form {
+  width: calc(100% - 240px);
+  padding-bottom: 16px;
+}
+
+#registration-section form h4,
+#registration-section form h4 label {
+  margin: 28px 0 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#registration-section form input {
+  display: block;
+  margin-bottom: 16px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid white;
+  background: transparent;
+  outline: none;
+  box-sizing: border-box;
+  transition: .2s;
+}
+
+#registration-section form input:focus {
+  background: #FFFFFF22;
+}
+
+#registration-section form input::placeholder {
+  font-family: Helvetica, sans-serif;
+  color: #959595;
+}
+
+#registration-section form div {
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+}
+
+#registration-section form div * {
+  margin: 0;
+}
+
+#registration-section form input::-webkit-outer-spin-button,
+#registration-section form input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+#registration-section form input[type=number] {
+  width: 100px;
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+#registration-section form button {
+  margin-top: 16px;
+  padding: 8px 20px;
+}
+
+#registration-section form div button {
+  width: 40px !important;
+  padding: 0;
+  border-width: 1px;
+  box-sizing: border-box;
+  margin: 0;
+}
