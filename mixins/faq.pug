@@ -1,0 +1,37 @@
+-
+  var faq_data = [
+    {
+      question: 'Разрешено ли использовать шаблоны или свои заготовки?',
+      answer: 'Шаблоны и заготовки возможно использовать при условии, что они не принимали ранее участие в других конкурсах, включая Национальную технологическую олимпиаду. Готовьте ноутбуки, свою жопу, продавайте почку и будьте спокойны, что у вас хватит активов, чтобы оплатить вход на наш чудесный хакатон. В противном случае придется отрабатывать грузчиком на благо РТУ МИРЭА, но и это не такая проблема, как кафедра ПМ.'
+    },
+    {
+      question: 'Разрешено ли использовать шаблоны или свои заготовки?',
+      answer: '12'
+    },
+    {
+      question: 'Разрешено ли использовать шаблоны или свои заготовки?',
+      answer: '12'
+    },
+    {
+      question: 'Разрешено ли использовать шаблоны или свои заготовки?',
+      answer: '12'
+    }
+  ];
+
+mixin faq_question(index, question)
+  li(class="question-card")
+    label(for=`question-${index}`)
+      h4.question_header= question.question
+      div
+        img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20")
+    input(type="checkbox" id=`question-${index}` hidden)
+    p.question_answer
+      = question.answer
+
+section#faq-section
+  h2.text__header FAQ
+
+  //TODO image for first element
+  ul#questions
+    each Q, i in faq_data
+      +faq_question(i, Q)

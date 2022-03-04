@@ -4,9 +4,16 @@
   padding-bottom: 0 !important;
 }
 
+#registration-section > img {
+  float: right;
+  padding-left: 0;
+  margin-top: 200px;
+}
+
 #registration-section form {
-  width: calc(100% - 240px);
+  width: calc(100% - 270px);
   padding-bottom: 16px;
+  box-sizing: border-box;
 }
 
 #registration-section form h4,

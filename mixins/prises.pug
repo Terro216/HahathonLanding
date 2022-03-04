@@ -1,0 +1,23 @@
+-
+  var prises_data = [
+    'Невероятные видеокарты',
+    'Доллары',
+    'Чифир',
+    'Горячие пуэртоританки',
+    'Ещё чифир',
+    'Доллары по 35',
+  ]
+
+section#prises-section
+  #prises-section_header
+    h2.text__header Призы
+    div
+      img(src="assets/logos/sbergames.png" alt="Логотип SberGames")
+    div
+      img(src="assets/logos/IIT_logo.svg" alt="Логотип Института ИТ")
+
+  img(src="assets/trophy.svg" height="300" width="300" alt="Призы")
+
+  ul#prises
+    each prise in prises_data
+      li(class="text__header")= prise

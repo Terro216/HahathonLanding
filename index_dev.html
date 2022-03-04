@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="style.css">
 
   <meta charset="UTF-8">
+  <meta name="author" content="RTUITLab">
+  <meta name="robots" content="index">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Добро пожаловать на хакатон от РТУ МИРЭА, приуроченный к международноому Дню дурака. Вас ждут увлекательные задания, интересные призы и кафедра ПМ">
 </head>
@@ -39,6 +41,7 @@
       <li>2-4 человека в команде</li>
     </ul>
 
+<!--    TODO change layout to columns, not rows-->
     <ul id="tasks">
       <li class="task">
         <div class="task_img-box">
@@ -116,51 +119,13 @@
   </section>
 
 <!-- FAQ -->
-  <section id="faq-section">
-    <h2 class="text__header">FAQ</h2>
 
-    <ul id="questions">
-      <li class="question-card">
-<!--        TODO image for first element-->
-        <label for="question-1">
-          <h4 class="question_header">Разрешено ли использовать шаблоны или свои заготовки?</h4>
-          <div><img src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20"></div>
-        </label>
-        <input type="checkbox" id="question-1" hidden>
-        <p class="question_answer">Шаблоны и заготовки возможно использовать при условии, что они не принимали ранее участие в других конкурсах, включая Национальную технологическую олимпиаду.
-          Готовьте ноутбуки, свою жопу, продавайте почку и будьте спокойны, что у вас хватит активов, чтобы оплатить вход на наш чудесный хакатон. В противном случае придется отрабатывать грузчиком на благо РТУ МИРЭА, но и это не такая проблема, как кафедра ПМ.</p>
-      </li>
-      <li class="question-card">
-        <label for="question-2">
-          <h4 class="question_header">Разрешено ли использовать шаблоны или свои заготовки?</h4>
-          <div><img src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20"></div>
-        </label>
-        <input type="checkbox" id="question-2" hidden>
-        <p class="question_answer">12</p>
-      </li>
-      <li class="question-card">
-        <label for="question-3">
-          <h4 class="question_header">Разрешено ли использовать шаблоны или свои заготовки?</h4>
-          <div><img src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20"></div>
-        </label>
-        <input type="checkbox" id="question-3" hidden>
-        <p class="question_answer">12</p>
-      </li>
-      <li class="question-card">
-        <label for="question-4">
-          <h4 class="question_header">Разрешено ли использовать шаблоны или свои заготовки?</h4>
-          <div><img src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20"></div>
-        </label>
-        <input type="checkbox" id="question-4" hidden>
-        <p class="question_answer">12</p>
-      </li>
-    </ul>
-  </section>
 
 <!--  Registration -->
   <section id="registration-section">
     <h2 class="text__header">Регистрация</h2>
 
+    <img src="assets/form_image.svg" height="274" width="234" alt="Иллюстрация для формы">
     <form action="javascript:submitRegistration()">
       <h4>Заполните форму и укажите всех участников своей команды</h4>
       <input type="text" id="captain-name" placeholder="ФИО капитана команды" minlength="3" required>
@@ -169,7 +134,7 @@
 
       <h5>Возраст капитана</h5>
       <div>
-<!--        TODO specify age arrange-->
+<!--        TODO specify age arrange (Sveta)-->
         <button type="button" id="age-minus" tabindex="-1">&minus;</button>
         <input type="number" min="18" max="99" placeholder="18" id="age" required>
         <button type="button" id="age-plus" tabindex="-1">+</button>

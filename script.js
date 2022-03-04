@@ -47,3 +47,4 @@ function submitRegistration() {
 
   return false;
 }
+
