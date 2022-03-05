@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 
-.question-card label h4 {
+.question-card label h3 {
   margin: 0;
   padding: 10px 36px;
   border-right: 4px solid white;

@@ -21,7 +21,7 @@
 mixin faq_question(index, question)
   li(class="question-card")
     label(for=`question-${index}`)
-      h4.question_header= question.question
+      h3.question_header= question.question
       div
         img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20" onclick=`onButtonClick(${index})`)
     input(type="checkbox" id=`question-${index}` hidden)
@@ -31,7 +31,6 @@ mixin faq_question(index, question)
 section#faq-section
   h2.text__header FAQ
 
-  //TODO image for first element
   ul#questions
     each Q, i in faq_data
       +faq_question(i, Q)

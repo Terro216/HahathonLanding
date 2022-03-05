@@ -3,27 +3,27 @@ section#registration-section
 
   img(src="assets/form_image.svg" height="274" width="234" alt="Иллюстрация для формы")
   form(action="javascript:submitRegistration()")
-    h4 Заполните форму и укажите всех участников своей команды
+    h3 Заполните форму и укажите всех участников своей команды
     input(type="text" id="captain-name" placeholder="ФИО капитана команды" minlength="3" required)
     input(type="email" id="captain-email" placeholder="E-mail капитана команды" minlength="5" required)
     input(type="text" id="captain-tg" placeholder="Telegram капитана команды" minlength="2" required)
 
-    h5 Возраст капитана
+    h4 Возраст капитана
     //TODO specify age arrange (Sveta)
     div
       button(type="button" id="age-minus" tabindex="-1") &minus;
       input(type="number" min="18" max="99" placeholder="18" id="age" required)
       button(type="button" id="age-plus" tabindex="-1") +
 
-    h4
+    h3
       label(for="member-2") Участник 2 (ФИО и возраст)
     input(type="text" id="member-2" placeholder="Киану Ривз, 37 лет" minlength="5" required)
 
-    h4
+    h3
       label(for="member-3") Участник 3 (ФИО и возраст)
     input(type="text" id="member-3" placeholder="Киану Ривз, 37 лет" minlength="5")
 
-    h4
+    h3
       label(for="member-4") Участник 4 (ФИО и возраст)
     input(type="text" id="member-4" placeholder="Киану Ривз, 37 лет" minlength="5")
 
