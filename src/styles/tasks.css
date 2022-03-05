@@ -101,3 +101,15 @@
   background: #1b002a;
   display: block;
 }
+
+
+@media (max-width: 980px) {
+  #tasks {
+    margin-top: 112px;
+    grid-template-columns: 100%;
+  }
+
+  .task {
+    margin-top: 32px !important;
+  }
+}
