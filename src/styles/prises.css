@@ -55,3 +55,19 @@
   }
 }
 
+@media (max-width: 650px) {
+  #prises-section_header {
+    display: block;
+  }
+
+  #prises-section_header > h2 {
+    width: 100%;
+  }
+
+  #prises-section_header > div {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    margin-top: 16px;
+  }
+}

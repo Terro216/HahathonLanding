@@ -94,3 +94,12 @@
   }
 }
 
+@media (max-width: 650px) {
+  #registration-section > img {
+    display: none;
+  }
+
+  #registration-section form {
+    width: 100%;
+  }
+}

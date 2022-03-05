@@ -76,7 +76,7 @@ header > div > * {
 
   #header_image-box {
     align-self: center;
-    width: 25%;
+    width: 23%;
   }
 
   #header_image-box > img:first-child {
@@ -85,5 +85,19 @@ header > div > * {
 
   #header_image-box > img:last-child {
     display: block;
+  }
+}
+
+@media (max-width: 650px) {
+  #header_title-box > h1 {
+    font-size: 284%;
+  }
+
+  #header_title-box {
+    width: 100%;
+  }
+
+  #header_image-box {
+    display: none;
   }
 }

@@ -113,3 +113,13 @@
     margin-top: 32px !important;
   }
 }
+
+@media (max-width: 650px) {
+  #tasks-section_some-terms > li {
+    font-size: 32px;
+  }
+
+  #tasks {
+    margin-top: 48px;
+  }
+}

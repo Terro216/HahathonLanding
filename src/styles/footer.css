@@ -50,3 +50,12 @@ footer button {
   }
 }
 
+@media (max-width: 650px) {
+  footer {
+    flex-direction: column;
+  }
+
+  footer > * {
+    margin-bottom: 16px;
+  }
+}
