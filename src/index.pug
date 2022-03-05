@@ -3,8 +3,6 @@ html(lang="ru")
   head
     title Хахатон РТУ МИРЭА
 
-    link(rel="stylesheet" href="style.css")
-
     meta(charset="UTF-8")
     meta(name="author" content="RTUITLab")
     meta(name="robots" content="index")
@@ -12,13 +10,17 @@ html(lang="ru")
     meta(name="description" content="Добро пожаловать на хакатон от РТУ МИРЭА, приуроченный к международноому Дню дурака. Вас ждут увлекательные задания, интересные призы и кафедра ПМ")
 
   body
-    include mixins/page-header
-    include mixins/tasks
-    include mixins/prises
-    include mixins/faq
-    include mixins/registration
-    include mixins/page-footer
+    div
+      include mixins/page-header
+      include mixins/tasks
+      include mixins/prises
+      include mixins/faq
+      include mixins/registration
+      include mixins/page-footer
+    .orbs
+      include assets/orbs/header.svg
+      include assets/orbs/header.svg
+      include assets/orbs/header.svg
+      include assets/orbs/header.svg
 
-    script(src="script.js")
-
-
+    script(src="main.js")

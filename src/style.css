@@ -10,6 +10,51 @@
 @import "styles/registration.css";
 @import "styles/footer.css";
 
+/* Import animations */
+@import "styles/animations.css";
+
+:root {
+  --wrapper-height: 0px
+}
+
+.orbs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: var(--wrapper-height);
+  overflow: hidden;
+  z-index: 0;
+  filter: blur(5px);
+}
+
+.orbs > svg {
+  width: auto !important;
+}
+
+.orbs > svg g:nth-child(3n - 2) {
+  animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.orbs > svg g:nth-child(3n - 1) {
+  animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation-delay: -4s;
+}
+
+.orbs > svg g:nth-child(3n) {
+  animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation-delay: -7s;
+}
+
+@keyframes fly {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100px);
+  }
+}
+
 /* Default layout settings*/
 * {
   color: white;
@@ -23,6 +68,12 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  background: var(--body-bg);
+}
+
+body > div:not(.orbs) {
+  position: relative;
+  z-index: 1;
 }
 
 ul {
@@ -31,13 +82,13 @@ ul {
   padding: 0;
 }
 
-body > * {
+body > div > * {
   max-width: 1440px;
   width: 100%;
   padding: 0 calc((100% - 1440px) / 2) 96px;
 }
 
-body > * > * {
+body > div > * > * {
   padding: 0 10%;
 }
 

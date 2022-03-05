@@ -1,10 +1,10 @@
 /* Header */
 header {
-  background: linear-gradient(to bottom, #4a0089, #1a0029);
+  /*background: linear-gradient(to bottom, #4a0089, #1a0029), url('../assets/orbs/header.svg');*/
 }
 
 header > ul { /* Menu */
-  padding-top: 48px;
+  padding-top: 48px !important;
   display: flex;
   flex-direction: row;
 }
