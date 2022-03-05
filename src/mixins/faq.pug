@@ -23,7 +23,7 @@ mixin faq_question(index, question)
     label(for=`question-${index}`)
       h4.question_header= question.question
       div
-        img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20")
+        img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20" onclick=`onButtonClick(${index})`)
     input(type="checkbox" id=`question-${index}` hidden)
     p.question_answer
       = question.answer
@@ -35,3 +35,9 @@ section#faq-section
   ul#questions
     each Q, i in faq_data
       +faq_question(i, Q)
+
+  script
+    | function onButtonClick(index) {
+    |   const img = document.querySelector(`label[for="question-${index}"] img`);
+    |   img.style.transform = img.style.transform ? '' : 'rotateZ(180deg)';
+    | }

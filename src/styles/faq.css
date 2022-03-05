@@ -36,6 +36,7 @@
 .question-card label img {
   display: block;
   margin: auto;
+  transition: .2s;
 }
 
 .question-card input ~ p {
