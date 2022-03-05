@@ -13,6 +13,21 @@ header > ul > li {
   padding-right: 5%;
 }
 
+header > ul > li > a::after {
+  display: block;
+  content: ' ';
+  background: white;
+  height: 3px;
+  width: 0;
+  box-sizing: content-box;
+  transition: .2s;
+  border-radius: 2px;
+}
+
+header > ul > li > a:hover::after {
+  width: 100%;
+}
+
 header > div {
   margin-top: 48px;
   display: flex;

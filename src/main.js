@@ -80,5 +80,5 @@ const setCssHeight = () => {
 }
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100));
-window.addEventListener('click', () => setTimeout(setCssHeight, 310));
+window.addEventListener('click', () => setTimeout(setCssHeight, 310)); // 310ms because animation lasts 300ms
 setTimeout(setCssHeight, 100);
