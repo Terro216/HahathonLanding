@@ -53,3 +53,51 @@ header > div > * {
 #header_image-box > img {
   width: 100%;
 }
+
+#header_image-box > img:last-child {
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  #header_title-box {
+    width: 65%;
+  }
+
+  #header_image-box {
+    width: 30%;
+  }
+}
+
+@media (max-width: 980px) {
+  #header_title-box {
+    width: 72%;
+  }
+
+  #header_image-box {
+    align-self: center;
+    width: 23%;
+  }
+
+  #header_image-box > img:first-child {
+    display: none;
+  }
+
+  #header_image-box > img:last-child {
+    display: block;
+  }
+}
+
+@media (max-width: 650px) {
+  #header_title-box > h1 {
+    font-size: 284%;
+  }
+
+  #header_title-box {
+    width: 100%;
+  }
+
+  #header_image-box {
+    display: none;
+  }
+}

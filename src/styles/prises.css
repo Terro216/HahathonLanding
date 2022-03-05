@@ -40,3 +40,34 @@
 #prises > li:nth-child(3n) {
   padding-right: 30%;
 }
+
+
+@media (max-width: 980px) {
+  #prises-section > img {
+    right: 0;
+    width: 32%;
+  }
+
+  #prises > li {
+    -webkit-text-stroke-width: 1px;
+    font-size: 32px;
+    text-align: start;
+  }
+}
+
+@media (max-width: 650px) {
+  #prises-section_header {
+    display: block;
+  }
+
+  #prises-section_header > h2 {
+    width: 100%;
+  }
+
+  #prises-section_header > div {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    margin-top: 16px;
+  }
+}

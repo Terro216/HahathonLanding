@@ -81,3 +81,25 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+
+@media (max-width: 980px) {
+  #registration-section > img {
+    width: 23%;
+    padding-right: 60px;
+  }
+
+  #registration-section form {
+    width: calc(100% - 190px);
+  }
+}
+
+@media (max-width: 650px) {
+  #registration-section > img {
+    display: none;
+  }
+
+  #registration-section form {
+    width: 100%;
+  }
+}
