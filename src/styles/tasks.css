@@ -123,3 +123,9 @@
     margin-top: 48px;
   }
 }
+
+@media (max-width: 425px) {
+  #tasks-section_some-terms > li {
+    font-size: 30px;
+  }
+}

@@ -156,3 +156,9 @@ h2 {
     font-size: 48px;
   }
 }
+
+@media (max-width: 425px) {
+  h2 {
+    font-size: 42px;
+  }
+}
