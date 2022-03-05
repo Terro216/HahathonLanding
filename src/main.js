@@ -56,8 +56,6 @@ const setCssHeight = () => {
   requestAnimationFrame(() => {
     const height = document.querySelector('body > div').scrollHeight;
 
-    console.log(height);
-
     const header = document.querySelector('header');
     const footer = document.getElementById('footer');
     const faq = document.getElementById('faq-section');
@@ -81,5 +79,6 @@ const setCssHeight = () => {
   });
 }
 
-window.addEventListener('resize', setCssHeight);
+window.addEventListener('resize', () => setTimeout(setCssHeight, 100));
+window.addEventListener('click', () => setTimeout(setCssHeight, 310));
 setTimeout(setCssHeight, 100);

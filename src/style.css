@@ -30,6 +30,8 @@
 
 .orbs > svg {
   width: auto !important;
+  max-width: 10000px;
+  padding: 0;
 }
 
 .orbs > svg g:nth-child(3n - 2) {
