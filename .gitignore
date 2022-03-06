@@ -1,3 +1,8 @@
-dist
+HahathonLanding-Front/dist
 .idea
-node_modules
+HahathonLanding-Front/node_modules
+
+HahathonLanding-Back/node_modules
+HahathonLanding-Back/.env
+HahathonLanding-Back/src/static
+HahathonLanding-Back/apiKey.json
