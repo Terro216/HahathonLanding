@@ -3,6 +3,7 @@ const sheets = google.sheets('v4');
 
 const sheetsId = require('../config').sheetsId;
 const encryptionService = require('./encryptionService');
+const mailerService = require('./mailerService');
 
 module.exports = {
   addTeam: async (data) => {
@@ -19,7 +20,11 @@ module.exports = {
       });
 
       const row = encryptionService.encrypt(res.data.updates.updatedRange.split(':')[1].slice(1));
-      console.log(row);
+      await mailerService.sendMail(
+        data.cEmail,
+        data.cName,
+        row
+      );
     } catch (e) {
       console.log(e);
       console.warn(data);
