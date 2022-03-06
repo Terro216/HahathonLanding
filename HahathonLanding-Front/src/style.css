@@ -138,6 +138,32 @@ h2 {
   font-weight: 600;
 }
 
+
+.notification {
+  position: fixed;
+  height: 0;
+  padding: 0;
+}
+
+.notification > div {
+  right: -100px;
+  max-width: 400px;
+  margin: 32px;
+  width: 90%;
+  float: right;
+  background: #a746bc;
+  padding: 16px 24px;
+  border: 3px solid white;
+  box-sizing: border-box;
+  transition: .3s;
+  transform: translateX(5500px);
+}
+
+.notification > div.visible {
+  transform: translateX(0);
+}
+
+
 /* Adaptivity */
 @media (max-width: 1200px) {
   h2 {

@@ -1,6 +1,7 @@
 const Router = require('express').Router;
 
 const sheetsService = require('../sevices/sheetsService');
+const baseUrl = require("../config").baseUrl;
 const validators = require('../middleware').requests;
 
 const router = new Router();
@@ -23,7 +24,7 @@ router.get('/confirm', async (req, res) => {
     console.log(e);
   }
 
-  res.sendStatus(200).send();
+  res.redirect(baseUrl);
 });
 
 module.exports = (api) => {
