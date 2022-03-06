@@ -44,8 +44,31 @@ document.getElementById('age-plus').addEventListener('click', (e) => {
   return false;
 });
 
-function submitRegistration() {
-  console.log('!!!');
+global.submitRegistration = () => {
+  fetch(location.origin + '/api/v1/requests/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      captainName: document.getElementById('captain-name').value,
+      captainEmail: document.getElementById('captain-email').value,
+      captainTg: document.getElementById('captain-tg').value,
+      captainAge: document.getElementById('age').value,
+      member2: document.getElementById('member-2').value,
+      member3: document.getElementById('member-3').value,
+      member4: document.getElementById('member-4').value
+    })
+  }).then(() => {
+    const N = document.querySelector('.notification div');
+
+    N.classList.add('visible');
+    setTimeout(() => {
+      N.classList.remove('visible');
+    }, 10000);
+  }).catch(() => {
+    console.log('ERROR');
+  });
 
   return false;
 }
