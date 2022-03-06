@@ -16,9 +16,9 @@ router.post('/create', validators.create, async (req, res) => {
 });
 
 
-router.put('/confirm', async (req, res) => {
+router.get('/confirm', async (req, res) => {
   try {
-    await sheetsService.confirm(req.payload);
+    await sheetsService.confirm(req.query.raw);
   } catch (e) {
     console.log(e);
   }

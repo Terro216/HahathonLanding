@@ -18,25 +18,29 @@ module.exports = {
         }
       });
 
-      const row = res.data.updates.updatedRange.split(':')[1].slice(1);
-      
+      const row = encryptionService.encrypt(res.data.updates.updatedRange.split(':')[1].slice(1));
+      console.log(row);
     } catch (e) {
       console.log(e);
-      console.warn(data)
+      console.warn(data);
     }
-
-
-
   },
 
   confirm: async (data) => {
-    await sheets.spreadsheets.values.update({
-      spreadsheetId: sheetsId,
-      range: 'Sheet1!J2',
-      valueInputOption: 'USER_ENTERED',
-      requestBody: {
-        values: [['Yes']]
-      }
-    })
+    try {
+      const row = encryptionService.decrypt(data);
+
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: sheetsId,
+        range: `Sheet1!J${row}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: {
+          values: [['Yes']]
+        }
+      });
+    } catch (e) {
+      console.log(e);
+      console.warn(data);
+    }
   }
 }
