@@ -13,12 +13,13 @@
   width: 50%;
 }
 
-#prises-section_header > div {
+#prises-section_header > a {
+  display: block;
   width: 25%;
   align-self: center;
 }
 
-#prises-section_header > div > img {
+#prises-section_header > a > img {
   width: 80%;
 }
 
