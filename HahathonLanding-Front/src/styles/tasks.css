@@ -75,11 +75,6 @@
   font-size: 16px;
 }
 
-.task article button {
-  padding: 10px 15%;
-  box-sizing: border-box;
-}
-
 .task article .task_button-box {
   display: flex;
   background: none;

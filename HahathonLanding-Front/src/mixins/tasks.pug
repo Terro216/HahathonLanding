@@ -3,22 +3,26 @@
   {
     "title": "Кейс \"Институт ИТ\"",
     "description": "Собрать портфель, чтобы сходить в школу - непросто. Решите задачу наиболее эффективно и положите с собой биг мак. Собрать портфель, чтобы пойти в универ сложнее. Обязательно купите вейп.",
-    "imgSrc": "assets/tasks/task_1.svg"
+    "imgSrc": "assets/tasks/task_1.svg",
+    "radioId": "task1"
   },
   {
     "title": "Кейс \"SberGames\"",
     "description": "Собрать портфель, чтобы сходить в школу - непросто. Решите задачу наиболее эффективно и положите с собой биг мак. Собрать портфель, чтобы пойти в универ сложнее. Обязательно купите вейп.",
-    "imgSrc": "assets/tasks/task_2.svg"
+    "imgSrc": "assets/tasks/task_2.svg",
+    "radioId": "task2"
   },
     {
       "title": "Кейс \"Wargaming\"",
       "description": "Собрать портфель, чтобы сходить в школу - непросто. Решите задачу наиболее эффективно и положите с собой биг мак. Собрать портфель, чтобы пойти в универ сложнее. Обязательно купите вейп.",
-      "imgSrc": "assets/tasks/task_3.svg"
+      "imgSrc": "assets/tasks/task_3.svg",
+      "radioId": "task3"
     },
     {
       "title": "Кейс \"Кафедра Прикладной математики\"",
       "description": "Собрать портфель, чтобы сходить в школу - непросто. Решите задачу наиболее эффективно и положите с собой биг мак. Собрать портфель, чтобы пойти в универ сложнее. Обязательно купите вейп.",
-      "imgSrc": "assets/tasks/task_1.svg"
+      "imgSrc": "assets/tasks/task_1.svg",
+      "radioId": "task4"
     }]
 
 mixin task(data)
@@ -30,7 +34,8 @@ mixin task(data)
       p
         = data.description
       .task_button-box
-        button Подробнее
+        label(for=data.radioId style="display: flex")
+          a.button Выбрать
 
 section#tasks-section
   h2.text__header Задачи
