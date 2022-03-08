@@ -13,6 +13,8 @@ module.exports = {
         error = 'No captain age';
       } else if (!req.body.member2) {
         error = 'No other members';
+      } else if (!req.body.track) {
+        error = 'No track';
       }
 
       if (error) {
@@ -25,7 +27,8 @@ module.exports = {
           cAge: req.body.captainAge,
           m2: req.body.member2,
           m3: req.body.member3,
-          m4: req.body.member4
+          m4: req.body.member4,
+          track: req.body.track
         }
 
         next();

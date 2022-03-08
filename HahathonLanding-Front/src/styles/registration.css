@@ -69,6 +69,48 @@
   -moz-appearance: textfield;
 }
 
+#registration-section form input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+#registration-section form label.radio {
+  display: block;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+#registration-section form label.radio::before {
+  content: ' ';
+  line-height: 1ch;
+  text-align: center;
+  margin-right: 8px;
+  border: 1px solid white;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+#registration-section form input:checked + label.radio::before {
+  content: 'x';
+}
+
+.error {
+  color: #bf0000;
+  font-size: 16px;
+}
+
+input:not(:invalid) + .error {
+  display: none;
+}
+
+/*#registration-section form label.radio input */
+
 #registration-section form button {
   margin-top: 16px;
   padding: 8px 20px;

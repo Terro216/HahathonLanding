@@ -44,7 +44,13 @@ document.getElementById('age-plus').addEventListener('click', (e) => {
   return false;
 });
 
+document.getElementById('register').addEventListener('invalid', (e) => {
+  e.preventDefault();
+  document.getElementById('error__reg').innerText = e.target.dataset.error;
+}, true);
+
 global.submitRegistration = () => {
+  document.getElementById('error__reg').innerText = '';
   fetch(location.origin + '/api/v1/requests/create', {
     method: 'POST',
     headers: {
@@ -57,7 +63,8 @@ global.submitRegistration = () => {
       captainAge: document.getElementById('age').value,
       member2: document.getElementById('member-2').value,
       member3: document.getElementById('member-3').value,
-      member4: document.getElementById('member-4').value
+      member4: document.getElementById('member-4').value,
+      track: document.querySelector('#register input[name="track"]:checked').value
     })
   }).then(() => {
     const N = document.querySelector('.notification div');
