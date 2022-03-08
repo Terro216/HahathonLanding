@@ -19,8 +19,8 @@ module.exports = {
         }
       });
 
-      const row = encryptionService.encrypt(res.data.updates.updatedRange.split(':')[1].slice(1));
-      await mailerService.sendMail(
+      const row = encryptionService.encrypt(res.data.updates.updatedRange.split(':')[1].slice(1) + "$$%%%$$" + data.cEmail + "$$%%%$$" + data.cName);
+      await mailerService.sendRegMail(
         data.cEmail,
         data.cName,
         row
@@ -33,16 +33,21 @@ module.exports = {
 
   confirm: async (data) => {
     try {
-      const row = encryptionService.decrypt(data);
+      const row = encryptionService.decrypt(data).split('$$%%%$$');
 
       await sheets.spreadsheets.values.update({
         spreadsheetId: sheetsId,
-        range: `Sheet1!J${row}`,
+        range: `Sheet1!J${row[0]}`,
         valueInputOption: 'USER_ENTERED',
         requestBody: {
           values: [['Yes']]
         }
       });
+
+      await mailerService.sendConfMail(
+        row[1],
+        row[2]
+      );
     } catch (e) {
       console.log(e);
       console.warn(data);
