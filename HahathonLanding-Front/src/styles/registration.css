@@ -6,7 +6,7 @@
 
 #registration-section > img {
   float: right;
-  padding-left: 0;
+  padding: 0 56px;
   margin-top: 200px;
 }
 
@@ -127,8 +127,9 @@ input:not(:invalid) + .error {
 
 @media (max-width: 980px) {
   #registration-section > img {
-    width: 23%;
-    padding-right: 60px;
+    width: 20%;
+    padding: 0 32px;
+    height: 20%;
   }
 
   #registration-section form {
