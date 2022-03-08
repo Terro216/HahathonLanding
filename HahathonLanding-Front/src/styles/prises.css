@@ -65,7 +65,7 @@
     width: 100%;
   }
 
-  #prises-section_header > div {
+  #prises-section_header > a {
     display: inline-block;
     width: 50%;
     vertical-align: middle;
