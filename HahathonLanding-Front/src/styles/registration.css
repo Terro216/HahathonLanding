@@ -35,8 +35,13 @@
   transition: .2s;
 }
 
-#registration-section form input:focus {
+#registration-section form input:focus-visible {
   background: #FFFFFF22;
+}
+
+#registration-section form button:focus-visible,
+#registration-section form a:focus-visible {
+  outline: 2px solid #cf2dff;
 }
 
 #registration-section form input::placeholder {
@@ -94,6 +99,10 @@
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 4px;
+}
+
+#registration-section form input:focus-visible + label.radio::before {
+  outline: 2px solid #cf2dff;
 }
 
 #registration-section form input:checked + label.radio::before {

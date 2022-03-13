@@ -96,7 +96,8 @@ body > div > * > * {
 }
 
 button,
-a.button {
+a.button,
+span.button {
   padding: 10px 76px;
   background: transparent !important;
   outline: none;
@@ -106,7 +107,8 @@ a.button {
 }
 
 button:hover,
-a.button:hover {
+a.button:hover,
+span.button:hover {
   background: #FFFFFF22 !important;
   border-color: #FFFFFFBB;
 }
