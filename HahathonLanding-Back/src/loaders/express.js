@@ -23,9 +23,7 @@ module.exports = async (app) => {
   app.use(apiPrefix, api());  // Adds routing
 
   app.use((req, res, next) => {
-    const err = new Error('Not found');
-    err['status'] = 404;
-    next(err);
+    res.redirect('/');
   });
 
   app.use((err, req, res, next) => {
