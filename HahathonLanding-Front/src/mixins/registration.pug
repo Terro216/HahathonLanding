@@ -2,7 +2,7 @@ section#registration-section
   h2.text__header Регистрация
 
   img(src="assets/Group 1.png" height="234" width="234" alt="Иллюстрация для формы")
-  form#register
+  form#register(name="form")
     h3 Заполните форму и укажите всех участников своей команды
     input(type="text" id="captain-name" placeholder="ФИО капитана команды" minlength="3" required data-error="Необходимо указать ФИО капитана")
     input(type="email" id="captain-email" placeholder="E-mail капитана команды" minlength="5" required data-error="Необходимо указать адрес")
@@ -40,4 +40,4 @@ section#registration-section
 
     p.error#error__reg
 
-    button.g-recaptcha(data-size="invisible" data-theme="dark" data-sitekey="6LfWwNgeAAAAAEfzAwwxK8d8FDbvO4HpD5NtAm8W" data-callback="submitRegistration") Отправить заявку
+    button.g-recaptcha(type="submit" data-size="invisible" data-theme="dark" data-sitekey="6LfWwNgeAAAAAEfzAwwxK8d8FDbvO4HpD5NtAm8W" data-callback="submitRegistration") Отправить заявку

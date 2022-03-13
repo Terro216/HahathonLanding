@@ -50,6 +50,10 @@ document.getElementById('register').addEventListener('invalid', (e) => {
 }, true);
 
 global.submitRegistration = (token) => {
+  if (!document.getElementById('register').checkValidity()) {
+    return false;
+  }
+
   document.getElementById('error__reg').innerText = '';
   fetch(location.origin + '/api/v1/requests/create', {
     method: 'POST',
