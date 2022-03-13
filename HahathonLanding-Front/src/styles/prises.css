@@ -1,8 +1,3 @@
-/* Prises */
-#prises-section {
-  /*background: linear-gradient(to bottom, #660089, #030029);*/
-}
-
 #prises-section_header {
   display: flex;
   flex-direction: row;
@@ -21,6 +16,7 @@
 
 #prises-section_header > a > img {
   width: 80%;
+  height: 80%;
 }
 
 #prises-section > img {

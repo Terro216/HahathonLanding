@@ -1,6 +1,4 @@
-/* Registration */
 #registration-section {
-  /*background: linear-gradient(to bottom, #004189, #030029);*/
   padding-bottom: 0 !important;
 }
 
@@ -8,6 +6,8 @@
   float: right;
   padding: 0 56px;
   margin-top: 200px;
+  width: 22%;
+  height: 22%;
 }
 
 #registration-section form {

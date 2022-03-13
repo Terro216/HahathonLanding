@@ -1,7 +1,9 @@
 import './style.css';
 
+const getById = (id) => document.getElementById(id);
+
 // Age input controls
-const ageInput = document.getElementById('age');
+const ageInput = getById('age');
 const minAge = 18;
 const maxAge = 99;
 
@@ -14,7 +16,7 @@ ageInput.addEventListener('change', (e) => {
   }
 });
 
-document.getElementById('age-minus').addEventListener('click', (e) => {
+getById('age-minus').addEventListener('click', (e) => {
   e.preventDefault();
 
   const age = parseInt(ageInput.value);
@@ -28,7 +30,7 @@ document.getElementById('age-minus').addEventListener('click', (e) => {
   return false;
 });
 
-document.getElementById('age-plus').addEventListener('click', (e) => {
+getById('age-plus').addEventListener('click', (e) => {
   e.preventDefault();
 
   const age = parseInt(ageInput.value);
@@ -44,35 +46,35 @@ document.getElementById('age-plus').addEventListener('click', (e) => {
   return false;
 });
 
-document.getElementById('register').addEventListener('invalid', (e) => {
+getById('register').addEventListener('invalid', (e) => {
   e.preventDefault();
-  document.getElementById('error__reg').innerText = e.target.dataset.error;
+  getById('error__reg').innerText = e.target.dataset.error;
 }, true);
 
 global.submitRegistration = (token) => {
-  if (!document.getElementById('register').checkValidity()) {
+  if (!getById('register').checkValidity()) {
     return false;
   }
 
-  document.getElementById('error__reg').innerText = '';
+  getById('error__reg').innerText = '';
   fetch(location.origin + '/api/v1/requests/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      captainName: document.getElementById('captain-name').value,
-      captainEmail: document.getElementById('captain-email').value,
-      captainTg: document.getElementById('captain-tg').value,
-      captainAge: document.getElementById('age').value,
-      member2: document.getElementById('member-2').value,
-      member3: document.getElementById('member-3').value,
-      member4: document.getElementById('member-4').value,
+      captainName: getById('captain-name').value,
+      captainEmail: getById('captain-email').value,
+      captainTg: getById('captain-tg').value,
+      captainAge: getById('age').value,
+      member2: getById('member-2').value,
+      member3: getById('member-3').value,
+      member4: getById('member-4').value,
       track: document.querySelector('#register input[name="track"]:checked').value,
       recaptcha: token
     })
   }).then(() => {
-    document.getElementById('register').reset();
+    getById('register').reset();
     const N = document.querySelector('.notification div');
 
     N.classList.add('visible');
@@ -93,11 +95,11 @@ const setCssHeight = () => {
     const height = document.querySelector('body > div').scrollHeight;
 
     const header = document.querySelector('header');
-    const footer = document.getElementById('footer');
-    const faq = document.getElementById('faq-section');
-    const tasks = document.getElementById('tasks-section');
-    const prises = document.getElementById('prises-section');
-    const registration = document.getElementById('registration-section');
+    const footer = getById('footer');
+    const faq = getById('faq-section');
+    const tasks = getById('tasks-section');
+    const prises = getById('prises-section');
+    const registration = getById('registration-section');
 
     const heights = [header, tasks, prises, faq, registration, footer].map((element) => {
       return (element.getBoundingClientRect().top + window.scrollY) / height * 100;

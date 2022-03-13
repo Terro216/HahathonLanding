@@ -35,16 +35,16 @@
   padding: 0;
 }
 
-.orbs > svg g:nth-child(3n - 2) {
+.orbs > svg circle:nth-child(3n - 2) {
   animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
-.orbs > svg g:nth-child(3n - 1) {
+.orbs > svg circle:nth-child(3n - 1) {
   animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   animation-delay: -4s;
 }
 
-.orbs > svg g:nth-child(3n) {
+.orbs > svg circle:nth-child(3n) {
   animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   animation-delay: -7s;
 }

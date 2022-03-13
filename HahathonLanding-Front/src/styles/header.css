@@ -1,9 +1,4 @@
-/* Header */
-header {
-  /*background: linear-gradient(to bottom, #4a0089, #1a0029), url('../assets/orbs/header.svg');*/
-}
-
-header > ul { /* Menu */
+header > ul {
   padding-top: 48px !important;
   display: flex;
   flex-direction: row;
