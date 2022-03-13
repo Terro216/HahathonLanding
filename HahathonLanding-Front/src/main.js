@@ -72,6 +72,7 @@ global.submitRegistration = (token) => {
       recaptcha: token
     })
   }).then(() => {
+    document.getElementById('register').reset();
     const N = document.querySelector('.notification div');
 
     N.classList.add('visible');
