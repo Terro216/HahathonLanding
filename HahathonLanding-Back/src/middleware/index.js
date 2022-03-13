@@ -1,6 +1,10 @@
+const fetch = require('node-fetch');
+
+const reCaptchaSecret = require('../config').reCaptchaSecret;
+
 module.exports = {
   requests: {
-    create: (req, res, next) => {
+    create: async (req, res, next) => {
       let error = '';
 
       if (!req.body.captainName) {
@@ -15,6 +19,22 @@ module.exports = {
         error = 'No other members';
       } else if (!req.body.track) {
         error = 'No track';
+      } else if (!req.body.recaptcha) {
+        error = 'Not approved';
+      } else {
+        try {
+          const reCaptchaResp = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${reCaptchaSecret}&response=${req.body.recaptcha}`, {
+            method: 'POST'
+          });
+
+          const body = await reCaptchaResp.json()
+          console.log('ReCaptchaScore: ' + body.score);
+          if (!body.success || body.score < 0.5) {
+            error = 'Not approved';
+          }
+        } catch (e) {
+          error = e;
+        }
       }
 
       if (error) {
