@@ -13,7 +13,7 @@ router.post('/create', validators.create, async (req, res) => {
     console.log(e);
   }
 
-  res.sendStatus(200).send();
+  res.sendStatus(200);
 });
 
 

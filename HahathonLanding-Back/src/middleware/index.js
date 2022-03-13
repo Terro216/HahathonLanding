@@ -33,12 +33,14 @@ module.exports = {
             error = 'Not approved';
           }
         } catch (e) {
+          console.log(e);
           error = e;
         }
       }
 
       if (error) {
-        res.send({ message: error}).sendStatus(400);
+        res.status(400);
+        res.send({ message: error});
       } else {
         req.payload = {
           cName: req.body.captainName,
