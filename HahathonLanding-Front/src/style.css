@@ -10,6 +10,10 @@
 @import "styles/registration.css";
 @import "styles/footer.css";
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 :root {
   --wrapper-height: 0px
 }

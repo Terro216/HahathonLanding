@@ -49,7 +49,11 @@ document.getElementById('register').addEventListener('invalid', (e) => {
   document.getElementById('error__reg').innerText = e.target.dataset.error;
 }, true);
 
-global.submitRegistration = () => {
+global.submitRegistration = (token) => {
+  if (!document.getElementById('register').checkValidity()) {
+    return false;
+  }
+
   document.getElementById('error__reg').innerText = '';
   fetch(location.origin + '/api/v1/requests/create', {
     method: 'POST',
@@ -64,7 +68,8 @@ global.submitRegistration = () => {
       member2: document.getElementById('member-2').value,
       member3: document.getElementById('member-3').value,
       member4: document.getElementById('member-4').value,
-      track: document.querySelector('#register input[name="track"]:checked').value
+      track: document.querySelector('#register input[name="track"]:checked').value,
+      recaptcha: token
     })
   }).then(() => {
     const N = document.querySelector('.notification div');
