@@ -37,7 +37,8 @@ module.exports = {
   plugins: [
     new htmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.pug'
+      template: './src/index.pug',
+      inject: 'body'
     }),
     new miniCssExtractPlugin(),
   ]
