@@ -51,6 +51,10 @@
   transform: translateX(-4000px);
 }
 
+.question-card input:checked ~ label img {
+  transform: rotateZ(180deg);
+}
+
 .question-card input:checked ~ p {
   padding: 36px;
   border: 4px solid white;

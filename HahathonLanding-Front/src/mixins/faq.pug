@@ -62,11 +62,11 @@
 
 mixin faq_question(index, question)
   li(class="question-card")
+    input(type="checkbox" id=`question-${index}` hidden)
     label(for=`question-${index}`)
       h3.question_header= question.question
       div
-        img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20" onclick=`onButtonClick(${index})`)
-    input(type="checkbox" id=`question-${index}` hidden)
+        img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20")
     p.question_answer!= question.answer
 
 section#faq-section
@@ -75,9 +75,3 @@ section#faq-section
   ul#questions
     each Q, i in faq_data
       +faq_question(i, Q)
-
-  script
-    | function onButtonClick(index) {
-    |   const img = document.querySelector(`label[for="question-${index}"] img`);
-    |   img.style.transform = img.style.transform ? '' : 'rotateZ(180deg)';
-    | }
