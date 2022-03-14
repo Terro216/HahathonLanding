@@ -9,6 +9,15 @@ const api = require('../api');
 module.exports = async (app) => {
   app.use(morgan('common'));
 
+  // Cache-control
+  app.use((req, res, next) => {
+    if (req.url.indexOf('/api') === -1) {
+      res.set('Cache-control', 'public, max-age=300');
+    }
+
+    next();
+  });
+
   app.use(express.static(__basedir + '/static'));
   console.log('  Looking for static files at: ' + __basedir + '/static');
 
