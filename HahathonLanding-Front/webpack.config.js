@@ -2,6 +2,8 @@ const fs = require('fs');
 
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: './src/main.js',
@@ -32,6 +34,12 @@ module.exports = {
         test: /\.s[ac]ss$/,
         use: [miniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
+    ]
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin()
     ]
   },
   plugins: [
