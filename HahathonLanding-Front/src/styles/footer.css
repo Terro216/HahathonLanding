@@ -29,11 +29,11 @@ footer > div > p {
   padding: 0;
 }
 
-footer a {
+footer a:not(.button) {
   color: #a5dbff;
 }
 
-footer button {
+footer .button {
   padding: 8px 24px !important;
 }
 
@@ -43,7 +43,7 @@ footer button {
     font-size: 16px !important;
   }
 
-  footer button {
+  footer .button {
     padding: 8px 8px !important;
   }
 }

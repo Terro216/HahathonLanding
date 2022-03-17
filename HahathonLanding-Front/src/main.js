@@ -5,7 +5,7 @@ const getById = (id) => document.getElementById(id);
 // Age input controls
 const ageInput = getById('age');
 const minAge = 18;
-const maxAge = 99;
+const maxAge = 25;
 
 ageInput.addEventListener('change', (e) => {
   const age = parseInt(e.target.value);
@@ -26,7 +26,6 @@ getById('age-minus').addEventListener('click', (e) => {
   } else {
     ageInput.value = age - 1;
   }
-
   return false;
 });
 

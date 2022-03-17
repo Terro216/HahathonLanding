@@ -1,7 +1,7 @@
 section#registration-section
   h2.text__header Регистрация
 
-  img(src="assets/Group 1.png" height="598" width="563" alt="Иллюстрация для формы")
+  img(src="assets/header_image.svg" height="467" width="456" alt="Иллюстрация для формы")
   form#register(name="form")
     h3 Заполните форму и укажите всех участников своей команды
     input(type="text" id="captain-name" placeholder="ФИО капитана команды" minlength="3" required data-error="Необходимо указать ФИО капитана")
@@ -9,10 +9,9 @@ section#registration-section
     input(type="text" id="captain-tg" placeholder="Telegram капитана команды" minlength="2" required data-error="Необходимо указать telegram")
 
     h4 Возраст капитана
-    //TODO specify age arrange (Sveta)
     div
       button(type="button" id="age-minus" tabindex="-1") &minus;
-      input(type="number" min="18" max="99" placeholder="18" id="age" required data-error="Необходимо указать возраст капитана")
+      input(type="number" min="18" max="25" placeholder="18" id="age" required data-error="Необходимо указать возраст капитана")
       button(type="button" id="age-plus" tabindex="-1") +
 
     h3
