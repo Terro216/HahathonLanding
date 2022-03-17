@@ -23,3 +23,13 @@ GOOGLE_SHEETS_ID=wkkICYXHNv3rfMhlDaOqZbkNtdjljh1ySRTxmIOvk # Id of Google spread
 ```
 * Don't forget to put your Google Credentials to `GOOGLE_APPLICATION_CREDENTIALS` path.
 * Run application with `node src` from `./app`.
+
+## Run from Docker
+* Build docker image
+    ```bash
+    docker-compose build
+    ```
+* Run Docker container in background
+    ```bash
+    docker-compose up -d
+    ```
