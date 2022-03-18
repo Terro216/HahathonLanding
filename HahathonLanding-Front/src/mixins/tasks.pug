@@ -4,12 +4,14 @@
     "title": "Кейс от Института ИТ",
     "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android",
     "imgSrc": "assets/tasks/task_1.svg",
+    "taskSrc": "assets/tasks/task_1_1.jpg",
     "radioId": "task1"
   },
   {
     "title": "Кейс от SberGames",
     "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android",
     "imgSrc": "assets/tasks/task_2.svg",
+    "taskSrc": "assets/tasks/task_2_1.jpg",
     "radioId": "task2"
   }]
 
@@ -21,6 +23,8 @@ mixin task(data)
       h3= data.title
       p
         = data.description
+      .img-box
+        img(src=data.taskSrc)
       .task_button-box
         label(for=data.radioId style="display: flex")
           span.button Выбрать

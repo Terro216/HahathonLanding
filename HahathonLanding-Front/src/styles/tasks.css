@@ -34,6 +34,17 @@
   overflow: hidden;
 }
 
+.img-box {
+  text-align: center;
+}
+
+.img-box img {
+  max-height: 250px;
+  max-width: 95%;
+  padding: 16px 0;
+  box-sizing: border-box;
+}
+
 .task:nth-child(2n) {
   margin-top: 144px;
 }
