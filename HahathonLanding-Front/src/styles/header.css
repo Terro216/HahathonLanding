@@ -54,6 +54,11 @@ header > div > * {
   display: none;
 }
 
+.curriculum {
+  margin-top: 64px;
+  display: block;
+}
+
 @media (max-width: 1200px) {
   #header_title-box {
     width: 65%;
