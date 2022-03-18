@@ -69,6 +69,7 @@ global.submitRegistration = (token) => {
       member2: getById('member-2').value,
       member3: getById('member-3').value,
       member4: getById('member-4').value,
+      university: getById('university').value,
       track: document.querySelector('#register input[name="track"]:checked').value,
       recaptcha: token
     })

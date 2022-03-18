@@ -50,6 +50,7 @@ module.exports = {
           m2: req.body.member2,
           m3: req.body.member3,
           m4: req.body.member4,
+          university: req.body.university,
           track: req.body.track
         }
 

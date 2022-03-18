@@ -37,7 +37,7 @@ module.exports = {
 
       await sheets.spreadsheets.values.update({
         spreadsheetId: sheetsId,
-        range: `Sheet1!J${row[0]}`,
+        range: `Sheet1!K${row[0]}`,
         valueInputOption: 'USER_ENTERED',
         requestBody: {
           values: [['Yes']]
