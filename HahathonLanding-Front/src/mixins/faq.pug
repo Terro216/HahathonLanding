@@ -1,15 +1,15 @@
 -
   var faq_data = [
     {
-      question: 'Я никогда не участвовал в Хахатоне, что мне нужно знать?',
-      answer: 'Мы подобрали несколько советов по участию в Хакатоне - <a href="https://docs.google.com/document/d/1eA2Th8CQ2ijg8NeqLLl969YQDBwSrM-t9RXX_nflPkE/edit?usp=sharing">ссылка</a>'
+      question: 'Я никогда не участвовал в Хахатонах, что мне нужно знать?',
+      answer: 'Мы подобрали несколько советов по участию в Хакатоне - <a href="https://docs.google.com/document/d/1eA2Th8CQ2ijg8NeqLLl969YQDBwSrM-t9RXX_nflPkE/edit?usp=sharing">посмотрите их</a>'
     },
     {
       question: 'Какие инструменты разрешается использовать участникам?',
       answer: 'Ограничений по инструментам нет, но необходимо учитывать требования к предоставлению результата.'
     },
     {
-      question: 'Разрешено ли использовать сторонние ассеты (и какие: только лицензионные или любые)?',
+      question: 'Разрешено ли использовать сторонние ассеты?',
       answer: 'Сторонние ассеты не запрещается использовать с указанием автора и источника в титрах к игре'
     },
     {
@@ -17,7 +17,7 @@
       answer: 'Шаблоны и заготовки возможно использовать при условии, что они не принимали ранее участие в других конкурсах.'
     },
     {
-      question: 'Какие требования к компиляции проекта (в правилах было сказано про Android APK): ограничения по размеру, дополнительные установочные файлы, версия Android и API?',
+      question: 'Какие требования к компиляции проекта?',
       answer: 'Игровой билд должен быть размером до 300 мб для Android 8 и более поздних версий (API уровней 9–10, 14 и выше)'
     },
     {
@@ -55,7 +55,7 @@
               '5. Геймдизайн: графика и концепции - <a href="https://www.coursera.org/specializations/game-design?ranMID=40328&ranEAID=vbJlOdbtkok&ranSiteID=vbJlOdbtkok-M01JHghThIt8Z9o2dkS8Hg&siteID=vbJlOdbtkok-M01JHghThIt8Z9o2dkS8Hg&utm_content=10&utm_medium=partners&utm_source=linkshare&utm_campaign=vbJlOdbtkok">ссылка</a>'
     },
     {
-      question: 'Как мне убедиться что я зарегистрирован на GameJam?',
+      question: 'Как мне убедиться что я зарегистрирован?',
       answer: 'Если вы сомневаетесь, что регистрация прошла успешно, напишите администраторам в чате мероприятия или на почту <a href="mailto:hahathon@rtuitlab.dev">hahathon@rtuitlab.dev</a>'
     }
   ];
@@ -70,7 +70,7 @@ mixin faq_question(index, question)
     p.question_answer!= question.answer
 
 section.faq#faq-section
-  h2.faq__header ЧаВо
+  h2.faq__header FAQ
 
   ul.faq__list#questions
     each Q, i in faq_data
