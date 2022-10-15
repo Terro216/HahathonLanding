@@ -1,45 +1,28 @@
 @import 'variables.scss';
 
-#prises-section_header {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+.prises {
+	&__header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		h2 {
+			width: 50%;
+		}
+	}
+	&__content {
+		display: flex;
+		justify-content: space-around;
+		.prise-block {
+			.logo {
+				position: absolute;
+				margin-top: 40px;
+			}
+			.description {
+			}
+		}
+	}
 }
-
-#prises-section_header > h2 {
-	width: 50%;
-}
-
-#prises-section_header > a {
-	display: block;
-	width: 25%;
-	align-self: center;
-}
-
-#prises-section_header > a > img {
-	width: 80%;
-	height: 80%;
-}
-
-#prises-section > img {
-	position: absolute;
-	margin-top: 40px;
-}
-
-#prises > li {
-	padding: 16px 0;
-	font-size: 56px;
-	text-align: end;
-}
-
-#prises > li:nth-child(3n - 1) {
-	padding-right: 15%;
-}
-
-#prises > li:nth-child(3n) {
-	padding-right: 0%;
-}
-
+/*
 @media (max-width: $desktop-breakpoint) {
 	#prises-section > img {
 		width: 25%;
@@ -79,3 +62,4 @@
 		margin-top: 16px;
 	}
 }
+*/

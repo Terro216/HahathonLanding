@@ -1,20 +1,24 @@
 -
   var prises_data = [
-    'Консультация от SberGames',
-    '50 000 рублей',
-    'Мерч от РТУ МИРЭА',
-  ]
+    {imgSrc:'Консультация от SberGames',
+    description:'50 000 рублей'
+    },{imgSrc:'Консультация от SberGames',
+    description:'50 000 рублей'
+    },{imgSrc:'Консультация от SberGames',
+    description:'50 000 рублей'
+    }
+  ] 
 
-section#prises-section
-  #prises-section_header
-    h2.text__header Призы
-    a(href="https://sbergames.ru/" target="_blank")
-      img(src="assets/logos/sbergames.png" width="271" height="39" alt="Логотип SberGames")
-    a(href="https://www.mirea.ru/" target="_blank")
-      img(src="assets/logos/IIT_logo.svg" width="203" height="130" alt="Логотип Института ИТ")
+mixin prise-block(data)
+  .prise-block
+    img.logo(href=data.imgSrc)
+    p.description
+     = data.description
 
-  img(src="assets/trophy.svg" height="300" width="300" alt="Призы")
+section.prises#prises-section
+  .prises__header
+    h2 Призы
 
-  ul#prises
+  .prises__content
     each prise in prises_data
-      li(class="text__header")= prise
+      +prise-block(prise)
