@@ -3,42 +3,40 @@
   {
     "title": "Кейс от Института ИТ",
     "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android. Тема трека: Smile, just a smile",
-    "winner": "Победители: Тришина Яна, Парфенов Егор",
-    "imgSrc": "assets/tasks/task_1.svg",
-    "taskSrc": "assets/tasks/task_1_1.jpg",
+    "theme": "Юбилей",
+    "duration": "2 минуты",
+    "format": "MP4",
+    "imgSrc": "assets/tasks/task_1_1.jpg",
     "radioId": "task1"
   },
   {
-    "title": "Кейс от SberGames",
-    "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android. Тема трека: Идеальная иллюзия",
-    "winner": "Победители: Мезенцева Татьяна, Замилацкая Диана",
-    "imgSrc": "assets/tasks/task_2.svg",
-    "taskSrc": "assets/tasks/task_2_1.jpg",
-    "radioId": "task2"
+    "title": "Кейс от Института ИТ",
+    "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android. Тема трека: Smile, just a smile",
+    "theme": "Юбилей",
+    "duration": "2 минуты",
+    "format": "MP4",
+    "imgSrc": "assets/tasks/task_1_1.jpg",
+    "radioId": "task1"
   }]
 
 mixin task(data)
-  li.task
-    .task_img-box
-      img(src=data.imgSrc height="144" width="124.2" alt="Иллюстрация задания")
-    article
-      h3= data.title
-      p
-        = data.description
-      p(style="font-weight: bold")
-        = data.winner
-      .img-box
-        img(src=data.taskSrc)
-      .task_button-box
-        label(for=data.radioId style="display: flex")
-          span.button Выбрать
+  article.task
+    h3.title= data.title
+    p.description
+      = data.description
+    p.theme Тема: 
+      = data.theme
+    p.duration Длительность: 
+      = data.duration
+    p.format Формат: 
+      = data.format
+    img(src=data.imgSrc)
+    .button
+      label(for=data.radioId)
+        span.button Выбрать кейс
 
-section#tasks-section
-  h2.text__header Задачи
-  ul#tasks-section_some-terms.text__header
-    li У вас всего 48 часов
-    li 2-4 человека в команде
-
-  ul#tasks
+section.tasks#tasks-section
+  h2.tasks__header Задачи
+  .tasks__content
     each singleTask in tasks_data
       +task(singleTask)
