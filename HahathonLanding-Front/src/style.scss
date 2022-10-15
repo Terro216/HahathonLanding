@@ -1,15 +1,21 @@
-/* Import fonts 
-@import 'fonts/AvenirNextCyr/stylesheet.css';
-@import 'fonts/Helvetica/stylesheet.css';*/
-
 /* Import blocks stiles */
 @import 'styles/header.scss';
+@import 'styles/hamburger-wrapper.scss';
 @import 'styles/tasks.scss';
 @import 'styles/prises.scss';
 @import 'styles/faq.scss';
 @import 'styles/registration.scss';
 @import 'styles/footer.scss';
 @import 'styles/variables.scss';
+
+@font-face {
+	font-family: 'Furore';
+	src: url('fonts/Furore/Furore.otf');
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('fonts/Inter/Inter-Regular.ttf');
+}
 
 .grecaptcha-badge {
 	visibility: hidden;
@@ -23,7 +29,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 100%;
+	max-width: 100%;
 	height: var(--wrapper-height);
 	overflow: hidden;
 	z-index: 0;
@@ -66,14 +72,17 @@
 }
 
 html {
-	//scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
 	padding: 0;
 	margin: 0;
+	width: 100%;
+	max-width: 1600px;
 	//scroll-behavior: smooth;
-	background: var(--body-bg);
+	//background: var(--body-bg);
+	background: #1e1e1e;
 }
 
 body > div:not(.orbs) {
@@ -87,54 +96,99 @@ ul {
 	padding: 0;
 }
 
-body > div > * {
-	max-width: 1440px;
-	width: 100%;
-	padding: 0 calc((100% - 1440px) / 2) 96px;
+body > div {
+	width: 74%;
+	margin: 0 13%; //calc((100% - 1440px) / 2);
+	position: relative;
 }
 
 body > div > * > * {
-	padding: 0 10%;
+	//padding: 0 10%;
 }
 
 button,
 a.button,
 span.button {
-	padding: 10px 76px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 446px;
+	height: 79px;
+	color: white;
+	background: linear-gradient(267.24deg, rgba(242, 242, 242, 0.25) 22.52%, rgba(242, 242, 242, 0.05) 83.16%),
+		#0077ff;
+	box-shadow: 0px 4px 15px rgba(0, 119, 255, 0.5);
+	border-radius: 20px;
+	&:hover {
+		box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
+		color: white;
+	}
+	@media (max-width: $mobile-breakpoint) {
+		width: 301px;
+		height: 72px;
+	}
+	/*padding: 10px 76px;
 	background: transparent !important;
 	outline: none;
 	border: 2px solid white;
 	transition: 0.1s;
-	cursor: pointer;
-}
-
-button:hover,
-a.button:hover,
-span.button:hover {
-	background: #ffffff22 !important;
-	border-color: #ffffffbb;
+	cursor: pointer;*/
 }
 
 a {
+	font-weight: 500;
+	line-height: 29px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #f2f2f2;
 	text-decoration: none;
+	&:hover {
+		color: #3191ff;
+	}
+	&:active {
+		color: #0265d7;
+	}
+	/*&:visited {
+		color: #0077ff;
+	}*/
 }
 
 /* Font settings */
 * {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 24px;
 }
 
-h1 {
-	font-size: 64px;
-	text-transform: uppercase;
-}
-
+h1,
 h2 {
-	font-size: 120px;
-	text-transform: uppercase;
-	margin: 0;
+	font-family: Furore;
+	font-weight: 400;
+	letter-spacing: 0em;
+	font-size: 108px;
+	line-height: 108px;
+	text-align: left;
+	position: relative;
+	color: #1e1e1e;
+	text-shadow: -1px 1px 0 #0077ff, 1px 1px 0 #0077ff, 1px -1px 0 #0077ff, -1px -1px 0 #0077ff;
+	margin: 0 0 0 15px;
+	&::after {
+		content: ''; //Тут текст белого цвета
+		position: absolute;
+		top: -10px;
+		left: -15px;
+		color: white;
+	}
+	@media (max-width: $mobile-breakpoint) {
+		font-size: 56px;
+		font-weight: 400;
+		line-height: 56px;
+		letter-spacing: 0em;
+		text-align: left;
+		word-wrap: break-word; //? delete
+	}
 }
 
 .text__header {
@@ -152,30 +206,29 @@ h2 {
 	position: fixed;
 	height: 0;
 	padding: 0;
-}
 
-.notification > div {
-	right: -100px;
-	max-width: 400px;
-	margin: 32px;
-	width: 90%;
-	float: right;
-	background: #a746bc;
-	padding: 16px 24px;
-	border: 3px solid white;
-	box-sizing: border-box;
-	transition: 0.3s;
-	transform: translateX(5500px);
-}
+	& > div {
+		right: -100px;
+		max-width: 400px;
+		margin: 32px;
+		width: 90%;
+		float: right;
+		background: #a746bc;
+		padding: 16px 24px;
+		border: 3px solid white;
+		box-sizing: border-box;
+		transition: 0.3s;
+		transform: translateX(5500px);
+	}
 
-.notification > div.visible {
-	transform: translateX(0);
+	& > div.visible {
+		transform: translateX(0);
+	}
 }
-
-/* Adaptivity */
+/* Adaptivity 
 @media (max-width: $desktop-breakpoint) {
 	h2 {
-		font-size: 96px;
+		font-size: 108px;
 	}
 }
 
@@ -195,4 +248,12 @@ h2 {
 	h2 {
 		font-size: 42px;
 	}
+	* {
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+	}
 }
+*/

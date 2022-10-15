@@ -8,6 +8,11 @@
 		display: flex;
 		justify-content: center;
 		gap: 20px;
+
+		@media (max-width: $mobile-breakpoint) {
+			flex-direction: column;
+			overflow: hidden;
+		}
 		.task {
 			display: flex;
 			flex-direction: column;
@@ -42,13 +47,14 @@
 				padding: 16px 0;
 				box-sizing: border-box;
 			}
-			.button {
+			.taskButton {
+				width: 10px;
 			}
 		}
 	}
 }
 
-/* Tasks list */
+/* Tasks list 
 
 .task article .task_button-box {
 	display: flex;

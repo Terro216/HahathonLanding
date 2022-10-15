@@ -2,13 +2,13 @@
   var curriculums_data = [
   {
     "stage": "Публикация заданий",
-    "date": "13.13.2013",
+    "date": "17.10.2022 23:00",
   },{
     "stage": "Завершение приёма решений",
-    "date": "13.13.2013",
+    "date": "21.10.2022 10:00",
   },{
     "stage": "Публикация результатов",
-    "date": "13.13.2013",
+    "date": "21.10.2022 20:00",
   }]
   
 mixin curriculum-block(data)
@@ -26,15 +26,24 @@ header.header
       a(href="#faq-section") FAQ
     li
       a(href="#registration-section") Регистрация
+    li
+      a(href="")
+        img(src="./assets/logos/telegram.svg")
 
+  .header__navbar-mobile
+    img.logo(src="./assets/logos/header_hack.svg")
+    .hamburger(data-opened='false')
+    include hamburger-wrapper
+    
   .header__main
     .title
       .title__icons
-        img.icon
-        img.icon
+        img.icon#header-icon.vk(src="./assets/logos/VK_default.svg")
+        span X
+        img.icon#header-icon.mirea(src="./assets/logos/MIREA_default.svg")
       h1.title__header Хахатон
-      span.title__date 17.10-21.10
-      a.button.title__button(href="#registration-section") Регистрация
+      span.title__date 17.10 — 21.10
+      a.button.title__button(href="#registration-section") Зарегистрироваться
     .curriculum
       each curriculum in curriculums_data
         +curriculum-block(curriculum)

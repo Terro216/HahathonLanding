@@ -1,7 +1,11 @@
+import * as mireaDefault from './assets/logos/MIREA_default.svg'
+import * as mireaHover from './assets/logos/MIREA_hover.svg'
+import * as vkDefault from './assets/logos/VK_default.svg'
+import * as vkHover from './assets/logos/VK_hover.svg'
 import './style.scss'
 
 const getById = (id) => document.getElementById(id)
-
+mireaDefault, mireaHover, vkDefault, vkHover
 // Age input controls
 const ageInput = getById('age')
 const minAge = 18
@@ -112,7 +116,7 @@ const setCssHeight = () => {
 		})
 
 		document.documentElement.style.setProperty('--wrapper-height', String(height) + 'px')
-		document.documentElement.style.setProperty(
+		/*document.documentElement.style.setProperty(
 			'--body-bg',
 			`linear-gradient( to bottom,` +
 				`#4a0089,` +
@@ -122,9 +126,55 @@ const setCssHeight = () => {
       #004189 ${heights[4]}%,
       #030029 ${heights[5]}%,
       #36002b)`
-		)
+		)*/
 	})
 }
+
+// подмена икноки мирэа и вк на цветную в хэдере
+document.querySelectorAll('#header-icon').forEach((icon) => {
+	icon.addEventListener('mouseover', (e) => {
+		console.log(e.target.src, e.target.classList.contains('mirea'))
+		e.target.src = e.target.classList.contains('mirea') ? mireaHover : vkHover
+	})
+	icon.addEventListener('mouseleave', (e) => {
+		e.target.src = e.target.classList.contains('mirea') ? mireaDefault : vkDefault
+	})
+})
+
+// открытие/закрытие меню на мобильных
+document.querySelector('.hamburger').addEventListener('click', (e) => {
+	if (e.target.dataset.opened === 'true') {
+		e.target.dataset.opened = 'false'
+		document.querySelector('.wrapper').style.display = 'none'
+	} else {
+		e.target.dataset.opened = 'true'
+		document.querySelector('.wrapper').style.display = 'flex'
+	}
+})
+
+// Нажатие на ссылку на мобильном
+document.querySelectorAll('#hamburger-link').forEach((link) =>
+	link.addEventListener('click', () => {
+		document.querySelector('.hamburger').click()
+	})
+)
+
+// Нажатие на мобильный хэдер
+document.querySelector('.header__navbar-mobile > .logo').addEventListener('click', () => {
+	window.scrollTo(0, 0)
+})
+
+//скрытие мобильного хэдера при скролле вниз
+let prevScrollPos = window.pageYOffset
+window.addEventListener('scroll', function () {
+	let currentScrollPos = window.pageYOffset
+	if (prevScrollPos > currentScrollPos) {
+		document.querySelector('.header__navbar-mobile').style.top = '0'
+	} else {
+		document.querySelector('.header__navbar-mobile').style.top = '-50px'
+	}
+	prevScrollPos = currentScrollPos
+})
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100))
 window.addEventListener('click', () => setTimeout(setCssHeight, 310)) // 310ms because animation lasts 300ms
