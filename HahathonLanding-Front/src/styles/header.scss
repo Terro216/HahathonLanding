@@ -1,109 +1,70 @@
-@import 'variables.scss';
+//@import 'variables.scss';
 
-header > ul {
-	padding-top: 48px !important;
-	display: flex;
-	flex-direction: row;
-}
-
-header > ul > li {
-	padding-right: 5%;
-}
-
-header > ul > li > a::after {
-	display: block;
-	content: ' ';
-	background: white;
-	height: 3px;
-	width: 0;
-	box-sizing: content-box;
-	transition: 0.2s;
-	border-radius: 2px;
-}
-
-header > ul > li > a:hover::after {
+.header {
 	width: 100%;
-}
+	&__navbar {
+		padding-top: 48px;
+		display: flex;
+		justify-content: space-around;
 
-header > div {
-	margin-top: 48px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
+		& > li {
+			padding-right: 5%;
+		}
 
-header > div > * {
-	width: 50%;
-}
+		& > li > a::after {
+			display: block;
+			content: ' ';
+			background: white;
+			height: 3px;
+			width: 0;
+			box-sizing: content-box;
+			transition: 0.2s;
+			border-radius: 2px;
+		}
 
-#header_title-box > h1 {
-	background: url('assets/logos/MIREA_Gerb.svg') no-repeat;
-	background-size: contain;
-	margin: 0;
-	padding: 42px 0;
-}
-
-#header_image-box {
-	width: 40%;
-}
-
-#header_image-box > img {
-	width: 100%;
-}
-
-#header_image-box > img:last-child {
-	width: 100%;
-	display: none;
-}
-
-.curriculum {
-	margin-top: 64px;
-	display: block;
-}
-
-@media (max-width: 1200px) {
-	#header_title-box {
-		width: 65%;
+		& > li > a:hover::after {
+			width: 100%;
+		}
 	}
 
-	#header_image-box {
-		width: 30%;
-	}
+	&__main {
+		margin-top: 48px;
+		display: flex;
+		flex-direction: column;
+		//justify-content: space-between;
 
-	#header_image-box > img {
-		height: 80%;
-	}
-}
+		/*& > * {
+			width: 50%;
+		}*/
+		.title {
+			display: flex;
+			flex-direction: column;
+			&__icons {
+				.icon {
+				}
+			}
+			&__header {
+			}
+			&__date {
+			}
+			&__button {
+			}
+		}
 
-@media (max-width: $tablet-breakpoint) {
-	#header_title-box {
-		width: 72%;
-	}
+		.curriculum {
+			margin-top: 64px;
+			display: flex;
+			justify-content: space-between;
 
-	#header_image-box {
-		align-self: center;
-		width: 23%;
-	}
-
-	#header_image-box > img:first-child {
-		display: none;
-	}
-
-	#header_image-box > img:last-child {
-		display: block;
-	}
-}
-
-@media (max-width: 650px) {
-	#header_title-box > h1 {
-		font-size: 284%;
-	}
-
-	#header_title-box {
-		width: 100%;
-	}
-
-	#header_image-box {
-		display: none;
+			&-block {
+				display: flex;
+				flex-direction: column;
+				width: 30%;
+				.stage {
+				}
+				.date {
+				}
+			}
+		}
 	}
 }

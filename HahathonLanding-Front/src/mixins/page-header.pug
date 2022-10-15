@@ -1,27 +1,29 @@
-header
-  ul
+header.header
+  ul.header__navbar
     li
       a(href="#tasks-section") Задачи
     li
       a(href="#prises-section") Призы
     li
-      a(href="#faq-section") ЧаВо
+      a(href="#faq-section") FAQ
     li
       a(href="#registration-section") Регистрация
 
-  div
-    div(id="header_title-box")
-      h1.text__header Хахатон
-        br
-        | РТУ МИРЭА
-        br
-        | 25.03 - 01.04
-      a.button.text__bold(href="#registration-section") Регистрация
-    div#header_image-box
-      img(src="assets/grifon.png" width="427" height="382" alt="Header image")
-      img(src="assets/tasks/task_1.svg" width="220.8" height="256" alt="Header image")
-
-  .curriculum
-    p 25.03.2022 23:00 — Публикация заданий
-    p 27.03.2022 23:00 — Завершение приёма решений
-    p 01.04.2022 12:00 — Публикация результатов
+  .header__main
+    .title
+      .title__icons
+        img.icon
+        img.icon
+      h1.title__header Хахатон
+      span.title__date 17.10-21.10
+      a.button.title__button(href="#registration-section") Регистрация
+    .curriculum
+      .curriculum-block 
+        span.stage Публикация заданий
+        span.date 25.03.2022 23:00
+      .curriculum-block 
+        span.stage Завершение приёма решений
+        span.date 25.03.2022 23:00
+      .curriculum-block 
+        span.stage Публикация результатов
+        span.date 25.03.2022 23:00
