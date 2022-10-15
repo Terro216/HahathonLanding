@@ -53,11 +53,7 @@
 		margin-top: 48px;
 		display: flex;
 		flex-direction: column;
-		//justify-content: space-between;
 
-		/*& > * {
-			width: 50%;
-		}*/
 		.title {
 			display: flex;
 			flex-direction: column;
@@ -90,7 +86,9 @@
 					text-align: left;
 				}
 				@media (max-width: $mobile-breakpoint) {
-					display: none;
+					order: 3;
+					margin-top: 45px;
+					align-self: center;
 				}
 			}
 			&__header {

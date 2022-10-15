@@ -2,21 +2,21 @@
   var tasks_data = [
   {
     "title": "Кейс от Института ИТ",
-    "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android. Тема трека: Smile, just a smile",
-    "theme": "Юбилей",
+    "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
+    "theme": "75-летний юбилей РТУ МИРЭА",
     "duration": "2 минуты",
     "format": "MP4",
-    "imgSrc": "assets/tasks/task_1_1.jpg",
+    "imgSrc": "assets/tasks/task_1.svg",
     "radioId": "task1"
   },
   {
-    "title": "Кейс от Института ИТ",
+    "title": "Кейс от VK GROUP",
     "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android. Тема трека: Smile, just a smile",
-    "theme": "Юбилей",
+    "theme": "16-й день рождения VK",
     "duration": "2 минуты",
-    "format": "MP4",
-    "imgSrc": "assets/tasks/task_1_1.jpg",
-    "radioId": "task1"
+    "format": "MP3",
+    "imgSrc": "assets/tasks/task_2.svg",
+    "radioId": "task2"
   }]
 
 mixin task(data)
@@ -24,16 +24,17 @@ mixin task(data)
     h3.title= data.title
     p.description
       = data.description
-    p.theme Тема: 
-      = data.theme
-    p.duration Длительность: 
-      = data.duration
-    p.format Формат: 
-      = data.format
+    div.rows
+      p.theme Тема: 
+        = data.theme
+      p.duration Длительность: 
+        = data.duration
+      p.format Формат: 
+        = data.format
     img(src=data.imgSrc)
-    .button
+    div
       label(for=data.radioId)
-        span.button Выбрать кейс
+        span.button.taskButton Выбрать кейс
 
 section.tasks#tasks-section
   h2.tasks__header Задачи
