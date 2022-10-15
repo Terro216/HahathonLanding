@@ -1,0 +1,43 @@
+section#registration-section
+  h2.text__header Регистрация
+
+  img(src="assets/header_image.svg" height="467" width="456" alt="Иллюстрация для формы")
+  form#register(name="form")
+    h3 Заполните форму и укажите всех участников своей команды
+    input(type="text" id="captain-name" placeholder="ФИО капитана команды *" minlength="3" required data-error="Необходимо указать ФИО капитана")
+    input(type="email" id="captain-email" placeholder="E-mail капитана команды *" minlength="5" required data-error="Необходимо указать адрес")
+    input(type="text" id="captain-tg" placeholder="Telegram капитана команды *" minlength="2" required data-error="Необходимо указать telegram")
+    input(type="text" id="university" placeholder="Университет")
+
+    h4 Возраст капитана *
+    div
+      button(type="button" id="age-minus" tabindex="-1") &minus;
+      input(type="number" min="18" max="25" placeholder="18" id="age" required data-error="Необходимо указать возраст капитана")
+      button(type="button" id="age-plus" tabindex="-1") +
+
+    h3
+      label(for="member-2") Участник 2 (ФИО и возраст) *
+    input(type="text" id="member-2" placeholder="Киану Ривз, 37 лет" minlength="5" required data-error="Необходим как минимум второй участник")
+
+    h3
+      label(for="member-3") Участник 3 (ФИО и возраст)
+    input(type="text" id="member-3" placeholder="Киану Ривз, 37 лет" minlength="5")
+
+    h3
+      label(for="member-4") Участник 4 (ФИО и возраст)
+    input(type="text" id="member-4" placeholder="Киану Ривз, 37 лет" minlength="5")
+
+    h3
+      label Выбранный трек *
+    input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
+    label.radio(for="task1")
+      | Институт ИТ
+      span.checkmark
+    input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
+    label.radio(for="task2")
+      | SberGames
+      span.checkmark
+
+    p.error#error__reg
+
+    button.g-recaptcha(type="submit" data-size="invisible" data-theme="dark" data-sitekey="6LfWwNgeAAAAAEfzAwwxK8d8FDbvO4HpD5NtAm8W" data-callback="submitRegistration") Отправить заявку

@@ -1,0 +1,81 @@
+@import 'variables.scss';
+
+#prises-section_header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#prises-section_header > h2 {
+	width: 50%;
+}
+
+#prises-section_header > a {
+	display: block;
+	width: 25%;
+	align-self: center;
+}
+
+#prises-section_header > a > img {
+	width: 80%;
+	height: 80%;
+}
+
+#prises-section > img {
+	position: absolute;
+	margin-top: 40px;
+}
+
+#prises > li {
+	padding: 16px 0;
+	font-size: 56px;
+	text-align: end;
+}
+
+#prises > li:nth-child(3n - 1) {
+	padding-right: 15%;
+}
+
+#prises > li:nth-child(3n) {
+	padding-right: 0%;
+}
+
+@media (max-width: $desktop-breakpoint) {
+	#prises-section > img {
+		width: 25%;
+	}
+}
+
+@media (max-width: $tablet-breakpoint) {
+	#prises-section > img {
+		right: 0;
+		width: 32%;
+	}
+
+	#prises > li {
+		-webkit-text-stroke-width: 1px;
+		font-size: 32px;
+		text-align: start;
+	}
+}
+
+@media (max-width: 650px) {
+	#prises-section > img {
+		display: none;
+	}
+
+	#prises-section_header {
+		display: block;
+	}
+
+	#prises-section_header > h2 {
+		width: 100%;
+	}
+
+	#prises-section_header > a {
+		display: inline-block;
+		width: 50%;
+		vertical-align: middle;
+		margin-top: 16px;
+	}
+}

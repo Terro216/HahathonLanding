@@ -1,0 +1,7 @@
+.idea/
+
+HahathonLanding-Back/src/static/
+HahathonLanding-Back/node_modules/
+
+HahathonLanding-Front/node_modules/
+HahathonLanding-Front/dist/

@@ -1,0 +1,44 @@
+-
+  var tasks_data = [
+  {
+    "title": "Кейс от Института ИТ",
+    "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android. Тема трека: Smile, just a smile",
+    "winner": "Победители: Тришина Яна, Парфенов Егор",
+    "imgSrc": "assets/tasks/task_1.svg",
+    "taskSrc": "assets/tasks/task_1_1.jpg",
+    "radioId": "task1"
+  },
+  {
+    "title": "Кейс от SberGames",
+    "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android. Тема трека: Идеальная иллюзия",
+    "winner": "Победители: Мезенцева Татьяна, Замилацкая Диана",
+    "imgSrc": "assets/tasks/task_2.svg",
+    "taskSrc": "assets/tasks/task_2_1.jpg",
+    "radioId": "task2"
+  }]
+
+mixin task(data)
+  li.task
+    .task_img-box
+      img(src=data.imgSrc height="144" width="124.2" alt="Иллюстрация задания")
+    article
+      h3= data.title
+      p
+        = data.description
+      p(style="font-weight: bold")
+        = data.winner
+      .img-box
+        img(src=data.taskSrc)
+      .task_button-box
+        label(for=data.radioId style="display: flex")
+          span.button Выбрать
+
+section#tasks-section
+  h2.text__header Задачи
+  ul#tasks-section_some-terms.text__header
+    li У вас всего 48 часов
+    li 2-4 человека в команде
+
+  ul#tasks
+    each singleTask in tasks_data
+      +task(singleTask)

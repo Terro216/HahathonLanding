@@ -1,0 +1,60 @@
+@import 'variables.scss';
+
+#footer {
+	padding-bottom: 48px;
+}
+
+#policy {
+	margin: 0;
+	font-size: 16px;
+	color: #dfdfdf;
+
+	padding-bottom: 160px;
+}
+
+#policy a {
+	color: #a5dbff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	opacity: 0.52;
+	font-size: 16px;
+}
+
+footer > div > p {
+	margin: 0;
+	padding: 0;
+}
+
+footer a:not(.button) {
+	color: #a5dbff;
+}
+
+footer .button {
+	padding: 8px 24px !important;
+}
+
+@media (max-width: $tablet-breakpoint) {
+	footer > * > * {
+		font-size: 16px !important;
+	}
+
+	footer .button {
+		padding: 8px 8px !important;
+	}
+}
+
+@media (max-width: 650px) {
+	footer {
+		flex-direction: column;
+	}
+
+	footer > * {
+		margin-bottom: 16px;
+	}
+}
