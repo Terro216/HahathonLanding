@@ -69,9 +69,9 @@ mixin faq_question(index, question)
         img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20")
     p.question_answer!= question.answer
 
-section#faq-section
-  h2.text__header ЧаВо
+section.faq#faq-section
+  h2.faq__header ЧаВо
 
-  ul#questions
+  ul.faq__list#questions
     each Q, i in faq_data
       +faq_question(i, Q)
