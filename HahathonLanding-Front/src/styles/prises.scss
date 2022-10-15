@@ -2,22 +2,55 @@
 
 .prises {
 	&__header {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		h2 {
-			width: 50%;
+		&::after {
+			content: 'Призы';
 		}
 	}
 	&__content {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
+		align-items: space-between;
+		gap: 30px;
+		@media (max-width: $tablet-breakpoint) {
+			flex-direction: column;
+			width: 100%;
+		}
 		.prise-block {
+			width: calc(100% / 3 - (30px * 2));
+			padding: 30px;
+			background: rgba(255, 255, 255, 0.05);
+			backdrop-filter: blur(25px);
+			border-radius: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			&:hover {
+				box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
+				transition: box-shadow 0.5s;
+			}
+			@media (max-width: $tablet-breakpoint) {
+				width: 100%;
+				max-height: 370px;
+				max-width: 570px;
+			}
+			@media (max-width: $mobile-breakpoint) {
+				width: calc(100% - 20%);
+				max-height: 370px;
+				max-width: 300px;
+			}
 			.logo {
-				position: absolute;
-				margin-top: 40px;
 			}
 			.description {
+				font-family: Furore;
+				font-size: 28px;
+				font-weight: 400;
+				line-height: 35px;
+				letter-spacing: 0em;
+				text-align: center;
+				@media (max-width: $mobile-breakpoint) {
+					font-size: 24px;
+				}
 			}
 		}
 	}

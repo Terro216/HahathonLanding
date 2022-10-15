@@ -1,23 +1,22 @@
 -
   var prises_data = [
-    {imgSrc:'Консультация от SberGames',
-    description:'50 000 рублей'
-    },{imgSrc:'Консультация от SberGames',
-    description:'50 000 рублей'
-    },{imgSrc:'Консультация от SberGames',
-    description:'50 000 рублей'
+    {imgSrc:'assets/prises/VK_prise.svg',
+    description:'Консультация от VK'
+    },{imgSrc:'assets/prises/Buds_prise.svg',
+    description:'Samsung Galaxy Buds Live'
+    },{imgSrc:'assets/prises/Galaxy_prise.svg',
+    description:'Samsung Galaxy A21s 64GB'
     }
   ] 
 
 mixin prise-block(data)
   .prise-block
-    img.logo(href=data.imgSrc)
+    img.logo(src=data.imgSrc)
     p.description
      = data.description
 
 section.prises#prises-section
-  .prises__header
-    h2 Призы
+  h2.prises__header Призы
 
   .prises__content
     each prise in prises_data
