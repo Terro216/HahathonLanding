@@ -1,3 +1,21 @@
+-
+  var curriculums_data = [
+  {
+    "stage": "Публикация заданий",
+    "date": "13.13.2013",
+  },{
+    "stage": "Завершение приёма решений",
+    "date": "13.13.2013",
+  },{
+    "stage": "Публикация результатов",
+    "date": "13.13.2013",
+  }]
+  
+mixin curriculum-block(data)
+  .curriculum-block 
+    span.stage= data.stage
+    span.date= data.date
+
 header.header
   ul.header__navbar
     li
@@ -18,12 +36,5 @@ header.header
       span.title__date 17.10-21.10
       a.button.title__button(href="#registration-section") Регистрация
     .curriculum
-      .curriculum-block 
-        span.stage Публикация заданий
-        span.date 25.03.2022 23:00
-      .curriculum-block 
-        span.stage Завершение приёма решений
-        span.date 25.03.2022 23:00
-      .curriculum-block 
-        span.stage Публикация результатов
-        span.date 25.03.2022 23:00
+      each curriculum in curriculums_data
+        +curriculum-block(curriculum)
