@@ -100,13 +100,14 @@
 
 html {
 	scroll-behavior: smooth;
+	background: #1e1e1e;
 }
 
 body {
 	padding: 0;
 	margin: 0;
 	width: 100%;
-	max-width: 1600px;
+	//max-width: 1600px;
 	font-family: Inter;
 	background: #1e1e1e;
 }
@@ -186,6 +187,7 @@ a {
 	text-align: left;
 	color: #f2f2f2;
 	text-decoration: none;
+	transition: color 0.2s;
 	&:hover {
 		color: #3191ff;
 	}
@@ -195,6 +197,23 @@ a {
 	/*&:visited {
 		color: #0077ff;
 	}*/
+}
+
+.icon {
+	&.vk {
+		transition: filter 0.2s;
+		filter: grayscale(1);
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+	&.mirea {
+		transition: filter 0.2s;
+		filter: brightness(0.9);
+		&:hover {
+			filter: brightness(1);
+		}
+	}
 }
 
 /* Font settings */
@@ -213,7 +232,7 @@ h2 {
 	line-height: 108px;
 	text-align: left;
 	position: relative;
-	color: #1e1e1e;
+	color: transparent;
 	text-shadow: -1px 1px 0 #0077ff, 1px 1px 0 #0077ff, 1px -1px 0 #0077ff, -1px -1px 0 #0077ff;
 	margin: 0 0 0 15px;
 	&::after {
@@ -254,6 +273,7 @@ h2 {
 	position: fixed;
 	height: 0;
 	padding: 0;
+	z-index: 999;
 
 	& > div {
 		right: -100px;
@@ -261,12 +281,13 @@ h2 {
 		margin: 32px;
 		width: 90%;
 		float: right;
-		background: #a746bc;
+		background: #1e1e1e;
 		padding: 16px 24px;
 		border: 3px solid white;
 		box-sizing: border-box;
 		transition: 0.3s;
 		transform: translateX(5500px);
+		z-index: 999;
 	}
 
 	& > div.visible {

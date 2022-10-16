@@ -139,6 +139,8 @@
 
 #registration-section form label.radio {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: row;
 	padding: 12px 0;
 	min-width: max-content;
@@ -150,11 +152,11 @@
 		line-height: 1ch;
 		text-align: center;
 		margin-right: 8px;
-		width: 12px;
-		height: 12px;
+		margin-bottom: 6px;
+		width: 24px;
+		height: 24px;
 		display: inline-block;
 		vertical-align: middle;
-		margin-bottom: 4px;
 		border: 1px solid #0077ff;
 		border-radius: 25px;
 		padding: 3px;
@@ -184,6 +186,7 @@
 	text-align: left;
 }
 #policy a {
+	padding: 0;
 	color: #0077ff;
 }
 input:not(:invalid) + .error {

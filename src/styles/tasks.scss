@@ -8,7 +8,7 @@
 	}
 	&__content {
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
 		gap: 20px;
 		width: 100%;
 		@media (max-width: $tablet-breakpoint) {
@@ -17,7 +17,7 @@
 		}
 		.task {
 			display: flex;
-			justify-content: flex-start;
+			justify-content: space-around;
 			align-items: center;
 			flex-direction: column;
 			box-sizing: border-box;
@@ -53,7 +53,17 @@
 				line-height: 32px;
 				letter-spacing: 0em;
 				text-align: left;
+				//? fix diff height
+				overflow: auto;
+				height: 160px;
+				max-width: 100%;
+				@media (max-width: $tablet-breakpoint) {
+					height: 100px;
+					font-size: 18px;
+					line-height: 24px;
+				}
 				@media (max-width: $mobile-breakpoint) {
+					height: max-content;
 					font-size: 18px;
 					line-height: 24px;
 				}

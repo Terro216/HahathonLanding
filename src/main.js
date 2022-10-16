@@ -1,12 +1,6 @@
-import * as mireaDefault from './assets/logos/MIREA_default.svg'
-import * as mireaHover from './assets/logos/MIREA_hover.svg'
-import * as vkDefault from './assets/logos/VK_default.svg'
-import * as vkHover from './assets/logos/VK_hover.svg'
-
 const getById = (id) => document.getElementById(id)
-mireaDefault, mireaHover, vkDefault, vkHover
 // Age input controls
-const ageInput = document.querySelectorAll('#memeber-age')
+const ageInput = [getById('memeber-1-age'), getById('memeber-2-age')]
 const minAge = 18
 const maxAge = 25
 
@@ -50,11 +44,11 @@ getById('age-plus').addEventListener('click', (e) => {
 	return false
 })
 */
-getById('register')?.addEventListener(
+getById('register').addEventListener(
 	'invalid',
 	(e) => {
 		e.preventDefault()
-		getById('error__reg').innerText = e.target.dataset.error
+		getById('error__reg').innerText = e.target.dataset.error || ''
 	},
 	true
 )
@@ -71,15 +65,18 @@ global.submitRegistration = (token) => {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			captainName: getById('captain-name').value,
-			captainEmail: getById('captain-email').value,
-			captainTg: getById('captain-tg').value,
-			captainAge: getById('age').value,
-			member2: getById('member-2').value,
-			member3: getById('member-3').value,
-			member4: getById('member-4').value,
-			university: getById('university').value,
-			track: document.querySelector('#register input[name="track"]:checked').value,
+			age1: getById('memeber-1-age').value,
+			age2: getById('memeber-2-age').value,
+			fio_1: getById('memeber-1').value,
+			fio_2: getById('memeber-2').value,
+			univercity_1: getById('memeber-1-institute').value,
+			univercity_2: getById('memeber-2-institute').value,
+			tg_1: getById('memeber-1-telegram').value,
+			tg_2: getById('memeber-2-telegram').value,
+			team_name: getById('team-name').value,
+			email_1: getById('memeber-1-email').value,
+			email_2: getById('memeber-2-email').value,
+			case_number: document.querySelector('#register input[name="track"]:checked').value,
 			recaptcha: token,
 		}),
 	})
@@ -113,42 +110,9 @@ const setCssHeight = () => {
 	requestAnimationFrame(() => {
 		const height = document.querySelector('body > div').scrollHeight
 
-		const header = document.querySelector('header')
-		const footer = getById('footer')
-		const faq = getById('faq-section')
-		const tasks = getById('tasks-section')
-		const prises = getById('prises-section')
-		const registration = getById('registration-section')
-
-		const heights = [header, tasks, prises, faq, registration, footer].map((element) => {
-			return ((element.getBoundingClientRect().top + window.scrollY) / height) * 100
-		})
-
 		document.documentElement.style.setProperty('--wrapper-height', String(height) + 'px')
-		/*document.documentElement.style.setProperty(
-			'--body-bg',
-			`linear-gradient( to bottom,` +
-				`#4a0089,` +
-				`#1a0029 ${heights[1]}%,
-      #660089 ${heights[2]}%,
-      #030029 ${heights[3]}%,
-      #004189 ${heights[4]}%,
-      #030029 ${heights[5]}%,
-      #36002b)`
-		)*/
 	})
 }
-
-// подмена икноки мирэа и вк на цветную в хэдере
-document.querySelectorAll('#header-icon').forEach((icon) => {
-	icon.addEventListener('mouseover', (e) => {
-		console.log(e.target.src, e.target.classList.contains('mirea'))
-		e.target.src = e.target.classList.contains('mirea') ? mireaHover : vkHover
-	})
-	icon.addEventListener('mouseleave', (e) => {
-		e.target.src = e.target.classList.contains('mirea') ? mireaDefault : vkDefault
-	})
-})
 
 // открытие/закрытие меню на мобильных
 document.querySelector('.hamburger').addEventListener('click', (e) => {
@@ -186,5 +150,4 @@ window.addEventListener('scroll', function () {
 })
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100))
-window.addEventListener('click', () => setTimeout(setCssHeight, 310)) // 310ms because animation lasts 300ms
 setTimeout(setCssHeight, 100)
