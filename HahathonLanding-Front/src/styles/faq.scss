@@ -35,7 +35,7 @@
 				}
 				h3 {
 					margin: 0;
-					padding: 10px 36px;
+					padding: 0;
 					width: -webkit-fill-available;
 					width: -moz-available;
 					box-sizing: border-box;
@@ -70,34 +70,29 @@
 					opacity: 0;
 					transition: padding 0.3s ease, opacity 0.3s ease, height 0.3s ease;
 					transform: translateX(-4000px);
-
-					font-family: Inter;
-					font-size: 14px;
-					font-weight: 500;
-					line-height: 19px;
-					text-align: left;
 				}
 				&:checked ~ label img {
 					transform: rotateZ(180deg);
 				}
 				&:checked ~ p {
 					padding: 20px;
-					margin-top: -11px;
 					background: rgba(255, 255, 255, 0.05);
 					backdrop-filter: blur(25px);
 					border: none;
 					height: auto;
-					width: auto;
+					width: 90%;
+					margin: 0 auto;
+					margin-top: 10px;
 					opacity: 1;
 					transform: none;
 					border-radius: 20px;
+					font-size: 20px;
+					& a {
+						color: #a5dbff;
+						font-size: 20px;
+					}
 				}
 			}
 		}
 	}
-}
-
-#faq-section a {
-	color: #a5dbff;
-	font-size: 16px;
 }

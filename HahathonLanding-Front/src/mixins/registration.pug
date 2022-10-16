@@ -21,21 +21,22 @@ section#registration-section
 
     h3
       label(for="member-3") Участник №2 
-        input(type="text" id="member-2" placeholder="Киану Ривз, 37 лет" minlength="5")
-      input(type="text" id="memeber-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту")
-      input(type="text" id="memeber-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм")
+        input(type="text" id="member-2" placeholder="ФИО" minlength="5")
+      input(type="text" id="memeber-email" placeholder="E-mail" minlength="6")
+      input(type="text" id="memeber-telegram" placeholder="Telegram" minlength="3")
       input(type="text" id="memeber-institute" placeholder="Институт")
-      input(type="number" id="memeber-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст")
+      input(type="number" id="memeber-age" placeholder="Возраст" minlength="2")
     h3
       label Выбранный трек *
-    input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
-    label.radio(for="task1")
-      | Кейс от института ИТ
-      span.checkmark
-    input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
-    label.radio(for="task2")
-      | Кейс от VK Group
-      span.checkmark
+    .radios
+      input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
+      label.radio(for="task1")
+        | Кейс от института ИТ
+        span.checkmark
+      input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
+      label.radio(for="task2")
+        | Кейс от VK Group
+        span.checkmark
 
     p.error#error__reg
 
