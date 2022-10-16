@@ -7,19 +7,21 @@ import './style.scss'
 const getById = (id) => document.getElementById(id)
 mireaDefault, mireaHover, vkDefault, vkHover
 // Age input controls
-const ageInput = getById('age')
+const ageInput = document.querySelectorAll('#memeber-age')
 const minAge = 18
 const maxAge = 25
 
-ageInput.addEventListener('change', (e) => {
-	const age = parseInt(e.target.value)
-	if (age < minAge) {
-		e.target.value = minAge
-	} else if (age > maxAge) {
-		e.target.value = maxAge
-	}
-})
-
+ageInput.forEach((input) =>
+	input.addEventListener('change', (e) => {
+		const age = parseInt(e.target.value)
+		if (age < minAge) {
+			e.target.value = minAge
+		} else if (age > maxAge) {
+			e.target.value = maxAge
+		}
+	})
+)
+/*
 getById('age-minus').addEventListener('click', (e) => {
 	e.preventDefault()
 
@@ -48,8 +50,8 @@ getById('age-plus').addEventListener('click', (e) => {
 
 	return false
 })
-
-getById('register').addEventListener(
+*/
+getById('register')?.addEventListener(
 	'invalid',
 	(e) => {
 		e.preventDefault()
@@ -99,6 +101,14 @@ global.submitRegistration = (token) => {
 }
 
 // Animated Orbs
+
+const orbs = document.querySelectorAll('#oneOrb')
+orbs.forEach((orb, i) => {
+	orb.style.top = Math.random() * document.body.scrollHeight
+	if (i % 2 == 0) orb.style.left = (Math.random() * document.body.clientWidth) / 2
+	else orb.style.right = Math.random() * document.body.clientWidth
+	orb.style.width = '1350px'
+})
 
 const setCssHeight = () => {
 	requestAnimationFrame(() => {
@@ -171,7 +181,7 @@ window.addEventListener('scroll', function () {
 	if (prevScrollPos > currentScrollPos) {
 		document.querySelector('.header__navbar-mobile').style.top = '0'
 	} else {
-		document.querySelector('.header__navbar-mobile').style.top = '-50px'
+		document.querySelector('.header__navbar-mobile').style.top = '-60px'
 	}
 	prevScrollPos = currentScrollPos
 })

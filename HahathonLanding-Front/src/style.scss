@@ -29,30 +29,48 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	max-width: 100%;
+	width: 100%;
 	height: var(--wrapper-height);
-	overflow: hidden;
 	z-index: 0;
-	filter: blur(5px);
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
 }
 
 .orbs > svg {
-	width: auto !important;
-	max-width: 10000px;
+	position: absolute;
 	padding: 0;
 }
 
-.orbs > svg circle:nth-child(3n - 2) {
+.orbs > svg:nth-child(odd) {
+	max-width: 25%;
 	animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
-.orbs > svg circle:nth-child(3n - 1) {
-	animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+.orbs > svg:nth-child(even) {
+	max-width: 25%;
+	animation: flyReverse 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.orbs > svg:nth-child(3n - 1) {
+	max-width: 15%;
+	filter: blur(5px) grayscale(1);
+}
+
+.orbs > svg:nth-child(3n - 2) {
 	animation-delay: -4s;
+	filter: blur(3px) grayscale(0);
 }
 
-.orbs > svg circle:nth-child(3n) {
-	animation: fly 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+.orbs > svg:nth-child(5n) {
+	max-width: 50%;
+	filter: blur(0) grayscale(0);
+}
+.orbs > svg:nth-child(5n-1) {
+	filter: grayscale(1);
+}
+
+.orbs > svg:nth-child(3n) {
 	animation-delay: -7s;
 }
 
@@ -63,6 +81,15 @@
 	}
 	50% {
 		transform: translateX(-100px);
+	}
+}
+@keyframes flyReverse {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(100px);
 	}
 }
 
@@ -81,7 +108,6 @@ body {
 	width: 100%;
 	max-width: 1600px;
 	//scroll-behavior: smooth;
-	//background: var(--body-bg);
 	background: #1e1e1e;
 }
 

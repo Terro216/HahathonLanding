@@ -1,3 +1,6 @@
+-
+  var blueOrbs = new Array(20)
+
 doctype html
 html(lang="ru")
   head
@@ -22,6 +25,7 @@ html(lang="ru")
       include mixins/registration
       include mixins/page-footer
     .orbs
-      //include assets/orbs/header.svg
+      each val in blueOrbs
+        include assets/orbs/orb.svg
 
     script(src="https://www.google.com/recaptcha/api.js" async defer)
