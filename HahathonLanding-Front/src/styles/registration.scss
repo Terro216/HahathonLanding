@@ -1,28 +1,41 @@
 @import 'variables.scss';
 
+.text__header {
+	&::after {
+		content: 'Регистрация';
+	}
+}
 #registration-section {
 	padding-bottom: 0 !important;
+	padding: 30px;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(25px);
+	border-radius: 20px;
+	#register h3 {
+		font-family: Inter;
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 38px;
+		letter-spacing: 0em;
+		text-align: left;
+	}
 }
 
-#registration-section > img {
-	float: right;
-	padding: 0 56px;
-	margin-top: 200px;
-	width: 20%;
-	height: 20%;
+#registration-section > div {
+	img {
+		float: right;
+		width: 20%;
+		height: 20%;
+	}
 }
 
 #registration-section form {
-	width: calc(100% - 270px);
+	width: calc(100% - 10% - 260px);
 	padding-bottom: 16px;
 	box-sizing: border-box;
-}
-
-#registration-section form h4,
-#registration-section form h4 label {
-	margin: 28px 0 20px;
-	font-size: 20px;
-	font-weight: 500;
+	@media (max-width: $tablet-breakpoint) {
+		width: 100%;
+	}
 }
 
 #registration-section form input {
@@ -37,18 +50,28 @@
 	transition: 0.2s;
 }
 
-#registration-section form input:focus-visible {
-	background: #ffffff22;
-}
-
 #registration-section form button:focus-visible,
-#registration-section form a:focus-visible {
-	outline: 2px solid #cf2dff;
+#registration-section form a:focus-visible,
+#registration-section form input:focus-visible {
+	//outline: 2px solid #cf2dff;
+	&::placeholder {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		color: rgba(242, 242, 242, 0.75);
+	}
 }
 
 #registration-section form input::placeholder {
 	//font-family: Helvetica, sans-serif;
-	color: #a5dbff;
+	//color: #a5dbff;
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #f2f2f280;
 }
 
 #registration-section form div {
@@ -67,14 +90,14 @@
 	margin: 0 !important;
 }
 
-#registration-section form input[type='number'] {
+/*#registration-section form input[type='number'] {
 	width: 100px;
 	margin: 0;
 	border-left: none;
 	border-right: none;
 	text-align: center;
 	-moz-appearance: textfield;
-}
+}*/
 
 #registration-section form input[type='radio'] {
 	position: absolute;
@@ -85,7 +108,9 @@
 }
 
 #registration-section form label.radio {
-	display: block;
+	display: flex;
+	flex-direction: row;
+
 	margin: 12px 0;
 	cursor: pointer;
 }
@@ -95,25 +120,41 @@
 	line-height: 1ch;
 	text-align: center;
 	margin-right: 8px;
-	border: 1px solid white;
 	width: 12px;
 	height: 12px;
 	display: inline-block;
 	vertical-align: middle;
 	margin-bottom: 4px;
+	border: 1px solid #0077ff;
+	border-radius: 25px;
+	padding: 3px;
 }
 
 #registration-section form input:focus-visible + label.radio::before {
-	outline: 2px solid #cf2dff;
+	padding: 1px;
 }
 
 #registration-section form input:checked + label.radio::before {
-	content: 'x';
+	content: ' ';
+	background: #0077ff;
+	border-radius: 25px;
 }
 
 .error {
 	color: #bf0000;
 	font-size: 16px;
+}
+
+#policy,
+#policy a {
+	padding: 30px 0;
+	margin: 0;
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: left;
 }
 
 input:not(:invalid) + .error {
@@ -123,16 +164,8 @@ input:not(:invalid) + .error {
 /*#registration-section form label.radio input */
 
 #registration-section form button {
+	width: 100%;
 	margin-top: 16px;
-	padding: 8px 20px;
-}
-
-#registration-section form div button {
-	width: 40px !important;
-	padding: 0;
-	border-width: 1px;
-	box-sizing: border-box;
-	margin: 0;
 }
 
 @media (max-width: $tablet-breakpoint) {

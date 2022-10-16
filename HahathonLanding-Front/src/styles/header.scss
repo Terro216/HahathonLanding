@@ -112,7 +112,7 @@
 			&__button {
 				margin-top: calc(45px - 10px);
 				@media (max-width: $mobile-breakpoint) {
-					width: 108%; //! fix
+					width: 108%;
 				}
 			}
 		}

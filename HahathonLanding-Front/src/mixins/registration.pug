@@ -1,43 +1,47 @@
+
+h2.text__header Регистрация
 section#registration-section
-  h2.text__header Регистрация
-
-  img(src="assets/logos/VK_default.svg" height="467" width="456" alt="Иллюстрация для формы")
+  div
+    img(src="assets/form_image.svg" height="1379" width="255" alt="Иллюстрация для формы")
   form#register(name="form")
-    h3 Заполните форму и укажите всех участников своей команды
-    input(type="text" id="captain-name" placeholder="ФИО капитана команды *" minlength="3" required data-error="Необходимо указать ФИО капитана")
-    input(type="email" id="captain-email" placeholder="E-mail капитана команды *" minlength="5" required data-error="Необходимо указать адрес")
-    input(type="text" id="captain-tg" placeholder="Telegram капитана команды *" minlength="2" required data-error="Необходимо указать telegram")
-    input(type="text" id="university" placeholder="Университет")
-
-    h4 Возраст капитана *
-    div
-      button(type="button" id="age-minus" tabindex="-1") &minus;
-      input(type="number" min="18" max="25" placeholder="18" id="age" required data-error="Необходимо указать возраст капитана")
-      button(type="button" id="age-plus" tabindex="-1") +
+    h3 Заполните форму и укажите всех участников
+    input(type="text" id="team-name" placeholder="Название команды *" minlength="3" required data-error="Необходимо указать название команды")
+    //input(type="text" id="captain-name" placeholder="ФИО капитана команды *" minlength="3" required data-error="Необходимо указать ФИО капитана")
+    //input(type="email" id="captain-email" placeholder="E-mail капитана команды *" minlength="5" required data-error="Необходимо указать адрес")
+    //input(type="text" id="captain-tg" placeholder="Telegram капитана команды *" minlength="2" required data-error="Необходимо указать telegram")
+    //input(type="text" id="university" placeholder="Университет")
 
     h3
-      label(for="member-2") Участник 2 (ФИО и возраст) *
-    input(type="text" id="member-2" placeholder="Киану Ривз, 37 лет" minlength="5" required data-error="Необходим как минимум второй участник")
+      label(for="member-2") Участник №1 *
+        input(type="text" id="member-1" placeholder="ФИО*" minlength="5" required data-error="Необходимо указать ФИО")
+      input(type="text" id="memeber-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту")
+      input(type="text" id="memeber-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм")
+      input(type="text" id="memeber-institute" placeholder="Институт")
+      input(type="number" id="memeber-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст")
 
     h3
-      label(for="member-3") Участник 3 (ФИО и возраст)
-    input(type="text" id="member-3" placeholder="Киану Ривз, 37 лет" minlength="5")
-
-    h3
-      label(for="member-4") Участник 4 (ФИО и возраст)
-    input(type="text" id="member-4" placeholder="Киану Ривз, 37 лет" minlength="5")
-
+      label(for="member-3") Участник №2 
+        input(type="text" id="member-2" placeholder="Киану Ривз, 37 лет" minlength="5")
+      input(type="text" id="memeber-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту")
+      input(type="text" id="memeber-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм")
+      input(type="text" id="memeber-institute" placeholder="Институт")
+      input(type="number" id="memeber-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст")
     h3
       label Выбранный трек *
     input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
     label.radio(for="task1")
-      | Институт ИТ
+      | Кейс от института ИТ
       span.checkmark
     input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
     label.radio(for="task2")
-      | SberGames
+      | Кейс от VK Group
       span.checkmark
 
     p.error#error__reg
 
-    button.g-recaptcha(type="submit" data-size="invisible" data-theme="dark" data-sitekey="6LfWwNgeAAAAAEfzAwwxK8d8FDbvO4HpD5NtAm8W" data-callback="submitRegistration") Отправить заявку
+    button.button.g-recaptcha(type="submit" data-size="invisible" data-theme="dark" data-sitekey="6LfWwNgeAAAAAEfzAwwxK8d8FDbvO4HpD5NtAm8W" data-callback="submitRegistration") Отправить заявку
+  p#policy
+    | Нажимая на кнопку «Отправить заявку» вы соглашаетесь на обработку персональных данных, в соответствии с&nbsp;
+    a(href="https://storage.yandexcloud.net/hahaton/Политика.pdf" target="_blank") Политикой конфиденциальности
+    | , а также с&nbsp;
+    a(href="https://storage.yandexcloud.net/hahaton/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%A5%D0%B0%D1%85%D0%B0%D1%82%D0%BE%D0%BD%D0%B5%202022.pdf" target="_blank") Положением Хакатона
