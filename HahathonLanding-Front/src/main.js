@@ -101,7 +101,7 @@ global.submitRegistration = (token) => {
 }
 
 // Animated Orbs
-
+//orbs positions
 const orbs = document.querySelectorAll('#oneOrb')
 orbs.forEach((orb, i) => {
 	orb.style.top = Math.random() * document.body.scrollHeight

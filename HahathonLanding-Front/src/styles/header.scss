@@ -86,9 +86,10 @@
 					text-align: left;
 				}
 				@media (max-width: $mobile-breakpoint) {
-					order: 3;
-					margin-top: 45px;
-					align-self: center;
+					/*order: 3;
+					margin-top: 35px;
+					align-self: center;*/
+					display: none;
 				}
 			}
 			&__header {
@@ -104,7 +105,8 @@
 				text-align: left;
 
 				@media (max-width: $mobile-breakpoint) {
-					font-size: 42px;
+					align-self: center;
+					font-size: 36px;
 					line-height: 48px;
 					text-align: center;
 				}
@@ -112,7 +114,7 @@
 			&__button {
 				margin-top: calc(45px - 10px);
 				@media (max-width: $mobile-breakpoint) {
-					width: 108%;
+					margin-top: calc(45px - 20px);
 				}
 			}
 		}
@@ -175,7 +177,40 @@
 						line-height: 36px;
 						text-align: right;
 					}
+					@media (max-width: $mobile-breakpoint) {
+						font-family: Furore;
+						font-size: 20px;
+						text-align: left;
+					}
 				}
+			}
+		}
+		.title__icons-mobile {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding: 0;
+			margin: 45px 0 0 10px;
+			@media (min-width: calc($mobile-breakpoint + 1px)) {
+				display: none;
+				margin: 0;
+			}
+			.icon {
+				height: 60px;
+				width: 60px;
+				left: 0px;
+				top: 0px;
+				border-radius: 0px;
+			}
+			span {
+				font-family: Furore;
+				font-size: 28px;
+				font-weight: 400;
+				line-height: 32px;
+				letter-spacing: 0em;
+				text-align: center;
 			}
 		}
 	}

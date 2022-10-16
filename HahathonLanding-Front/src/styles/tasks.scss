@@ -86,6 +86,9 @@
 				}
 			}
 			.taskButton {
+				@media (max-width: $mobile-breakpoint) {
+					width: 100%;
+				}
 			}
 		}
 	}

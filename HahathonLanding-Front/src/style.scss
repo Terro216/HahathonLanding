@@ -228,6 +228,7 @@ h2 {
 		line-height: 56px;
 	}
 	@media (max-width: $mobile-breakpoint) {
+		margin: 0;
 		font-size: 36px;
 		line-height: 36px;
 		&:is(h1) {
@@ -241,6 +242,9 @@ h2 {
 
 h2 {
 	margin: 200px 0 100px 0;
+	@media (max-width: $tablet-breakpoint) {
+		margin: 150px 0 60px 0;
+	}
 	@media (max-width: $mobile-breakpoint) {
 		margin: 100px 0 60px 0;
 	}

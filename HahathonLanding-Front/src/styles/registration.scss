@@ -43,11 +43,18 @@
 	margin-bottom: 16px;
 	width: 100%;
 	padding: 8px 12px;
-	border: 1px solid white;
+	border: none;
+	border-bottom: 2px solid rgba(242, 242, 242, 0.5);
 	background: transparent;
 	outline: none;
 	box-sizing: border-box;
 	transition: 0.2s;
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0em;
+	text-align: left;
 }
 
 #registration-section form button:focus-visible,
@@ -60,6 +67,7 @@
 		font-weight: 400;
 		color: rgba(242, 242, 242, 0.75);
 	}
+	border-bottom: 2px solid #f2f2f2;
 }
 
 #registration-section form input::placeholder {
@@ -156,7 +164,9 @@
 	letter-spacing: 0em;
 	text-align: left;
 }
-
+#policy a {
+	color: #0077ff;
+}
 input:not(:invalid) + .error {
 	display: none;
 }
