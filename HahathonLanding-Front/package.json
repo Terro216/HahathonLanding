@@ -4,7 +4,7 @@
 	"description": "Landing for RTU MIREA Hackathon 2022",
 	"scripts": {
 		"start": "parcel src/index.pug",
-		"build": "webpack",
+		"build": "parcel build src/index.pug --dist-dir build --public-url ./",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Ilya Medvedev & Ivan Laptev",

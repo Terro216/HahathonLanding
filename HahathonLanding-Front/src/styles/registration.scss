@@ -19,45 +19,45 @@
 		letter-spacing: 0em;
 		text-align: left;
 	}
-}
-
-#registration-section > div {
-	img {
-		float: right;
-		width: 20%;
-		height: 20%;
+	.image-wrapper {
+		img {
+			float: right;
+			width: 20%;
+			height: 20%;
+		}
+		@media (max-width: $tablet-breakpoint) {
+			display: none;
+		}
+	}
+	form {
+		width: calc(100% - 10% - 260px);
+		padding-bottom: 16px;
+		box-sizing: border-box;
+		@media (max-width: $tablet-breakpoint) {
+			width: 100%;
+		}
+		input {
+			display: block;
+			margin-bottom: 16px;
+			width: 100%;
+			padding: 8px 12px;
+			border: none;
+			border-bottom: 2px solid rgba(242, 242, 242, 0.5);
+			background: transparent;
+			outline: none;
+			box-sizing: border-box;
+			transition: 0.2s;
+			font-family: Inter;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 24px;
+			letter-spacing: 0em;
+			text-align: left;
+		}
 	}
 }
 
-#registration-section form {
-	width: calc(100% - 10% - 260px);
-	padding-bottom: 16px;
-	box-sizing: border-box;
-	@media (max-width: $tablet-breakpoint) {
-		width: 100%;
-	}
-}
-
-#registration-section form input {
-	display: block;
-	margin-bottom: 16px;
-	width: 100%;
-	padding: 8px 12px;
-	border: none;
-	border-bottom: 2px solid rgba(242, 242, 242, 0.5);
-	background: transparent;
-	outline: none;
-	box-sizing: border-box;
-	transition: 0.2s;
-	font-family: Inter;
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 24px;
-	letter-spacing: 0em;
-	text-align: left;
-}
-
-#registration-section form button:focus-visible,
+#registration-section form #registration-section form button:focus-visible,
 #registration-section form a:focus-visible,
 #registration-section form input:focus-visible {
 	//outline: 2px solid #cf2dff;

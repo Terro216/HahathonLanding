@@ -2,7 +2,6 @@ import * as mireaDefault from './assets/logos/MIREA_default.svg'
 import * as mireaHover from './assets/logos/MIREA_hover.svg'
 import * as vkDefault from './assets/logos/VK_default.svg'
 import * as vkHover from './assets/logos/VK_hover.svg'
-import './style.scss'
 
 const getById = (id) => document.getElementById(id)
 mireaDefault, mireaHover, vkDefault, vkHover
