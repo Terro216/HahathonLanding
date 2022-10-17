@@ -112,6 +112,7 @@ body {
 	//max-width: 1600px;
 	font-family: Inter;
 	background: #1e1e1e;
+	overflow-x: hidden;
 }
 
 body > div:not(.orbs) {
@@ -236,45 +237,51 @@ h2 {
 	text-align: left;
 	position: relative;
 	color: transparent;
-	-webkit-text-stroke: 2px #0077ff;
+	-webkit-text-stroke: 1px #0077ff;
 	//text-shadow: -1px 1px 0 #0077ff, 1px 1px 0 #0077ff, 1px -1px 0 #0077ff, -1px -1px 0 #0077ff;
 	margin: 0;
+	padding-top: 10px;
+	padding-left: 10px;
+	&:hover {
+		cursor: default;
+	}
 	&::after {
 		content: ''; //Тут текст белого цвета
 		position: absolute;
-		top: -10px;
-		left: -15px;
+		top: 0;
+		left: 0;
 		color: white;
-	}
-	@media (max-width: $tablet-breakpoint) {
-		font-size: 56px;
-		line-height: 56px;
-	}
-	@media (max-width: $mobile-breakpoint) {
-		margin: 0;
-		font-size: 36px;
-		line-height: 36px;
-		&:is(h1) {
-			font-size: 56px;
-			line-height: 56px;
-			letter-spacing: 0em;
-			text-align: left;
-		}
+		-webkit-text-stroke: 0;
 	}
 }
 
 h2 {
 	margin: 200px 0 100px 0;
 	@media (max-width: $tablet-breakpoint) {
+		font-size: 68px;
 		margin: 150px 0 60px 0;
 	}
 	@media (max-width: $mobile-breakpoint) {
 		margin: 100px 0 60px 0;
+		font-size: 36px;
+		line-height: 36px;
 	}
 }
 
 h1 {
+	@media (max-width: 666px) {
+		font-size: 88px;
+	}
 	@media (max-width: $mobile-breakpoint) {
+		margin: 0;
+		font-size: 36px;
+		line-height: 36px;
+
+		font-size: 56px;
+		line-height: 56px;
+		letter-spacing: 0em;
+		text-align: left;
+
 		align-self: center;
 	}
 }

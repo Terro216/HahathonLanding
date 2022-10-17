@@ -27,14 +27,20 @@
 			border-radius: 20px;
 			padding: 30px;
 			width: calc(50% - 20px);
+			@media (max-width: 1065px) {
+				gap: 10px;
+			}
 			@media (max-width: 800px) {
 				justify-content: center;
 				width: 100%;
 			}
+			@media (max-width: 307px) {
+				gap: 30px;
+			}
 			.title {
 				margin: 0;
 				font-family: Furore;
-				font-size: 38px;
+				font-size: 34px;
 				font-weight: 400;
 				line-height: 38px;
 				letter-spacing: 0em;
@@ -44,10 +50,13 @@
 					font-size: 32px;
 				}
 				@media (max-width: 931px) {
-					font-size: 25px;
+					font-size: 26px;
+				}
+				@media (max-width: 800px) {
+					justify-content: center;
+					width: 100%;
 				}
 				@media (max-width: $mobile-breakpoint) {
-					height: 60px;
 					font-size: 28px;
 					line-height: 28px;
 				}
@@ -60,8 +69,13 @@
 				line-height: 32px;
 				letter-spacing: 0em;
 				text-align: left;
-				overflow: auto;
 				max-width: 100%;
+				@media (max-width: 1065px) {
+					font-size: 22px;
+				}
+				@media (max-width: 931px) {
+					font-size: 20px;
+				}
 				@media (max-width: $mobile-breakpoint) {
 					//height: max-content;
 					font-size: 18px;

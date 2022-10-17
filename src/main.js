@@ -3,8 +3,12 @@ const getById = (id) => document.getElementById(id)
 const ageInput = [getById('memeber-1-age'), getById('memeber-2-age')]
 const minAge = 18
 const maxAge = 25
+const [maxHeight, maxWidth] = [
+	document.querySelector('body > div').scrollHeight,
+	document.querySelector('body > div').scrollWidth,
+]
 
-ageInput?.forEach((input) =>
+ageInput.forEach((input) =>
 	input.addEventListener('change', (e) => {
 		const age = parseInt(e.target.value)
 		if (age < minAge) {
@@ -14,36 +18,7 @@ ageInput?.forEach((input) =>
 		}
 	})
 )
-/*
-getById('age-minus').addEventListener('click', (e) => {
-	e.preventDefault()
 
-	const age = parseInt(ageInput.value)
-
-	if (!age || age <= minAge) {
-		ageInput.value = minAge
-	} else {
-		ageInput.value = age - 1
-	}
-	return false
-})
-
-getById('age-plus').addEventListener('click', (e) => {
-	e.preventDefault()
-
-	const age = parseInt(ageInput.value)
-
-	if (!age) {
-		ageInput.value = minAge
-	} else if (age >= maxAge) {
-		ageInput.value = maxAge
-	} else {
-		ageInput.value = age + 1
-	}
-
-	return false
-})
-*/
 getById('register').addEventListener(
 	'invalid',
 	(e) => {
@@ -96,12 +71,10 @@ global.submitRegistration = (token) => {
 	return false
 }
 
-// Animated Orbs
-
+// Высота для wrapper шаров
 const setCssHeight = () => {
 	requestAnimationFrame(() => {
-		const height = document.querySelector('body > div').scrollHeight
-		document.documentElement.style.setProperty('--wrapper-height', String(height) + 'px')
+		document.documentElement.style.setProperty('--wrapper-height', String(maxHeight) + 'px')
 	})
 }
 
@@ -141,31 +114,14 @@ window.addEventListener('scroll', function () {
 })
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100))
-setTimeout(() => {
+
+document.addEventListener('DOMContentLoaded', () => {
 	setCssHeight()
 	const orbs = document.querySelectorAll('#oneOrb')
-	//why firefox cannot set height
-	let height = Math.max(
-		document.querySelector('body').style.height,
-		document.body.scrollHeight,
-		document.body.offsetHeight,
-		document.documentElement.clientHeight,
-		document.documentElement.scrollHeight,
-		document.documentElement.offsetHeight
-	)
-	let width = Math.max(
-		document.querySelector('body').style.width,
-		document.body.scrollWidth,
-		document.body.offsetWidth,
-		document.documentElement.clientWidth,
-		document.documentElement.scrollWidth,
-		document.documentElement.offsetWidth
-	)
-	console.log(width, height)
 	orbs.forEach((orb, i) => {
-		orb.style.top = Math.random() * height
-		if (i % 2 == 0) orb.style.left = (Math.random() * width) / 2
-		else orb.style.right = Math.random() * width
+		orb.style.top = Math.random() * maxHeight + 'px'
+		if (i % 2 == 0) orb.style.left = (Math.random() * maxWidth) / 2 + 'px'
+		else orb.style.right = Math.random() * maxWidth + 'px'
 		orb.style.width = '1350px'
 	})
-}, 100)
+})

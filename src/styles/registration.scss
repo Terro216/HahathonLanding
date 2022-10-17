@@ -5,11 +5,11 @@
 	&::after {
 		content: 'Регистрация';
 	}
-	@media (max-width: 1000px) {
+	@media (max-width: 1005px) {
 		font-size: 90px;
 	}
-	@media (max-width: 835px) {
-		font-size: 70px;
+	@media (max-width: 840px) {
+		font-size: 68px;
 	}
 	@media (max-width: 650px) {
 		font-size: 50px;
@@ -20,6 +20,12 @@
 	@media (max-width: $mobile-breakpoint) {
 		font-size: 36px;
 		line-height: 36px;
+	}
+	@media (max-width: 355px) {
+		font-size: 30px;
+	}
+	@media (max-width: 355px) {
+		font-size: 26px;
 	}
 }
 
@@ -37,6 +43,9 @@
 		line-height: 38px;
 		letter-spacing: 0em;
 		text-align: left;
+		@media (max-width: $tablet-breakpoint) {
+			font-size: 24px;
+		}
 	}
 	.image-wrapper {
 		img {
@@ -55,6 +64,11 @@
 		@media (max-width: $tablet-breakpoint) {
 			width: 100%;
 		}
+		label {
+			@media (max-width: $mobile-breakpoint) {
+				font-size: 18px;
+			}
+		}
 		input {
 			display: block;
 			margin-bottom: 16px;
@@ -72,6 +86,9 @@
 			line-height: 24px;
 			letter-spacing: 0em;
 			text-align: left;
+			@media (max-width: $tablet-breakpoint) {
+				font-size: 18px;
+			}
 		}
 	}
 }
@@ -79,7 +96,6 @@
 #registration-section form #registration-section form button:focus-visible,
 #registration-section form a:focus-visible,
 #registration-section form input:focus-visible {
-	//outline: 2px solid #cf2dff;
 	&::placeholder {
 		font-family: 'Inter';
 		font-style: normal;
@@ -90,8 +106,6 @@
 }
 
 #registration-section form input::placeholder {
-	//font-family: Helvetica, sans-serif;
-	//color: #a5dbff;
 	font-family: Inter;
 	font-size: 24px;
 	font-weight: 400;
@@ -120,16 +134,11 @@
 	-webkit-appearance: none !important;
 	margin: 0 !important;
 }
-/*
+
 #registration-section form input[type='number'] {
-	width: 100px;
-	margin: 0;
-	border-left: none;
-	border-right: none;
-	text-align: center;
 	-moz-appearance: textfield;
 }
-*/
+
 #registration-section form input[type='radio'] {
 	opacity: 0;
 	cursor: pointer;
@@ -161,21 +170,24 @@
 	max-width: 100%;
 	cursor: pointer;
 	.checkmark {
-		font-size: 18px;
-	}
-	& .checkmark::before {
-		content: ' ';
-		line-height: 1ch;
-		text-align: center;
-		margin-right: 8px;
-		margin-bottom: 6px;
-		width: 24px;
-		height: 24px;
-		display: inline-block;
-		vertical-align: middle;
-		border: 2px solid #0077ff;
-		border-radius: 25px;
-		padding: 3px;
+		@media (max-width: $mobile-breakpoint) {
+			font-size: 18px;
+		}
+		@media (max-width: 368px) {
+			font-size: 15px;
+		}
+		&::before {
+			vertical-align: middle;
+			content: ' ';
+			margin-right: 8px;
+			margin-bottom: 6px;
+			width: 24px;
+			height: 24px;
+			display: inline-block;
+			border: 2px solid #0077ff;
+			border-radius: 25px;
+			padding: 3px;
+		}
 	}
 }
 
@@ -199,6 +211,9 @@
 	line-height: 19px;
 	letter-spacing: 0em;
 	text-align: left;
+	@media (max-width: $tablet-breakpoint) {
+		font-size: 12px;
+	}
 }
 #policy a {
 	max-width: 100%;
@@ -210,8 +225,6 @@ input:not(:invalid) + .error {
 	display: none;
 }
 
-/*#registration-section form label.radio input */
-
 #registration-section form button.button {
 	max-width: 100%;
 	margin-top: 16px;
@@ -219,12 +232,6 @@ input:not(:invalid) + .error {
 	@media (max-width: $mobile-breakpoint) {
 		margin: 0;
 		overflow: hidden;
-	}
-}
-
-@media (max-width: $tablet-breakpoint) {
-	#registration-section form {
-		//width: calc(100% - 190px);
 	}
 }
 
