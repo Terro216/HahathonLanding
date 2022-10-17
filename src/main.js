@@ -75,7 +75,7 @@ global.submitRegistration = (token) => {
 // Высота для wrapper шаров
 const setCssHeight = () => {
 	requestAnimationFrame(() => {
-		document.documentElement.style.setProperty('--wrapper-height', String(maxHeight) + 'px')
+		document.documentElement.style.setProperty('--wrapper-height', String(maxHeight + 100) + 'px')
 	})
 }
 
