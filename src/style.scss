@@ -313,26 +313,42 @@ h1 {
 
 .notification {
 	position: fixed;
-	height: 0;
 	padding: 0;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	z-index: 999;
-
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.01);
+	backdrop-filter: blur(25px);
+	display: none;
+	@media (max-width: $mobile-breakpoint) {
+		align-items: flex-start;
+	}
 	& > div {
-		right: -100px;
-		max-width: 400px;
-		margin: 32px;
-		width: 90%;
-		float: right;
+		position: fixed;
+		width: 50vw;
 		background: #1e1e1e;
 		padding: 16px 24px;
 		border: 3px solid white;
 		box-sizing: border-box;
 		transition: 0.3s;
-		transform: translateX(5500px);
+		transform: translateY(-5500px);
 		z-index: 999;
+		margin: 20% 0 0 25%;
+		@media (max-width: $mobile-breakpoint) {
+			margin: 60% 0 0 15%;
+			width: 70vw;
+		}
 	}
 
-	& > div.visible {
-		transform: translateX(0);
+	&.visible {
+		display: block;
+		& > div {
+			transform: translateY(0);
+		}
 	}
 }

@@ -28,21 +28,20 @@ getById('register').addEventListener(
 	true
 )
 
-global.submitRegistration = (token) => {
+globalThis.onSubmit = (token) => {
 	if (!getById('register').checkValidity()) {
-		console.info('form not valid')
+		console.info('form check failed')
 		return false
 	}
-
 	getById('error__reg').innerText = ''
-	fetch(location.origin + '/api/v1/requests/create', {
+	fetch(window.location.origin + '/team', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			age1: getById('memeber-1-age').value,
-			age2: getById('memeber-2-age').value,
+			age_1: getById('memeber-1-age').value,
+			age_2: getById('memeber-2-age').value,
 			fio_1: getById('memeber-1').value,
 			fio_2: getById('memeber-2').value,
 			univercity_1: getById('memeber-1-institute').value,
@@ -57,16 +56,17 @@ global.submitRegistration = (token) => {
 		}),
 	})
 		.then(() => {
+			console.log('form sent')
 			getById('register').reset()
-			const N = document.querySelector('.notification div')
+			const notify = document.querySelector('.notification')
 
-			N.classList.add('visible')
+			notify.classList.add('visible')
 			setTimeout(() => {
-				N.classList.remove('visible')
+				notify.classList.remove('visible')
 			}, 10000)
 		})
 		.catch(() => {
-			console.error('ERROR')
+			console.error('ERROR in form')
 		})
 
 	return false
@@ -75,7 +75,7 @@ global.submitRegistration = (token) => {
 // Высота для wrapper шаров
 const setCssHeight = () => {
 	requestAnimationFrame(() => {
-		document.documentElement.style.setProperty('--wrapper-height', String(maxHeight + 100) + 'px')
+		document.documentElement.style.setProperty('--wrapper-height', String(maxHeight) + 'px')
 	})
 }
 

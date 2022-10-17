@@ -2,7 +2,7 @@
 
 footer {
 	width: 100%;
-	margin-top: 150px;
+	margin-top: 100px;
 	padding-bottom: 48px;
 	display: flex;
 	flex-direction: column;
@@ -17,7 +17,7 @@ footer {
 	text-align: left;
 
 	@media (max-width: $tablet-breakpoint) {
-		margin-top: 130px;
+		margin-top: 80px;
 	}
 	a {
 		font-size: 20px;

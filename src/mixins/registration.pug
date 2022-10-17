@@ -8,33 +8,34 @@ section#registration-section
     input(type="text" id="team-name" placeholder="Название команды *" minlength="3" required data-error="Необходимо указать название команды")
 
     h3
-      label(for="member-2") Участник №1 *
-        input(type="text" id="member-1" placeholder="ФИО*" minlength="5" required data-error="Необходимо указать ФИО")
-      input(type="text" id="memeber-1-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту")
-      input(type="text" id="memeber-1-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм")
-      input(type="text" id="memeber-1-institute" placeholder="Институт")
-      input(type="number" id="memeber-1-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст")
+      label(for="memeber-1") Участник №1
+        input(type="text" id="memeber-1" placeholder="ФИО*" minlength="10" required data-error="Необходимо указать ФИО 1 участника")
+      input(type="email" id="memeber-1-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту 1 участника")
+      input(type="text" id="memeber-1-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм 1 участника")
+      input(type="text" id="memeber-1-institute" placeholder="Институт*" minlength="2" required data-error="Необходимо указать институт 1 участника")
+      input(type="number" id="memeber-1-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст 1 участника")
 
     h3
-      label(for="member-3") Участник №2 
-        input(type="text" id="member-2" placeholder="ФИО" minlength="5")
-      input(type="text" id="memeber-2-email" placeholder="E-mail" minlength="6")
-      input(type="text" id="memeber-2-telegram" placeholder="Telegram" minlength="3")
-      input(type="text" id="memeber-2-institute" placeholder="Институт")
-      input(type="number" id="memeber-2-age" placeholder="Возраст" minlength="2")
+      label(for="memeber-2") Участник №2
+        input(type="text" id="memeber-2" placeholder="ФИО*" minlength="10" required data-error="Необходимо указать ФИО 2 участника")
+      input(type="email" id="memeber-2-email" placeholder="E-mail*" minlength="6" required data-error="Необходимо указать почту 2 участника")
+      input(type="text" id="memeber-2-telegram" placeholder="Telegram*" minlength="3" required data-error="Необходимо указать телеграм 2 участника")
+      input(type="text" id="memeber-2-institute" placeholder="Институт*" minlength="2" required data-error="Необходимо указать институт 2 участника")
+      input(type="number" id="memeber-2-age" placeholder="Возраст*" minlength="2" required data-error="Необходимо указать возраст 2 участника")
+    
     h3
-      label Выбранный трек *
+      label Выбранный трек
     .radios
       label.radio(for="task1")
-        input#task1(type="radio" name="track" value="1" data-error="Необходимо выбрать трек")
+        input#task1(type="radio" name="track" value="1" required data-error="Необходимо выбрать трек")
         span.checkmark Кейс от института ИТ
       label.radio(for="task2")
         input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
         span.checkmark Кейс от VK Group
 
-    p.error#error__reg
+    p.error#error__reg 
 
-    button.button.g-recaptcha(type="submit" data-size="invisible" data-theme="dark" data-sitekey="6LfWwNgeAAAAAEfzAwwxK8d8FDbvO4HpD5NtAm8W" data-callback="submitRegistration") Отправить заявку
+    button.button.g-recaptcha(type="submit" id="form-submit" data-size="invisible" data-theme="dark" data-sitekey="6LcJ5YgiAAAAAFo58S7Y8br37RzRwT41IUDE764Y" data-callback="onSubmit") Отправить заявку
   p#policy
     | Нажимая на кнопку «Отправить заявку» вы соглашаетесь на обработку персональных данных, в соответствии с 
     a(href="https://storage.yandexcloud.net/hahaton/Политика.pdf" target="_blank" rel="noopener noreferrer") Политикой конфиденциальности
