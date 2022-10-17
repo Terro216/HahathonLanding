@@ -4,7 +4,7 @@ const ageInput = [getById('memeber-1-age'), getById('memeber-2-age')]
 const minAge = 18
 const maxAge = 25
 
-ageInput.forEach((input) =>
+ageInput?.forEach((input) =>
 	input.addEventListener('change', (e) => {
 		const age = parseInt(e.target.value)
 		if (age < minAge) {
@@ -97,19 +97,10 @@ global.submitRegistration = (token) => {
 }
 
 // Animated Orbs
-//orbs positions
-const orbs = document.querySelectorAll('#oneOrb')
-orbs.forEach((orb, i) => {
-	orb.style.top = Math.random() * document.body.scrollHeight
-	if (i % 2 == 0) orb.style.left = (Math.random() * document.body.clientWidth) / 2
-	else orb.style.right = Math.random() * document.body.clientWidth
-	orb.style.width = '1350px'
-})
 
 const setCssHeight = () => {
 	requestAnimationFrame(() => {
 		const height = document.querySelector('body > div').scrollHeight
-
 		document.documentElement.style.setProperty('--wrapper-height', String(height) + 'px')
 	})
 }
@@ -150,4 +141,31 @@ window.addEventListener('scroll', function () {
 })
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100))
-setTimeout(setCssHeight, 100)
+setTimeout(() => {
+	setCssHeight()
+	const orbs = document.querySelectorAll('#oneOrb')
+	//why firefox cannot set height
+	let height = Math.max(
+		document.querySelector('body').style.height,
+		document.body.scrollHeight,
+		document.body.offsetHeight,
+		document.documentElement.clientHeight,
+		document.documentElement.scrollHeight,
+		document.documentElement.offsetHeight
+	)
+	let width = Math.max(
+		document.querySelector('body').style.width,
+		document.body.scrollWidth,
+		document.body.offsetWidth,
+		document.documentElement.clientWidth,
+		document.documentElement.scrollWidth,
+		document.documentElement.offsetWidth
+	)
+	console.log(width, height)
+	orbs.forEach((orb, i) => {
+		orb.style.top = Math.random() * height
+		if (i % 2 == 0) orb.style.left = (Math.random() * width) / 2
+		else orb.style.right = Math.random() * width
+		orb.style.width = '1350px'
+	})
+}, 100)

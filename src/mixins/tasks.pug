@@ -3,19 +3,17 @@
   {
     "title": "Кейс от Института ИТ",
     "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
-    "theme": "75-летний юбилей РТУ МИРЭА",
     "duration": "2 минуты",
     "format": "MP4",
-    "imgSrc": "assets/tasks/task_1.svg",
+    "imgSrc": "assets/tasks/task_1.webp",
     "radioId": "task1"
   },
   {
     "title": "Кейс от VK GROUP",
-    "description": "В данном кейсе на заданную тематику потребуется создать игру под мобильный телефон с Android.",
-    "theme": "16-й день рождения VK",
+    "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
     "duration": "2 минуты",
-    "format": "MP3",
-    "imgSrc": "assets/tasks/task_2.svg",
+    "format": "MP4",
+    "imgSrc": "assets/tasks/task_2.webp",
     "radioId": "task2"
   }] 
 
@@ -25,13 +23,11 @@ mixin task(data)
     p.description
       = data.description
     div.rows
-      p.theme Тема: 
-        = data.theme
       p.duration Длительность: 
         = data.duration
       p.format Формат: 
         = data.format
-    img(src=data.imgSrc)
+    img(src=data.imgSrc alt="Иконка с подарком")
     div
       label(for=data.radioId)
         span.button.taskButton Выбрать кейс

@@ -28,6 +28,7 @@ footer {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
+		gap: 30px;
 		.tg {
 			a {
 				img {
@@ -37,13 +38,23 @@ footer {
 				}
 			}
 		}
+		a {
+			@media (max-width: 900px) {
+				font-size: 18px;
+			}
+			@media (max-width: 830px) {
+				font-size: 16px;
+			}
+			@media (max-width: $tablet-breakpoint) {
+				text-align: center;
+				font-size: 24px;
+			}
+		}
 		@media (max-width: $tablet-breakpoint) {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			gap: 15px;
-			text-align: center;
-			font-size: 24px;
 		}
 	}
 	.bottom {

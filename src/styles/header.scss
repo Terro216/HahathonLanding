@@ -3,15 +3,21 @@
 .header {
 	width: 100%;
 	&__navbar {
+		width: 100%;
 		padding: 25px 0px;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: nowrap;
+		@media (max-width: $mobile-breakpoint) {
+			display: none;
+		}
 		li > a > img {
 			vertical-align: middle;
 		}
-		@media (max-width: $mobile-breakpoint) {
-			display: none;
+		li a {
+			@media (max-width: 800px) {
+				font-size: 20px;
+			}
 		}
 	}
 	&__navbar-mobile {
@@ -63,7 +69,6 @@
 			gap: 10px;
 			@media (max-width: $mobile-breakpoint) {
 				margin-top: 70px;
-				width: 100%;
 			}
 			&__icons {
 				display: flex;
@@ -89,9 +94,6 @@
 			&__header {
 				&::after {
 					content: 'Хакатон';
-				}
-				@media (max-width: $mobile-breakpoint) {
-					margin-left: 20px;
 				}
 			}
 			&__date {
@@ -144,9 +146,8 @@
 					height: 112px;
 					align-items: center;
 				}
-				@media (max-width: $mobile-breakpoint) {
+				@media (max-width: 840px) {
 					width: calc(100% - (13% / 2));
-					height: 158px;
 					flex-direction: column;
 					align-items: flex-start;
 				}
@@ -157,6 +158,14 @@
 					line-height: 36px;
 					letter-spacing: 0em;
 					text-align: left;
+					@media (max-width: 1057px) {
+						font-size: 24px;
+						line-height: 31px;
+					}
+					@media (max-width: 950px) {
+						font-size: 20px;
+						line-height: 31px;
+					}
 					@media (max-width: $mobile-breakpoint) {
 						font-size: 24px;
 						line-height: 31px;
@@ -169,15 +178,8 @@
 					line-height: 26px;
 					letter-spacing: 0em;
 					text-align: left;
-					@media (max-width: $tablet-breakpoint) {
-						font-size: 28px;
-						line-height: 36px;
-						text-align: right;
-					}
 					@media (max-width: $mobile-breakpoint) {
-						font-family: Furore;
 						font-size: 20px;
-						text-align: left;
 					}
 				}
 			}
@@ -193,13 +195,6 @@
 			@media (min-width: calc($mobile-breakpoint + 1px)) {
 				display: none;
 				margin: 0;
-			}
-			.icon {
-				height: 60px;
-				width: 60px;
-				left: 0px;
-				top: 0px;
-				border-radius: 0px;
 			}
 			span {
 				font-family: Furore;

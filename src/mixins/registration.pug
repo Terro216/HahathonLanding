@@ -6,10 +6,6 @@ section#registration-section
   form#register(name="form")
     h3 Заполните форму и укажите всех участников
     input(type="text" id="team-name" placeholder="Название команды *" minlength="3" required data-error="Необходимо указать название команды")
-    //input(type="text" id="captain-name" placeholder="ФИО капитана команды *" minlength="3" required data-error="Необходимо указать ФИО капитана")
-    //input(type="email" id="captain-email" placeholder="E-mail капитана команды *" minlength="5" required data-error="Необходимо указать адрес")
-    //input(type="text" id="captain-tg" placeholder="Telegram капитана команды *" minlength="2" required data-error="Необходимо указать telegram")
-    //input(type="text" id="university" placeholder="Университет")
 
     h3
       label(for="member-2") Участник №1 *
@@ -29,20 +25,18 @@ section#registration-section
     h3
       label Выбранный трек *
     .radios
-      input#task1(type="radio" name="track" value="1" data-error="Необходимо выбрать трек")
       label.radio(for="task1")
-        | Кейс от института ИТ
-        span.checkmark
-      input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
+        input#task1(type="radio" name="track" value="1" data-error="Необходимо выбрать трек")
+        span.checkmark Кейс от института ИТ
       label.radio(for="task2")
-        | Кейс от VK Group
-        span.checkmark
+        input#task2(type="radio" name="track" value="2" data-error="Необходимо выбрать трек")
+        span.checkmark Кейс от VK Group
 
     p.error#error__reg
 
     button.button.g-recaptcha(type="submit" data-size="invisible" data-theme="dark" data-sitekey="6LfWwNgeAAAAAEfzAwwxK8d8FDbvO4HpD5NtAm8W" data-callback="submitRegistration") Отправить заявку
   p#policy
     | Нажимая на кнопку «Отправить заявку» вы соглашаетесь на обработку персональных данных, в соответствии с 
-    a(href="https://storage.yandexcloud.net/hahaton/Политика.pdf" target="_blank") Политикой конфиденциальности
+    a(href="https://storage.yandexcloud.net/hahaton/Политика.pdf" target="_blank" rel="noopener noreferrer") Политикой конфиденциальности
     | , а также с 
-    a(href="https://storage.yandexcloud.net/hahaton/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%A5%D0%B0%D1%85%D0%B0%D1%82%D0%BE%D0%BD%D0%B5%202022.pdf" target="_blank") Положением Хакатона
+    a(href="https://storage.yandexcloud.net/hahaton/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%A5%D0%B0%D1%85%D0%B0%D1%82%D0%BE%D0%BD%D0%B5%202022.pdf" target="_blank" rel="noopener noreferrer") Положением Хакатона

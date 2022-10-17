@@ -27,6 +27,7 @@
 				border-radius: 20px;
 				padding: 30px;
 				cursor: pointer;
+				transition: box-shadow 0.2s;
 				@media (max-width: $mobile-breakpoint) {
 					padding: 20px;
 				}
@@ -56,6 +57,7 @@
 					img {
 						display: block;
 						margin: auto;
+						transform: rotate(180deg);
 						transition: 0.2s;
 					}
 				}
@@ -72,7 +74,7 @@
 					transform: translateX(-4000px);
 				}
 				&:checked ~ label img {
-					transform: rotateZ(180deg);
+					transform: rotate(0);
 				}
 				&:checked ~ p {
 					padding: 20px;
@@ -80,7 +82,7 @@
 					backdrop-filter: blur(25px);
 					border: none;
 					height: auto;
-					width: 90%;
+					width: 100%;
 					margin: 0 auto;
 					margin-top: 10px;
 					opacity: 1;

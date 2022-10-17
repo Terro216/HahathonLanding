@@ -1,15 +1,35 @@
 @import 'variables.scss';
 
 .text__header {
+	max-width: 100%;
 	&::after {
 		content: 'Регистрация';
 	}
+	@media (max-width: 1000px) {
+		font-size: 90px;
+	}
+	@media (max-width: 835px) {
+		font-size: 70px;
+	}
+	@media (max-width: 650px) {
+		font-size: 50px;
+	}
+	@media (max-width: 520px) {
+		font-size: 36px;
+	}
+	@media (max-width: $mobile-breakpoint) {
+		font-size: 36px;
+		line-height: 36px;
+	}
 }
+
 #registration-section {
 	padding: 30px;
 	background: rgba(255, 255, 255, 0.05);
 	backdrop-filter: blur(25px);
 	border-radius: 20px;
+	max-width: 100%;
+	overflow: hidden;
 	#register h3 {
 		font-family: Inter;
 		font-size: 28px;
@@ -17,27 +37,19 @@
 		line-height: 38px;
 		letter-spacing: 0em;
 		text-align: left;
-		@media (max-width: $mobile-breakpoint) {
-			font-family: Inter;
-			font-size: 28px;
-			font-weight: 700;
-			line-height: 38px;
-			letter-spacing: 0em;
-			text-align: left;
-		}
 	}
 	.image-wrapper {
 		img {
 			float: right;
 			width: 20%;
-			height: 20%;
+			height: auto;
 		}
 		@media (max-width: $tablet-breakpoint) {
 			display: none;
 		}
 	}
 	form {
-		width: calc(100% - 10% - 260px);
+		width: 70%;
 		padding-bottom: 16px;
 		box-sizing: border-box;
 		@media (max-width: $tablet-breakpoint) {
@@ -127,11 +139,14 @@
 
 #registration-section form .radios {
 	width: auto;
+	max-width: 100%;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	gap: 30px;
+	flex-wrap: wrap;
 	@media (max-width: $tablet-breakpoint) {
+		align-items: start;
 		flex-direction: column;
 		gap: 5px;
 	}
@@ -142,12 +157,13 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
-	padding: 12px 0;
 	min-width: max-content;
 	max-width: 100%;
 	cursor: pointer;
-	font-size: 24px;
-	&::before {
+	.checkmark {
+		font-size: 18px;
+	}
+	& .checkmark::before {
 		content: ' ';
 		line-height: 1ch;
 		text-align: center;
@@ -157,16 +173,14 @@
 		height: 24px;
 		display: inline-block;
 		vertical-align: middle;
-		border: 1px solid #0077ff;
+		border: 2px solid #0077ff;
 		border-radius: 25px;
 		padding: 3px;
 	}
 }
 
-#registration-section form input:checked + label.radio::before {
-	content: ' ';
+#registration-section form input:checked ~ .checkmark::before {
 	background: #0077ff;
-	border-radius: 25px;
 }
 
 .error {
@@ -176,6 +190,7 @@
 
 #policy,
 #policy a {
+	max-width: 100%;
 	padding: 30px 0;
 	margin: 0;
 	font-family: Inter;
@@ -186,7 +201,9 @@
 	text-align: left;
 }
 #policy a {
+	max-width: 100%;
 	padding: 0;
+	margin: 0;
 	color: #0077ff;
 }
 input:not(:invalid) + .error {
@@ -195,10 +212,14 @@ input:not(:invalid) + .error {
 
 /*#registration-section form label.radio input */
 
-#registration-section form button {
-	width: 100%;
+#registration-section form button.button {
+	max-width: 100%;
 	margin-top: 16px;
-	border: none !important;
+	border: none;
+	@media (max-width: $mobile-breakpoint) {
+		margin: 0;
+		overflow: hidden;
+	}
 }
 
 @media (max-width: $tablet-breakpoint) {
