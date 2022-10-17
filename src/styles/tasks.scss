@@ -77,7 +77,6 @@
 					font-size: 20px;
 				}
 				@media (max-width: $mobile-breakpoint) {
-					//height: max-content;
 					font-size: 18px;
 					line-height: 24px;
 				}
@@ -102,14 +101,10 @@
 				}
 			}
 			img {
-				max-height: 250px;
 				max-width: 100%;
+				height: auto;
 				padding: 16px 0;
 				box-sizing: border-box;
-				@media (max-width: $mobile-breakpoint) {
-					max-width: 240px;
-					max-height: 160px;
-				}
 			}
 			.taskButton {
 				white-space: nowrap;
@@ -125,45 +120,3 @@
 		}
 	}
 }
-
-/* Tasks list 
-
-.task article .task_button-box {
-	display: flex;
-	background: none;
-	padding: 0;
-	margin: 0;
-}
-
-.task article .task_button-box::before {
-	content: ' ';
-	width: -moz-available;
-	width: -webkit-fill-available;
-	background: #1b002a;
-	display: block;
-}
-
-.task article .task_button-box::after {
-	content: ' ';
-	width: 48px;
-	background: #1b002a;
-	display: block;
-}
-/*
-@media (max-width: $tablet-breakpoint) {
-	#tasks {
-		margin-top: 112px;
-		grid-template-columns: 100%;
-	}
-
-	.task {
-		margin-top: 32px !important;
-	}
-}
-
-@media (max-width: 650px) {
-	#tasks {
-		margin-top: 48px;
-	}
-}
-*/

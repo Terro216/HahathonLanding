@@ -6,6 +6,8 @@
     "duration": "2 минуты",
     "format": "MP4",
     "imgSrc": "assets/tasks/task_1.webp",
+    "height": "343px",
+    "width": "440px",
     "radioId": "task1"
   },
   {
@@ -14,6 +16,8 @@
     "duration": "2 минуты",
     "format": "MP4",
     "imgSrc": "assets/tasks/task_2.webp",
+    "height": "328px",
+    "width": "407px",
     "radioId": "task2"
   }] 
 
@@ -27,7 +31,7 @@ mixin task(data)
         = data.duration
       p.format Формат: 
         = data.format
-    img(src=data.imgSrc alt="Иконка с подарком")
+    img(src=data.imgSrc alt="Иконка с подарком" width=data.width height=data.height)
     div
       label(for=data.radioId)
         span.button.taskButton Выбрать кейс

@@ -43,7 +43,6 @@
 			display: block;
 			height: 24px;
 			width: 24px;
-			//margin-right: -24px;
 			transform: scale(1.4);
 			cursor: pointer;
 			&[data-opened='true'] {
@@ -85,9 +84,6 @@
 					text-align: left;
 				}
 				@media (max-width: $mobile-breakpoint) {
-					/*order: 3;
-					margin-top: 35px;
-					align-self: center;*/
 					display: none;
 				}
 			}

@@ -1,4 +1,4 @@
-/* Import blocks stiles */
+/* Import blocks styles */
 @import './styles/header.scss';
 @import './styles/hamburger-wrapper.scss';
 @import './styles/tasks.scss';
@@ -11,10 +11,25 @@
 @font-face {
 	font-family: 'Furore';
 	src: url('fonts/Furore/Furore.otf');
+	font-display: swap;
 }
 @font-face {
 	font-family: 'Inter';
+	font-weight: 400;
 	src: url('fonts/Inter/Inter-Regular.ttf');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Inter';
+	font-weight: 500;
+	src: url('fonts/Inter/Inter-Medium.ttf');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Inter';
+	font-weight: 700;
+	src: url('fonts/Inter/Inter-Bold.ttf');
+	font-display: swap;
 }
 
 .grecaptcha-badge {
@@ -42,16 +57,22 @@
 	padding: 0;
 }
 
-$animation-duration-blue: 50s;
-$animation-duration-grey: 40s;
 .orbs > svg:nth-child(odd) {
 	max-width: 25%;
-	animation: fly $animation-duration-blue cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	animation: fly 50s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	@media (max-width: 800px) {
+		max-width: 50%;
+		animation: flyMobile 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	}
 }
 
 .orbs > svg:nth-child(even) {
 	max-width: 25%;
-	animation: flyReverse $animation-duration-grey cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	animation: flyReverse 40s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	@media (max-width: 800px) {
+		max-width: 50%;
+		animation: flyReverseMobile 16s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+	}
 }
 
 .orbs > svg:nth-child(3n - 1) {
@@ -65,7 +86,7 @@ $animation-duration-grey: 40s;
 }
 
 .orbs > svg:nth-child(5n) {
-	max-width: 50%;
+	max-width: 60%;
 	filter: blur(0) grayscale(0);
 }
 .orbs > svg:nth-child(5n-1) {
@@ -85,6 +106,15 @@ $animation-duration-grey: 40s;
 		transform: translateX(-1000px);
 	}
 }
+@keyframes flyMobile {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-400px);
+	}
+}
 @keyframes flyReverse {
 	0%,
 	100% {
@@ -92,6 +122,15 @@ $animation-duration-grey: 40s;
 	}
 	50% {
 		transform: translateX(1000px);
+	}
+}
+@keyframes flyReverseMobile {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(400px);
 	}
 }
 
@@ -130,10 +169,6 @@ body > div {
 	width: 74%;
 	margin: 0 13%; //calc((100% - 1440px) / 2);
 	position: relative;
-}
-
-body > div > * > * {
-	//padding: 0 10%;
 }
 
 button,
@@ -176,12 +211,6 @@ span.button {
 				#0c60be;
 		}
 	}
-	/*padding: 10px 76px;
-	background: transparent !important;
-	outline: none;
-	border: 2px solid white;
-	transition: 0.1s;
-	cursor: pointer;*/
 }
 
 a {
@@ -274,14 +303,10 @@ h1 {
 	}
 	@media (max-width: $mobile-breakpoint) {
 		margin: 0;
-		font-size: 36px;
-		line-height: 36px;
-
 		font-size: 56px;
 		line-height: 56px;
 		letter-spacing: 0em;
 		text-align: left;
-
 		align-self: center;
 	}
 }
@@ -311,35 +336,3 @@ h1 {
 		transform: translateX(0);
 	}
 }
-/* Adaptivity 
-@media (max-width: $desktop-breakpoint) {
-	h2 {
-		font-size: 108px;
-	}
-}
-
-@media (max-width: $tablet-breakpoint) {
-	h2 {
-		font-size: 80px;
-	}
-}
-
-@media (max-width: 650px) {
-	h2 {
-		font-size: 48px;
-	}
-}
-
-@media (max-width: $mobile-breakpoint) {
-	h2 {
-		font-size: 42px;
-	}
-	* {
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 24px;
-		letter-spacing: 0em;
-		text-align: left;
-	}
-}
-*/

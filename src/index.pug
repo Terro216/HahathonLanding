@@ -4,19 +4,28 @@
 doctype html
 html(lang="ru")
   head
-    title Хахатон РТУ МИРЭА
+    title CreativeHack 2022
 
     meta(charset="UTF-8")
     meta(name="author" content="RTUITLab")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    meta(name="description" content="Добро пожаловать на Xахатон от РТУ МИРЭА ")
+    meta(name="description" content="CreativeHack 2022 - хакатон от РТУ МИРЭА и Вконтакте. Создай лучший видеоролик и выиграй все призы!")
+    meta(name="keywords" content="Хакатон, CreativeHack 2022, РТУ МИРЭА, ВКонтакте")
+
+    meta(property="og:title" content="Хакатон CreativeHack 2022")
+    meta(property="og:description" content="CreativeHack 2022 - хакатон от РТУ МИРЭА и Вконтакте. Создай лучший видеоролик и выиграй все призы!")
+    meta(property="og:url" content="https://hack.rtuitlab.dev/")
+    meta(property="og:site_name" content="CreativeHack 2022")
+    meta(property="og:image" content="assets/og_image.png")
+    meta(property="og:image:width" content="706")
+    meta(property="og:image:width" content="425")
 
     link(rel="icon" href="./assets/tasks/task_1.webp")
     link(rel="stylesheet" href="./style.scss")
   body 
     div
       .notification
-        div На вашу почту выслано письмо для подтверждения регистрации. Если письмо не пришло, повторите попытку через час или напишите нам на hahathon@rtuitlab.dev
+        div На вашу почту выслано письмо для подтверждения регистрации. Если письмо не пришло, повторите попытку через час или напишите нам на hack@rtuitlab.dev
       
       include mixins/page-header
       include mixins/tasks

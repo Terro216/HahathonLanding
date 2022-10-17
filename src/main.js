@@ -30,6 +30,7 @@ getById('register').addEventListener(
 
 global.submitRegistration = (token) => {
 	if (!getById('register').checkValidity()) {
+		console.info('form not valid')
 		return false
 	}
 
@@ -65,7 +66,7 @@ global.submitRegistration = (token) => {
 			}, 10000)
 		})
 		.catch(() => {
-			console.log('ERROR')
+			console.error('ERROR')
 		})
 
 	return false
@@ -101,7 +102,7 @@ document.querySelector('.header__navbar-mobile > .logo').addEventListener('click
 	window.scrollTo(0, 0)
 })
 
-//скрытие мобильного хэдера при скролле вниз
+// скрытие мобильного хэдера при скролле вниз
 let prevScrollPos = window.pageYOffset
 window.addEventListener('scroll', function () {
 	let currentScrollPos = window.pageYOffset
@@ -115,7 +116,7 @@ window.addEventListener('scroll', function () {
 
 window.addEventListener('resize', () => setTimeout(setCssHeight, 100))
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
 	setCssHeight()
 	const orbs = document.querySelectorAll('#oneOrb')
 	orbs.forEach((orb, i) => {
@@ -124,4 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		else orb.style.right = Math.random() * maxWidth + 'px'
 		orb.style.width = '1350px'
 	})
-})
+}
+
+document.addEventListener('DOMContentLoaded', init)

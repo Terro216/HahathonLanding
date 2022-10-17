@@ -1,17 +1,29 @@
 -
   var prises_data = [
-    {imgSrc:'assets/prises/VK_prise.webp',
-    description:'Консультация от VK'
-    },{imgSrc:'assets/prises/Buds_prise.webp',
-    description:'Samsung Galaxy Buds Live'
-    },{imgSrc:'assets/prises/Galaxy_prise.webp',
-    description:'Samsung Galaxy A21s 64GB'
+    {
+      imgSrc:'assets/prises/VK_prise.webp',
+      width:'120px',
+      height:'120px',
+      alt: 'Логотип Вконтакте',
+      description:'Консультация от VK'
+    },{
+      imgSrc:'assets/prises/Buds_prise.webp',
+      width:'150px',
+      height:'150px',
+      alt: 'Наушники Samsung Galaxy Buds Live',
+      description:'Samsung Galaxy Buds Live'
+    },{
+      imgSrc:'assets/prises/Galaxy_prise.webp',
+      width:'140px',
+      height:'140px',
+      alt: 'Смартфон Samsung Galaxy A21s 64GB',
+      description:'Samsung Galaxy A21s 64GB'
     }
   ] 
  
 mixin prise-block(data)
   .prise-block
-    img.logo(src=data.imgSrc)
+    img.logo(src=data.imgSrc width=data.width height=data.height alt=data.alt)
     p.description
      = data.description
 
