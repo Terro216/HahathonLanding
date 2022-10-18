@@ -63,7 +63,7 @@ globalThis.onSubmit = (token) => {
 			notify.classList.add('visible')
 			setTimeout(() => {
 				notify.classList.remove('visible')
-			}, 10000)
+			}, 4000)
 		})
 		.catch(() => {
 			console.error('ERROR in form')
