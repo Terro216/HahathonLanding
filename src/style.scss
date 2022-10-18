@@ -152,6 +152,7 @@ body {
 	font-family: Inter;
 	background: #1e1e1e;
 	overflow-x: hidden;
+	height: 100%;
 }
 
 body > div:not(.orbs) {
@@ -242,9 +243,9 @@ a {
 	}
 	&.mirea {
 		transition: filter 0.2s;
-		filter: brightness(0.9);
+		filter: grayscale(1);
 		&:hover {
-			filter: brightness(1);
+			filter: grayscale(0);
 		}
 	}
 }

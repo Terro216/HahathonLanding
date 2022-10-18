@@ -3,9 +3,10 @@
   {
     "title": "Кейс от Института ИТ",
     "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
+    "theme": "75-летний юбилей РТУ МИРЭА",
     "duration": "2 минуты",
     "format": "MP4",
-    "imgSrc": "assets/tasks/task_1.webp",
+    "imgSrc": "assets/tasks/mra.webp",
     "height": "343px",
     "width": "440px",
     "radioId": "task1"
@@ -13,11 +14,12 @@
   {
     "title": "Кейс от VK GROUP",
     "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
+    "theme": "11-й день рождения VK образования",
     "duration": "2 минуты",
     "format": "MP4",
-    "imgSrc": "assets/tasks/task_2.webp",
-    "height": "328px",
-    "width": "407px",
+    "imgSrc": "assets/tasks/vk.webp",
+    "height": "343px",
+    "width": "440px",
     "radioId": "task2"
   }] 
 
@@ -27,6 +29,8 @@ mixin task(data)
     p.description
       = data.description
     div.rows
+      p.theme Тема: 
+        = data.theme
       p.duration Длительность: 
         = data.duration
       p.format Формат: 
