@@ -43,25 +43,31 @@
 				height: max-content;
 				font-size: 52px;
 				font-weight: 400;
+				height: calc(52px * 2);
 				letter-spacing: 0em;
 				text-align: left;
 				align-self: start;
 				@media (max-width: 1400px) {
 					font-size: 42px;
+					height: calc(42px * 2);
 				}
 				@media (max-width: 1200px) {
 					font-size: 36px;
+					height: calc(36px * 2);
 				}
 				@media (max-width: 1050px) {
 					font-size: 30px;
+					height: calc(30px * 2);
 				}
 				@media (max-width: 900px) {
 					font-size: 25px;
+					height: calc(25px * 2);
 					justify-content: center;
 					width: 100%;
 				}
 				@media (max-width: $mobile-breakpoint) {
 					font-size: 28px;
+					height: calc(28px * 2);
 					line-height: 28px;
 				}
 			}
