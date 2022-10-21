@@ -2,6 +2,7 @@
   var tasks_data = [
   {
     "title": "Кейс от Института ИТ",
+    "winner": "Двое из ларца",
     "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
     "theme": "75-летний юбилей РТУ МИРЭА",
     "duration": "2 минуты",
@@ -13,6 +14,7 @@
   },
   {
     "title": "Кейс от VK",
+    "winner": "Reality Zero",
     "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
     "theme": "11-й день рождения VK образования",
     "duration": "2 минуты",
@@ -29,6 +31,8 @@ mixin task(data)
     p.description
       = data.description
     div.rows
+      p.winner Победитель: 
+        = data.winner
       p.theme Тема: 
         = data.theme
       p.duration Длительность: 

@@ -93,11 +93,12 @@
 			}
 			.rows {
 				align-self: flex-start;
+				.winner,
 				.duration,
 				.theme,
 				.format {
 					font-family: Inter;
-					font-size: 22px;
+					font-size: 20px;
 					font-weight: 700;
 					line-height: 32px;
 					letter-spacing: 0em;
@@ -105,7 +106,7 @@
 					@media (max-width: 1065px) {
 						font-size: 18px;
 					}
-					@media (max-width: 880px) {
+					@media (max-width: 908px) {
 						font-size: 15px;
 						line-height: 24px;
 					}
