@@ -67,7 +67,7 @@
 				}
 				@media (max-width: $mobile-breakpoint) {
 					font-size: 28px;
-					height: calc(28px * 2);
+					height: max-content;
 					line-height: 28px;
 				}
 			}
