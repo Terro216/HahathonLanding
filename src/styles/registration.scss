@@ -1,0 +1,242 @@
+@import 'variables.scss';
+
+.text__header {
+	max-width: 100%;
+	&::after {
+		content: 'Регистрация';
+	}
+	@media (max-width: 1005px) {
+		font-size: 90px;
+	}
+	@media (max-width: 840px) {
+		font-size: 68px;
+	}
+	@media (max-width: 650px) {
+		font-size: 50px;
+	}
+	@media (max-width: 520px) {
+		font-size: 36px;
+	}
+	@media (max-width: $mobile-breakpoint) {
+		font-size: 36px;
+		line-height: 36px;
+	}
+	@media (max-width: 355px) {
+		font-size: 30px;
+	}
+	@media (max-width: 355px) {
+		font-size: 26px;
+	}
+}
+
+#registration-section {
+	padding: 30px;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(25px);
+	border-radius: 20px;
+	max-width: 100%;
+	overflow: hidden;
+	#register h3 {
+		font-family: Inter;
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 38px;
+		letter-spacing: 0em;
+		text-align: left;
+		@media (max-width: $tablet-breakpoint) {
+			font-size: 24px;
+		}
+	}
+	.image-wrapper {
+		img {
+			float: right;
+			width: 20%;
+			height: auto;
+		}
+		@media (max-width: $tablet-breakpoint) {
+			display: none;
+		}
+	}
+	form {
+		width: 70%;
+		padding-bottom: 16px;
+		box-sizing: border-box;
+		@media (max-width: $tablet-breakpoint) {
+			width: 100%;
+		}
+		label {
+			@media (max-width: $mobile-breakpoint) {
+				font-size: 18px;
+			}
+		}
+		input {
+			display: block;
+			margin-bottom: 16px;
+			width: 100%;
+			padding: 8px 12px;
+			border: none;
+			border-bottom: 2px solid rgba(242, 242, 242, 0.5);
+			background: transparent;
+			outline: none;
+			box-sizing: border-box;
+			transition: 0.2s;
+			font-family: Inter;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 24px;
+			letter-spacing: 0em;
+			text-align: left;
+			@media (max-width: $tablet-breakpoint) {
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+#registration-section form #registration-section form button:focus-visible,
+#registration-section form a:focus-visible,
+#registration-section form input:focus-visible {
+	&::placeholder {
+		font-family: Inter;
+		font-style: normal;
+		font-weight: 400;
+		color: rgba(242, 242, 242, 0.75);
+	}
+	border-bottom: 2px solid #f2f2f2;
+}
+
+#registration-section form input::placeholder {
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #f2f2f280;
+	@media (max-width: $mobile-breakpoint) {
+		font-size: 18px;
+		line-height: 18px;
+	}
+}
+
+#registration-section form div {
+	width: 180px;
+	display: flex;
+	flex-direction: row;
+}
+
+#registration-section form div * {
+	margin: 0;
+}
+
+#registration-section form input::-webkit-outer-spin-button,
+#registration-section form input::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+	margin: 0 !important;
+}
+
+#registration-section form input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+#registration-section form input[type='radio'] {
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+#registration-section form .radios {
+	width: auto;
+	max-width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 30px;
+	flex-wrap: wrap;
+	@media (max-width: $tablet-breakpoint) {
+		align-items: start;
+		flex-direction: column;
+		gap: 5px;
+	}
+}
+
+#registration-section form label.radio {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	min-width: max-content;
+	max-width: 100%;
+	cursor: pointer;
+	.checkmark {
+		@media (max-width: $mobile-breakpoint) {
+			font-size: 18px;
+		}
+		@media (max-width: 368px) {
+			font-size: 15px;
+		}
+		&::before {
+			vertical-align: middle;
+			content: ' ';
+			margin-right: 8px;
+			margin-bottom: 6px;
+			width: 24px;
+			height: 24px;
+			display: inline-block;
+			border: 2px solid #0077ff;
+			border-radius: 25px;
+			padding: 3px;
+		}
+	}
+}
+
+#registration-section form input:checked ~ .checkmark::before {
+	background: #0077ff;
+}
+
+.error {
+	color: #ff3232;
+	font-size: 16px;
+}
+
+#policy,
+#policy a {
+	max-width: 100%;
+	padding: 30px 0;
+	margin: 0;
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: left;
+	@media (max-width: $tablet-breakpoint) {
+		font-size: 12px;
+	}
+}
+#policy a {
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+	color: #0077ff;
+}
+input:not(:invalid) + .error {
+	display: none;
+}
+
+#registration-section form button.button {
+	max-width: 100%;
+	margin-top: 16px;
+	border: none;
+	@media (max-width: $mobile-breakpoint) {
+		margin: 0;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 650px) {
+	#registration-section form {
+		width: 100%;
+	}
+}

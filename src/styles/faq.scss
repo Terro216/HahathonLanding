@@ -1,0 +1,105 @@
+@import 'variables.scss';
+
+.faq {
+	&__header {
+		&::after {
+			content: 'FAQ';
+		}
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 5px;
+		width: 100%;
+		.question-card {
+			margin-top: 8px;
+			width: 100%;
+
+			label {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				background: rgba(255, 255, 255, 0.05);
+				backdrop-filter: blur(25px);
+				border-radius: 20px;
+				padding: 30px;
+				cursor: pointer;
+				transition: box-shadow 0.2s;
+				@media (max-width: $mobile-breakpoint) {
+					padding: 20px;
+				}
+				&:hover {
+					box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
+				}
+				h3 {
+					margin: 0;
+					padding: 0;
+					width: -webkit-fill-available;
+					width: -moz-available;
+					box-sizing: border-box;
+
+					font-family: Inter;
+					font-size: 24px;
+					font-weight: 700;
+					line-height: 24px;
+					letter-spacing: 0em;
+					text-align: left;
+					@media (max-width: $mobile-breakpoint) {
+						font-size: 14px;
+						line-height: 19px;
+					}
+				}
+				div {
+					width: 10%;
+					img {
+						display: block;
+						margin: auto;
+						transform: rotate(180deg);
+						transition: 0.2s;
+					}
+				}
+			}
+
+			input {
+				& ~ p {
+					margin: 0;
+					padding: 0 36px;
+					box-sizing: border-box;
+					height: 0;
+					opacity: 0;
+					transition: opacity 0.3s ease, height 0.3s ease;
+					transform: translateX(-4000px);
+				}
+				&:checked ~ label img {
+					transform: rotate(0);
+				}
+				&:checked ~ p {
+					padding: 20px;
+					background: rgba(255, 255, 255, 0.05);
+					backdrop-filter: blur(25px);
+					border: none;
+					height: auto;
+					width: 100%;
+					margin: 0 auto;
+					margin-top: 10px;
+					opacity: 1;
+					transform: none;
+					border-radius: 20px;
+					font-size: 20px;
+					font-family: Inter;
+					@media (max-width: $mobile-breakpoint) {
+						font-size: 14px;
+						line-height: 19px;
+					}
+					& a {
+						color: #a5dbff;
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+}

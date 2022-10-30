@@ -1,0 +1,51 @@
+-
+  var tasks_data = [
+  {
+    "title": "Кейс от Института ИТ",
+    "winner": "Двое из ларца",
+    "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
+    "theme": "75-летний юбилей РТУ МИРЭА",
+    "duration": "2 минуты",
+    "format": "MP4",
+    "imgSrc": "assets/tasks/mra.webp",
+    "height": "343px",
+    "width": "440px",
+    "radioId": "task1"
+  },
+  {
+    "title": "Кейс от VK",
+    "winner": "Reality Zero",
+    "description": "Создание анимированного видео с озвучкой и использованием 3D, моушн-дизайна и т.п.",
+    "theme": "11-й день рождения VK образования",
+    "duration": "2 минуты",
+    "format": "MP4",
+    "imgSrc": "assets/tasks/vk.webp",
+    "height": "343px",
+    "width": "440px",
+    "radioId": "task2"
+  }] 
+
+mixin task(data)
+  article.task
+    h3.title= data.title
+    p.description
+      = data.description
+    div.rows
+      p.winner Победитель: 
+        = data.winner
+      p.theme Тема: 
+        = data.theme
+      p.duration Длительность: 
+        = data.duration
+      p.format Формат: 
+        = data.format
+    img(src=data.imgSrc alt="Иконка с подарком" width=data.width height=data.height)
+    div
+      label(for=data.radioId)
+        span.button.taskButton Выбрать кейс
+
+section.tasks#tasks-section
+  h2.tasks__header Задачи
+  .tasks__content
+    each singleTask in tasks_data
+      +task(singleTask)

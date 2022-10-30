@@ -1,0 +1,20 @@
+{
+	"name": "hahatonlanding",
+	"version": "2.0.0",
+	"description": "Landing for RTU MIREA Hackathon 2022",
+	"scripts": {
+		"start": "parcel src/index.pug",
+		"build": "parcel build src/index.pug --dist-dir build --public-url ./",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ivan Laptev",
+	"contributors": [
+		"ilya Medvedev"
+	],
+	"license": "ISC",
+	"devDependencies": {
+		"@parcel/transformer-pug": "^2.7.0",
+		"@parcel/transformer-sass": "^2.7.0",
+		"parcel": "^2.7.0"
+	}
+}

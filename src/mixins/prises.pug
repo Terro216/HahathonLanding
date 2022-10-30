@@ -1,0 +1,35 @@
+-
+  var prises_data = [
+    {
+      imgSrc:'assets/logos/VK_hover.svg',
+      width:'120px',
+      height:'120px',
+      alt: 'Логотип Вконтакте',
+      description:'Консультация от VK'
+    },{
+      imgSrc:'assets/prises/Buds_prise.webp',
+      width:'150px',
+      height:'150px',
+      alt: 'Наушники Samsung Galaxy Buds Live',
+      description:'Samsung Galaxy Buds Live'
+    },{
+      imgSrc:'assets/prises/Galaxy_prise.webp',
+      width:'140px',
+      height:'140px',
+      alt: 'Смартфон Samsung Galaxy A21s 64GB',
+      description:'Samsung Galaxy A21s 64GB'
+    }
+  ] 
+ 
+mixin prise-block(data)
+  .prise-block
+    img.logo(src=data.imgSrc width=data.width height=data.height alt=data.alt)
+    p.description
+      = data.description
+
+section.prises#prises-section
+  h2.prises__header Призы
+
+  .prises__content
+    each prise in prises_data
+      +prise-block(prise)

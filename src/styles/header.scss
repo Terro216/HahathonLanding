@@ -1,0 +1,216 @@
+@import 'variables.scss';
+
+.header {
+	width: 100%;
+	&__navbar {
+		width: 100%;
+		padding: 25px 0px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		@media (max-width: $mobile-breakpoint) {
+			display: none;
+		}
+		li > a > img {
+			vertical-align: middle;
+		}
+		li a {
+			@media (max-width: 800px) {
+				font-size: 20px;
+			}
+		}
+	}
+	&__navbar-mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 15px 0px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		background: #1e1e1e;
+		transition: top 0.3s; //Эффект перехода при скольжении вниз/вверх
+		@media (min-width: calc($mobile-breakpoint + 1px)) {
+			display: none;
+		}
+		&,
+		.logo,
+		.hamburger {
+			z-index: 3; //больше чем у wrapper
+		}
+		.hamburger {
+			display: block;
+			height: 24px;
+			width: 24px;
+			transform: scale(1.4);
+			cursor: pointer;
+			&[data-opened='true'] {
+				background: url(./assets/hamburger/close.svg) center center no-repeat;
+			}
+			&[data-opened='false'] {
+				background: url(./assets/hamburger/open.svg) center center no-repeat;
+			}
+		}
+	}
+
+	&__main {
+		width: 100%;
+		margin-top: 48px;
+		display: flex;
+		flex-direction: column;
+
+		.title {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 10px;
+			@media (max-width: $mobile-breakpoint) {
+				margin-top: 70px;
+			}
+			&__icons {
+				display: flex;
+				flex-wrap: nowrap;
+				gap: 30px;
+				justify-content: flex-start;
+				align-items: center;
+				span {
+					font-family: Furore;
+					font-size: 28px;
+					font-weight: 400;
+					line-height: 32px;
+					letter-spacing: 0em;
+					text-align: left;
+				}
+				@media (max-width: $mobile-breakpoint) {
+					display: none;
+				}
+			}
+			&__header {
+				&::after {
+					content: 'Хакатон';
+				}
+			}
+			&__date {
+				font-family: Furore;
+				font-size: 72px;
+				font-weight: 400;
+				letter-spacing: 0em;
+				text-align: left;
+				@media (max-width: 666px) {
+					font-size: 52px;
+				}
+				@media (max-width: $mobile-breakpoint) {
+					align-self: center;
+					font-size: 36px;
+					line-height: 48px;
+				}
+			}
+			&__button {
+				margin-top: calc(45px - 10px);
+				@media (max-width: $tablet-breakpoint) {
+					width: 44%;
+					padding: 25px 100px;
+				}
+				@media (max-width: $mobile-breakpoint) {
+					margin-top: 45px;
+					width: 100%;
+					align-self: center;
+					padding: 25px 55px;
+				}
+			}
+		}
+
+		.curriculum {
+			margin-top: 64px;
+			display: flex;
+			justify-content: space-between;
+			gap: 30px;
+			@media (max-width: $tablet-breakpoint) {
+				flex-direction: column;
+				gap: 15px;
+				margin-top: 75px;
+				padding: 0;
+			}
+			@media (max-width: $mobile-breakpoint) {
+				width: 95%;
+			}
+			&-block {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: space-between;
+				padding: 20px;
+				width: calc(100% / 3 - 30px * 2);
+				height: 168px;
+				background: rgba(255, 255, 255, 0.05);
+				backdrop-filter: blur(25px);
+				border-radius: 20px;
+				@media (max-width: $tablet-breakpoint) {
+					width: 100%;
+					flex-direction: row;
+					height: 112px;
+					align-items: center;
+				}
+				@media (max-width: 840px) {
+					width: calc(100% - (13% / 2));
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				.stage {
+					font-family: Furore;
+					font-size: 28px;
+					font-weight: 400;
+					line-height: 36px;
+					letter-spacing: 0em;
+					text-align: left;
+					@media (max-width: 1057px) {
+						font-size: 24px;
+						line-height: 31px;
+					}
+					@media (max-width: 950px) {
+						font-size: 20px;
+						line-height: 31px;
+					}
+					@media (max-width: $mobile-breakpoint) {
+						font-size: 24px;
+						line-height: 31px;
+					}
+				}
+				.date {
+					font-family: Furore;
+					font-size: 20px;
+					font-weight: 400;
+					line-height: 26px;
+					letter-spacing: 0em;
+					text-align: left;
+					@media (max-width: $mobile-breakpoint) {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+		.title__icons-mobile {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding: 0;
+			margin: 45px 0 0 0;
+			@media (min-width: calc($mobile-breakpoint + 1px)) {
+				display: none;
+				margin: 0;
+			}
+			span {
+				font-family: Furore;
+				font-size: 28px;
+				font-weight: 400;
+				line-height: 32px;
+				letter-spacing: 0em;
+				text-align: center;
+			}
+		}
+	}
+}
