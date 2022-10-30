@@ -5,9 +5,11 @@
 ## view live:
 
 1: https://terro216.github.io/HahathonLanding/
-2: hack.rtuitlab.dev
+
+2: https://hack.rtuitlab.dev
 
 ### run local:
 
 `npm i`
+
 `npm start`
