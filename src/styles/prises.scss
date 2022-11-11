@@ -1,0 +1,107 @@
+@import 'variables.scss';
+
+.prises {
+	width: 100%;
+	&__header {
+		&::after {
+			content: 'Призы';
+		}
+	}
+	&__content {
+		display: flex;
+		justify-content: center;
+		align-items: space-between;
+		gap: 30px;
+		@media (max-width: $tablet-breakpoint) {
+			flex-direction: column;
+			width: 100%;
+			align-items: center;
+		}
+		.prise-block {
+			width: calc(100% / 3 - (30px * 2));
+			padding: 30px;
+			background: rgba(255, 255, 255, 0.05);
+			backdrop-filter: blur(25px);
+			border-radius: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: space-between;
+			transition: box-shadow 0.2s;
+			cursor: default;
+			&:hover {
+				box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.25);
+			}
+			@media (max-width: $tablet-breakpoint) {
+				align-items: center;
+				width: 100%;
+				max-width: 570px;
+				max-height: 300px;
+			}
+			@media (max-width: 905px) {
+				width: calc(100% - 20%);
+				max-width: 300px;
+			}
+			.logo {
+				align-self: center;
+			}
+			.description {
+				font-family: Furore;
+				font-size: 28px;
+				font-weight: 400;
+				line-height: 35px;
+				letter-spacing: 0em;
+				text-align: center;
+				align-self: center;
+				min-height: max-content;
+				@media (max-width: 1200px) {
+					font-size: 24px;
+				}
+				@media (max-width: 1000px) {
+					font-size: 22px;
+				}
+			}
+		}
+	}
+}
+/*
+@media (max-width: $desktop-breakpoint) {
+	#prises-section > img {
+		width: 25%;
+	}
+}
+
+@media (max-width: $tablet-breakpoint) {
+	#prises-section > img {
+		right: 0;
+		width: 32%;
+	}
+
+	#prises > li {
+		-webkit-text-stroke-width: 1px;
+		font-size: 32px;
+		text-align: start;
+	}
+}
+
+@media (max-width: 650px) {
+	#prises-section > img {
+		display: none;
+	}
+
+	#prises-section_header {
+		display: block;
+	}
+
+	#prises-section_header > h2 {
+		width: 100%;
+	}
+
+	#prises-section_header > a {
+		display: inline-block;
+		width: 50%;
+		vertical-align: middle;
+		margin-top: 16px;
+	}
+}
+*/

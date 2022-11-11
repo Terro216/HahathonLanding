@@ -1,0 +1,53 @@
+-
+  var curriculums_data = [
+  {
+    "stage": "Публикация заданий",
+    "date": "18.10.2022 20:00",
+  },{
+    "stage": "Завершение приёма решений",
+    "date": "21.10.2022 09:00",
+  },{
+    "stage": "Публикация результатов",
+    "date": "21.10.2022 20:00",
+  }]
+  
+mixin curriculum-block(data)
+  .curriculum-block 
+    span.stage= data.stage
+    span.date= data.date
+
+header.header
+  ul.header__navbar
+    li
+      a(href="#tasks-section") Задачи
+    li
+      a(href="#prises-section") Призы
+    li
+      a(href="#faq-section") FAQ
+    li
+      a(href="#registration-section") Регистрация
+    li
+      a(href="https://t.me/creative_hack_2022_chat" target="_blank" rel="noopener noreferrer")
+        img(src="assets/logos/telegram.svg" alt="Телеграм чат"  width="28px" height="24px")
+
+  .header__navbar-mobile
+    img.logo(src="assets/logos/header_hack.svg" width="150px" height="30px")
+    .hamburger(data-opened='false')
+    include hamburger-wrapper
+    
+  .header__main
+    .title
+      .title__icons
+        img.icon#header-icon.vk(src="./assets/logos/VK_hover.svg"  alt="Логотип Вконтакте" width="60px" height="60px")
+        span X
+        img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="60px")
+      h1.title__header Хакатон
+      span.title__date 18.10 — 21.10
+      a.button.title__button(href="#registration-section") Зарегистрироваться
+    .curriculum
+      each curriculum in curriculums_data
+        +curriculum-block(curriculum)
+    .title__icons-mobile
+      img.icon#header-icon.vk(src="./assets/logos/VK_hover.svg"  alt="Логотип Вконтакте" width="60px" height="60px")
+      span X
+      img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="60px")

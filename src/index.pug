@@ -1,0 +1,42 @@
+-
+  var blueOrbs = new Array(20)
+
+doctype html
+html(lang="ru")
+  head
+    title CreativeHack 2022
+
+    meta(charset="UTF-8")
+    meta(name="author" content="RTUITLab")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="CreativeHack 2022 - хакатон от РТУ МИРЭА и Вконтакте. Создай лучший видеоролик и выиграй все призы!")
+    meta(name="keywords" content="Хакатон, CreativeHack 2022, РТУ МИРЭА, ВКонтакте")
+
+    meta(property="og:title" content="Хакатон CreativeHack 2022")
+    meta(property="og:description" content="CreativeHack 2022 - хакатон от РТУ МИРЭА и Вконтакте. Создай лучший видеоролик и выиграй все призы!")
+    meta(property="og:url" content="https://hack.rtuitlab.dev/")
+    meta(property="og:site_name" content="CreativeHack 2022")
+    meta(property="og:image" content="https://hack.rtuitlab.dev/og_image.png")
+    meta(property="og:image:width" content="706")
+    meta(property="og:image:width" content="425")
+
+    link(rel="image_src" href="og_image.png")
+    link(rel="icon" href="./assets/favicon.png")
+    link(rel="stylesheet" href="./style.scss")
+  body 
+    div
+      .notification
+        div Регистрация прошла успешно
+      
+      include mixins/page-header
+      include mixins/tasks
+      include mixins/prises
+      include mixins/faq
+      include mixins/registration
+      include mixins/page-footer
+    .orbs
+      each val in blueOrbs
+        include assets/orbs/orb.svg
+
+    script(src="https://www.google.com/recaptcha/api.js" async defer)
+    script(src="./main.js" type="module")
