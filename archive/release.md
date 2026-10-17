@@ -76,18 +76,19 @@ screenshots remain on big-one under `/tmp/creativehack-qa-original` and
 `/tmp/creativehack-qa-preview`; public screenshots are in `/tmp/creativehack-qa-public`.
 The disposable original/preview web containers were removed after verification.
 
-## Recovery and remaining manual ownership step
+## Recovery
 
-No application data, secrets, volumes or scheduled jobs were introduced.
-DE application backup exclusion is explicit in server BACKUPS.md and recovery.yml.
-The active DE receipt was read: 17 October 2026 16:48:58 UTC,
-`data_check=ok`, `restore_verify=ok`; provider pauses were respected.
-A fresh existing encrypted export was observed at
-`server-recovery-20261017T194248Z.tar.gz.gpg`, `roundtrip=ok`, 61 big-one and
-4 DE files. This task did not run a new privileged export without sudo permission.
-Manual attachment/update of `Server recovery: DE + big-one` by the owner is
-not established by the server-side evidence. No keys/passwords are needed for
-this static site; its recovery instructions are in [README](../README.md).
+The site has no application data, secrets, volumes or scheduled jobs. All source,
+artwork, fonts, original PDFs, the npm lockfile and Compose configuration are in
+Git. Restore from the recorded archive branch/tag and rebuild the pinned image,
+or load the retained Docker image. DE application backup exclusion is explicit
+in server BACKUPS.md and recovery.yml.
+
+No site-specific data backup, new encrypted secrets export or manual Bitwarden
+update is required for CreativeHack. The server-wide recovery export covers
+other services and credentials; no new credentials were introduced here.
+The saved Git bundle and Docker archive are optional additional recovery copies.
+See the [recovery instructions](../README.md).
 
 First-release rollback removes only creativehack/web and its Caddy route.
 Subsequent releases should keep the old immutable image tag and switch only
