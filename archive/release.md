@@ -63,8 +63,12 @@ archive-button fit are small repairs; the original block style files remain inta
   healthy status and unchanged auth fingerprint; anonymous auth status stays 401.
   Concurrent portal releases were detected before changes and preserved.
 - Bootstrap registry/recovery and all 37 Compose configurations validated.
-  The full drift check reported unrelated pending `honest-broker` and
-  `moscow-city-hack` Compose manifests; the CreativeHack runtime matched.
+  An earlier drift check found two unrelated pending neighbor manifests. After
+  their parallel launches, the final full check passed (all 37 stacks, exit 0);
+  only historical Compose config-hash warnings remained.
+- 72 containers retained their IDs, StartedAt and restart counts. Other changes
+  were the authorized portal catalog update and concurrent QA/neighbor releases;
+  Caddy and Gatus container identities were unchanged.
 
 Screenshots: [desktop](screenshots/desktop.png), [mobile](screenshots/mobile.png),
 [closed form](screenshots/registration-mobile.png). Original and preview full-page
