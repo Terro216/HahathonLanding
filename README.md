@@ -100,8 +100,8 @@ reCAPTCHA; старую регистрацию не вызывали. Резул
 Активная общесерверная копия — ежедневная DE; паузу Яндекс.Диска не менять.
 Общие Caddy/DNS восстанавливаются по серверному runbook. У самого сайта
 credentials нет. Отдельный backup данных, новый encrypted secrets export
-и ручное обновление Bitwarden для CreativeHack не нужны. Сохранённые образ
-и Git bundle — дополнительные копии, восстановление возможно из Git.
+и ручное обновление Bitwarden для CreativeHack не нужны. Работающий образ
+в Docker и Git-история достаточны; отдельные TAR и Git bundle не хранятся.
 
 На новом big-one после восстановления Docker/Caddy и `caddy_net`:
 
@@ -109,8 +109,7 @@ credentials нет. Отдельный backup данных, новый encrypted
 git clone --branch archive/creativehack-2022 https://github.com/Terro216/HahathonLanding.git /home/me/server/projects/HahathonLanding
 cd /home/me/server/projects/HahathonLanding
 # Сверить release commit и image ID по archive/release.md.
-# Можно загрузить сохранённый образ: docker load -i creativehack-image.tar
-# Или собрать из зафиксированного release commit:
+# Собрать из зафиксированного release commit:
 docker build -t creativehack:archive-20261017-252bb49 .
 docker compose up -d --no-build --pull never --wait --wait-timeout 60 web
 curl --fail https://creativehack.ilyamedve.dev/healthz
@@ -129,3 +128,12 @@ DNS A: `creativehack.ilyamedve.dev` → `94.126.204.131`; IPv6 публиков�
 Каталог портала и новые monitoring entries откатываются отдельно по
 сохранённым scoped diff, без замены чужих изменений.
 Саму страницу и образ можно восстановить независимо от портала.
+
+## Хранение артефактов после восстановления
+
+Для восстановления используется опубликованная Git-ревизия, lockfile и Dockerfile.
+На big-one хранятся работающий образ и, если сервис уже обновлялся, один предыдущий
+production-образ. Отдельные локальные source/image TAR, Git bundle, копии окружения,
+промежуточные сборки и QA-каталоги не хранятся. Пути к ним в отчётах первого выпуска
+исторические. Общесерверные бэкапы и исходные файлы проекта эта очистка не затрагивает.
+Итог обслуживания 18.10.2026: `server/docs/restored-services-2026-10-18.json`.
