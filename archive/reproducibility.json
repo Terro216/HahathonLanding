@@ -1,0 +1,6 @@
+{
+  "files": 29,
+  "manifest_sha256": "7113fb1eab42cfc2fe91c1e57342581100532363dd966b01887dbe90bc613686",
+  "independent_clean_build": "byte-identical",
+  "image_id": "sha256:7d08fcbdeab95a9b4d2052ec37f2633ad2c329e84f241817153ec283a82508ed"
+}

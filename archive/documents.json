@@ -1,0 +1,12 @@
+[
+  {
+    "file": "public/documents/creativehack-2022-rules.pdf",
+    "source": "https://storage.yandexcloud.net/hahaton/Положение_CreativeHack_подписанное.pdf",
+    "sha256": "f69767905df5996cbbfff6ebb9354729ed25ea9af3d5f0d5a7ad34cab5895bda"
+  },
+  {
+    "file": "public/documents/creativehack-2022-privacy.pdf",
+    "source": "https://storage.yandexcloud.net/hahaton/Политика.pdf",
+    "sha256": "e7b5f509ecfb0ecc27738b325f16aeda8e4a4a04df14be10c48f7a5e4b39614a"
+  }
+]

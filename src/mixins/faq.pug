@@ -22,7 +22,7 @@
     },
     {
       question: 'Как мне убедиться что я зарегистрирован?',
-      answer: 'Если вы сомневаетесь, что регистрация прошла успешно, напишите администраторам в чате мероприятия или на почту <a href="mailto:hack@rtuitlab.dev">hack@rtuitlab.dev</a>'
+      answer: 'Если вы сомневаетесь, что регистрация прошла успешно, напишите администраторам в чате мероприятия или на почту hack@rtuitlab.dev (ответ 2022 года; регистрация завершена)'
     },{
       question: 'Можно ли участвовать в конкурсе онлайн?',
       answer: 'Да, вся работа над проектом ведётся в дистанционном формате. Однако защита и награждение победителей всё же пройдёт очно в РТУ МИРЭА'
@@ -32,11 +32,11 @@
 mixin faq_question(index, question)
   li(class="question-card")
     input(type="checkbox" id=`question-${index}` hidden)
-    label(for=`question-${index}`)
+    label(for=`question-${index}` role="button" tabindex="0" aria-expanded="false" aria-controls=`answer-${index}`)
       h3.question_header= question.question
       div
         img(src="assets/down-arrow.svg" alt="Стрелка вниз" width="20" height="20")
-    p.question_answer!= question.answer
+    p.question_answer(id=`answer-${index}`)!= question.answer
 
 section.faq#faq-section
   h2.faq__header FAQ

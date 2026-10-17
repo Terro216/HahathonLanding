@@ -1,0 +1,36 @@
+name: creativehack
+services:
+  web:
+    build:
+      context: .
+    image: ${CREATIVEHACK_IMAGE:-creativehack:archive-20261017-252bb49}
+    container_name: creativehack
+    restart: unless-stopped
+    read_only: true
+    user: "101:101"
+    tmpfs:
+      - /tmp:size=8m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    networks: [caddy_net]
+    labels:
+      caddy: creativehack.ilyamedve.dev
+      caddy.reverse_proxy: "{{upstreams 8080}}"
+      caddy.encode: zstd gzip
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, http://127.0.0.1:8080/healthz]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    cpus: 0.25
+    mem_limit: 32m
+    pids_limit: 32
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+networks:
+  caddy_net:
+    external: true

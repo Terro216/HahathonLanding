@@ -1,0 +1,653 @@
+{
+  "result": "passed",
+  "checks": [
+    "1440: HTTP 200",
+    "1440: responsive layout",
+    "1440: original sections",
+    "1440: historical content",
+    "1440: archive and no success claim",
+    "1440: all original images",
+    "1440: local fonts loaded",
+    "1440: 20 animated orbs",
+    "1440: animation advances",
+    "1440: original animation speeds",
+    "desktop: logo hover restores color",
+    "1440: FAQ 1 opens",
+    "1440: FAQ 1 keyboard closes",
+    "1440: FAQ 2 opens",
+    "1440: FAQ 2 keyboard closes",
+    "1440: FAQ 3 opens",
+    "1440: FAQ 3 keyboard closes",
+    "1440: FAQ 4 opens",
+    "1440: FAQ 4 keyboard closes",
+    "1440: FAQ 5 opens",
+    "1440: FAQ 5 keyboard closes",
+    "1440: FAQ 6 opens",
+    "1440: FAQ 6 keyboard closes",
+    "1440: FAQ 7 opens",
+    "1440: FAQ 7 keyboard closes",
+    "1440: tasks-section desktop anchor",
+    "1440: prises-section desktop anchor",
+    "1440: faq-section desktop anchor",
+    "1440: registration-section desktop anchor",
+    "1440: task1 selection",
+    "1440: task2 selection",
+    "1440: form fields and button disabled",
+    "1440: submission creates no request",
+    "1440: no recaptcha or mail handler",
+    "1440: transport guard",
+    "1440: background follows FAQ height",
+    "1440: resize background",
+    "1440: canonical",
+    "768: HTTP 200",
+    "768: responsive layout",
+    "768: original sections",
+    "768: historical content",
+    "768: archive and no success claim",
+    "768: all original images",
+    "768: local fonts loaded",
+    "768: 20 animated orbs",
+    "768: animation advances",
+    "768: original animation speeds",
+    "768: FAQ 1 opens",
+    "768: FAQ 1 keyboard closes",
+    "768: FAQ 2 opens",
+    "768: FAQ 2 keyboard closes",
+    "768: FAQ 3 opens",
+    "768: FAQ 3 keyboard closes",
+    "768: FAQ 4 opens",
+    "768: FAQ 4 keyboard closes",
+    "768: FAQ 5 opens",
+    "768: FAQ 5 keyboard closes",
+    "768: FAQ 6 opens",
+    "768: FAQ 6 keyboard closes",
+    "768: FAQ 7 opens",
+    "768: FAQ 7 keyboard closes",
+    "768: tasks-section desktop anchor",
+    "768: prises-section desktop anchor",
+    "768: faq-section desktop anchor",
+    "768: registration-section desktop anchor",
+    "768: task1 selection",
+    "768: task2 selection",
+    "768: form fields and button disabled",
+    "768: submission creates no request",
+    "768: no recaptcha or mail handler",
+    "768: transport guard",
+    "768: background follows FAQ height",
+    "768: resize background",
+    "768: canonical",
+    "390: HTTP 200",
+    "390: responsive layout",
+    "390: original sections",
+    "390: historical content",
+    "390: archive and no success claim",
+    "390: all original images",
+    "390: local fonts loaded",
+    "390: 20 animated orbs",
+    "390: animation advances",
+    "390: original animation speeds",
+    "390: FAQ 1 opens",
+    "390: FAQ 1 keyboard closes",
+    "390: FAQ 2 opens",
+    "390: FAQ 2 keyboard closes",
+    "390: FAQ 3 opens",
+    "390: FAQ 3 keyboard closes",
+    "390: FAQ 4 opens",
+    "390: FAQ 4 keyboard closes",
+    "390: FAQ 5 opens",
+    "390: FAQ 5 keyboard closes",
+    "390: FAQ 6 opens",
+    "390: FAQ 6 keyboard closes",
+    "390: FAQ 7 opens",
+    "390: FAQ 7 keyboard closes",
+    "390: menu opens",
+    "390: tasks-section mobile anchor",
+    "390: tasks-section in viewport",
+    "390: menu opens",
+    "390: prises-section mobile anchor",
+    "390: prises-section in viewport",
+    "390: menu opens",
+    "390: faq-section mobile anchor",
+    "390: faq-section in viewport",
+    "390: menu opens",
+    "390: registration-section mobile anchor",
+    "390: registration-section in viewport",
+    "390: Escape closes menu",
+    "390: task1 selection",
+    "390: task2 selection",
+    "390: form fields and button disabled",
+    "390: submission creates no request",
+    "390: no recaptcha or mail handler",
+    "390: transport guard",
+    "390: background follows FAQ height",
+    "390: resize background",
+    "390: canonical",
+    "320: HTTP 200",
+    "320: responsive layout",
+    "320: original sections",
+    "320: historical content",
+    "320: archive and no success claim",
+    "320: all original images",
+    "320: local fonts loaded",
+    "320: 20 animated orbs",
+    "320: animation advances",
+    "320: original animation speeds",
+    "320: FAQ 1 opens",
+    "320: FAQ 1 keyboard closes",
+    "320: FAQ 2 opens",
+    "320: FAQ 2 keyboard closes",
+    "320: FAQ 3 opens",
+    "320: FAQ 3 keyboard closes",
+    "320: FAQ 4 opens",
+    "320: FAQ 4 keyboard closes",
+    "320: FAQ 5 opens",
+    "320: FAQ 5 keyboard closes",
+    "320: FAQ 6 opens",
+    "320: FAQ 6 keyboard closes",
+    "320: FAQ 7 opens",
+    "320: FAQ 7 keyboard closes",
+    "320: menu opens",
+    "320: tasks-section mobile anchor",
+    "320: tasks-section in viewport",
+    "320: menu opens",
+    "320: prises-section mobile anchor",
+    "320: prises-section in viewport",
+    "320: menu opens",
+    "320: faq-section mobile anchor",
+    "320: faq-section in viewport",
+    "320: menu opens",
+    "320: registration-section mobile anchor",
+    "320: registration-section in viewport",
+    "320: Escape closes menu",
+    "320: task1 selection",
+    "320: task2 selection",
+    "320: form fields and button disabled",
+    "320: submission creates no request",
+    "320: no recaptcha or mail handler",
+    "320: transport guard",
+    "320: background follows FAQ height",
+    "320: resize background",
+    "320: canonical",
+    "no browser errors",
+    "no network errors",
+    "only same-origin GET/HEAD resources"
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "documentWidth": 1440,
+      "contentHeight": 6160,
+      "orbHeight": 6160,
+      "overflowing": []
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "contentHeight": 7599,
+      "orbHeight": 7599,
+      "overflowing": []
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "contentHeight": 6945,
+      "orbHeight": 6945,
+      "overflowing": []
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "contentHeight": 7260,
+      "orbHeight": 7260,
+      "overflowing": []
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "requests": [
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/",
+      "resource": "document"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.fa866f55.css",
+      "resource": "stylesheet"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/telegram.1a00588b.svg",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/header_hack.eecf22b4.svg",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/VK_hover.11b190f6.svg",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/MIREA_logo2.ce7fbdeb.webp",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/mra.eab4580a.webp",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/vk.0130263b.webp",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Buds_prise.e403e0cf.webp",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Galaxy_prise.91fb08b7.webp",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/down-arrow.83f8f975.svg",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/form_image.9fb27058.webp",
+      "resource": "image"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.f51d9b3f.js",
+      "resource": "script"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Furore.6da308ab.otf",
+      "resource": "font"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Regular.74535f8a.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Bold.2a398d70.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Medium.de3d51e6.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 1440,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/open.047f6659.svg",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/",
+      "resource": "document"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.fa866f55.css",
+      "resource": "stylesheet"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/telegram.1a00588b.svg",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/header_hack.eecf22b4.svg",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/VK_hover.11b190f6.svg",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/MIREA_logo2.ce7fbdeb.webp",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/mra.eab4580a.webp",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/vk.0130263b.webp",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Buds_prise.e403e0cf.webp",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Galaxy_prise.91fb08b7.webp",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/down-arrow.83f8f975.svg",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/form_image.9fb27058.webp",
+      "resource": "image"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.f51d9b3f.js",
+      "resource": "script"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Furore.6da308ab.otf",
+      "resource": "font"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Regular.74535f8a.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Bold.2a398d70.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Medium.de3d51e6.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 768,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/open.047f6659.svg",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/",
+      "resource": "document"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.fa866f55.css",
+      "resource": "stylesheet"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/telegram.1a00588b.svg",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/header_hack.eecf22b4.svg",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/VK_hover.11b190f6.svg",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/MIREA_logo2.ce7fbdeb.webp",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/mra.eab4580a.webp",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/vk.0130263b.webp",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Buds_prise.e403e0cf.webp",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Galaxy_prise.91fb08b7.webp",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/down-arrow.83f8f975.svg",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/form_image.9fb27058.webp",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.f51d9b3f.js",
+      "resource": "script"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/open.047f6659.svg",
+      "resource": "image"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Furore.6da308ab.otf",
+      "resource": "font"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Regular.74535f8a.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Bold.2a398d70.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Medium.de3d51e6.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 390,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/close.3575a544.svg",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/",
+      "resource": "document"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.fa866f55.css",
+      "resource": "stylesheet"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/telegram.1a00588b.svg",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/header_hack.eecf22b4.svg",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/VK_hover.11b190f6.svg",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/MIREA_logo2.ce7fbdeb.webp",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/mra.eab4580a.webp",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/vk.0130263b.webp",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Buds_prise.e403e0cf.webp",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Galaxy_prise.91fb08b7.webp",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/down-arrow.83f8f975.svg",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/form_image.9fb27058.webp",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/index.f51d9b3f.js",
+      "resource": "script"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/open.047f6659.svg",
+      "resource": "image"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Furore.6da308ab.otf",
+      "resource": "font"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Regular.74535f8a.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Bold.2a398d70.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/Inter-Medium.de3d51e6.ttf",
+      "resource": "font"
+    },
+    {
+      "width": 320,
+      "method": "GET",
+      "url": "https://creativehack.ilyamedve.dev/close.3575a544.svg",
+      "resource": "image"
+    }
+  ]
+}

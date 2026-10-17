@@ -1,130 +1,76 @@
-const getById = (id) => document.getElementById(id)
-// Age input controls
-const ageInput = [getById('memeber-1-age'), getById('memeber-2-age')]
-const minAge = 18
-const maxAge = 25
-const [maxHeight, maxWidth] = [
-	document.querySelector('body > div').scrollHeight,
-	document.querySelector('body > div').scrollWidth,
-]
+// CreativeHack 2022 archive: registration is closed. No network or storage API.
+const form = document.getElementById('register')
+form.addEventListener('submit', (event) => event.preventDefault())
 
-ageInput.forEach((input) =>
-	input.addEventListener('change', (e) => {
-		const age = parseInt(e.target.value)
-		if (age < minAge) {
-			e.target.value = minAge
-		} else if (age > maxAge) {
-			e.target.value = maxAge
-		}
+// Keep the original case-selection affordance as a visual archive interaction.
+document.querySelectorAll('[data-case]').forEach((link) => {
+	link.addEventListener('click', () => {
+		document.getElementById(link.dataset.case).checked = true
 	})
-)
-
-getById('register').addEventListener(
-	'invalid',
-	(e) => {
-		e.preventDefault()
-		getById('error__reg').innerText = e.target.dataset.error || ''
-	},
-	true
-)
-
-globalThis.onSubmit = (token) => {
-	if (!getById('register').checkValidity()) {
-		console.info('form check failed')
-		return false
-	}
-	getById('error__reg').innerText = ''
-	fetch(window.location.origin + '/team', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({
-			age_1: getById('memeber-1-age').value,
-			age_2: getById('memeber-2-age').value,
-			fio_1: getById('memeber-1').value,
-			fio_2: getById('memeber-2').value,
-			univercity_1: getById('memeber-1-institute').value,
-			univercity_2: getById('memeber-2-institute').value,
-			tg_1: getById('memeber-1-telegram').value,
-			tg_2: getById('memeber-2-telegram').value,
-			team_name: getById('team-name').value,
-			email_1: getById('memeber-1-email').value,
-			email_2: getById('memeber-2-email').value,
-			case_number: document.querySelector('#register input[name="track"]:checked').value,
-			recaptcha: token,
-		}),
-	})
-		.then(() => {
-			console.log('form sent')
-			getById('register').reset()
-			const notify = document.querySelector('.notification')
-
-			notify.classList.add('visible')
-			setTimeout(() => {
-				notify.classList.remove('visible')
-			}, 4000)
-		})
-		.catch(() => {
-			console.error('ERROR in form')
-		})
-
-	return false
-}
-
-// Высота для wrapper шаров
-const setCssHeight = () => {
-	requestAnimationFrame(() => {
-		document.documentElement.style.setProperty('--wrapper-height', String(maxHeight) + 'px')
-	})
-}
-
-// открытие/закрытие меню на мобильных
-document.querySelector('.hamburger').addEventListener('click', (e) => {
-	if (e.target.dataset.opened === 'true') {
-		e.target.dataset.opened = 'false'
-		document.querySelector('.wrapper').style.display = 'none'
-	} else {
-		e.target.dataset.opened = 'true'
-		document.querySelector('.wrapper').style.display = 'flex'
-	}
 })
 
-// Нажатие на ссылку на мобильном
-document.querySelectorAll('#hamburger-link').forEach((link) =>
-	link.addEventListener('click', () => {
-		document.querySelector('.hamburger').click()
-	})
-)
-
-// Нажатие на мобильный хэдер
+const menu = document.querySelector('.wrapper')
+const hamburger = document.querySelector('.hamburger')
+const mobileHeader = document.querySelector('.header__navbar-mobile')
+const setMenu = (opened) => {
+	hamburger.dataset.opened = String(opened)
+	hamburger.setAttribute('aria-expanded', String(opened))
+	hamburger.setAttribute('aria-label', opened ? 'Закрыть меню' : 'Открыть меню')
+	menu.style.display = opened ? 'flex' : 'none'
+}
+hamburger.addEventListener('click', () => setMenu(hamburger.dataset.opened !== 'true'))
+document.querySelectorAll('.hamburger-link').forEach((link) => {
+	link.addEventListener('click', () => setMenu(false))
+})
+document.addEventListener('keydown', (event) => {
+	if (event.key === 'Escape') setMenu(false)
+})
 document.querySelector('.header__navbar-mobile > .logo').addEventListener('click', () => {
+	setMenu(false)
 	window.scrollTo(0, 0)
 })
 
-// скрытие мобильного хэдера при скролле вниз
-let prevScrollPos = window.pageYOffset
-window.addEventListener('scroll', function () {
-	let currentScrollPos = window.pageYOffset
-	if (prevScrollPos > currentScrollPos) {
-		document.querySelector('.header__navbar-mobile').style.top = '0'
-	} else {
-		document.querySelector('.header__navbar-mobile').style.top = '-60px'
-	}
+let prevScrollPos = window.scrollY
+window.addEventListener('scroll', () => {
+	const currentScrollPos = window.scrollY
+	mobileHeader.style.top = prevScrollPos > currentScrollPos || currentScrollPos <= 0 ||
+		hamburger.dataset.opened === 'true' ? '0' : '-60px'
 	prevScrollPos = currentScrollPos
+}, { passive: true })
+
+// Retain the original CSS FAQ transitions, adding keyboard operation.
+document.querySelectorAll('.question-card').forEach((card) => {
+	const input = card.querySelector('input')
+	const label = card.querySelector('label')
+	label.addEventListener('keydown', (event) => {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault()
+			input.click()
+		}
+	})
+	input.addEventListener('change', () => label.setAttribute('aria-expanded', String(input.checked)))
 })
 
-window.addEventListener('resize', () => setTimeout(setCssHeight, 100))
-
-function init() {
-	setCssHeight()
-	const orbs = document.querySelectorAll('#oneOrb')
-	orbs.forEach((orb, i) => {
-		orb.style.top = Math.random() * maxHeight + 'px'
-		if (i % 2 == 0) orb.style.left = (Math.random() * maxWidth) / 2 + 'px'
-		else orb.style.right = Math.random() * maxWidth + 'px'
+// Same twenty floating SVG orbs, speeds, blur and grayscale as in 2022.
+// Re-measure after fonts, FAQ expansion and resize instead of freezing height.
+const content = document.querySelector('body > div')
+const orbs = [...document.querySelectorAll('.orbs > svg')].map((orb, i) => ({
+	orb, side: i % 2 === 0 ? 'left' : 'right', x: Math.random(), y: Math.random(), i,
+}))
+const setCssHeight = () => {
+	const height = content.scrollHeight
+	const width = content.scrollWidth
+	document.documentElement.style.setProperty('--wrapper-height', `${height}px`)
+	orbs.forEach(({ orb, side, x, y, i }) => {
+		orb.style.top = `${y * height}px`
+		orb.style[side] = `${x * width / (i % 2 === 0 ? 2 : 1)}px`
 		orb.style.width = '1350px'
 	})
 }
-
-document.addEventListener('DOMContentLoaded', init)
+new ResizeObserver(setCssHeight).observe(content)
+document.fonts.ready.then(setCssHeight)
+window.addEventListener('resize', () => {
+	if (window.innerWidth > 555) setMenu(false)
+	setCssHeight()
+})
+setCssHeight()

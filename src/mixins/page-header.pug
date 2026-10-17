@@ -31,8 +31,8 @@ header.header
         img(src="assets/logos/telegram.svg" alt="Телеграм чат"  width="28px" height="24px")
 
   .header__navbar-mobile
-    img.logo(src="assets/logos/header_hack.svg" width="150px" height="30px")
-    .hamburger(data-opened='false')
+    img.logo(alt="CreativeHack 2022 — к началу страницы" src="assets/logos/header_hack.svg" width="150px" height="30px")
+    button.hamburger(type="button" data-opened="false" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu")
     include hamburger-wrapper
     
   .header__main
@@ -43,7 +43,8 @@ header.header
         img.icon#header-icon.mirea(src="./assets/logos/MIREA_logo2.webp"  alt="Логотип РТУ МИРЭА" width="60px" height="60px")
       h1.title__header Хакатон
       span.title__date 18.10 — 21.10
-      a.button.title__button(href="#registration-section") Зарегистрироваться
+      p.archive-note Архив · CreativeHack 2022. Мероприятие завершено.
+      a.button.title__button(href="#registration-section") Регистрация завершена
     .curriculum
       each curriculum in curriculums_data
         +curriculum-block(curriculum)
