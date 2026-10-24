@@ -8,6 +8,7 @@ const output = process.argv[3] || '/tmp/creativehack-browser'
 const baseline = process.argv.includes('--baseline')
 mkdirSync(output, { recursive: true })
 const errors = [], failed = [], requests = [], checks = [], layouts = []
+const isAnalytics = r => { const u=new URL(r.url); return u.origin==='https://analytics.ilyamedve.dev' && ((r.method==='GET' && u.pathname==='/js/pa-KIwRgUfomuNri2ibWApTN.js') || (r.method==='POST' && u.pathname==='/api/event')) }
 const ok = (name, value) => { assert.ok(value, name); checks.push(name) }
 const browser = await chromium.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] })
 try {
@@ -87,13 +88,13 @@ try {
    ok(`${width}: ${id} selection`, await page.locator(`#${id}`).isChecked() && new URL(page.url()).hash==='#registration-section')
   }
   ok(`${width}: form fields and button disabled`, await page.locator('#register input, #form-submit').evaluateAll(xs=>xs.length===14 && xs.every(x=>x.matches(':disabled'))))
-  const initialRequests = requests.length
+  const initialRequests = requests.filter(r=>!isAnalytics(r)).length
   await page.locator('#register').evaluate(f=> { f.requestSubmit(); f.dispatchEvent(new Event('submit',{cancelable:true,bubbles:true})); })
   await page.keyboard.press('Enter'); await page.waitForTimeout(400)
-  ok(`${width}: submission creates no request`, requests.length===initialRequests)
+  ok(`${width}: submission creates no request`, requests.filter(r=>!isAnalytics(r)).length===initialRequests)
   ok(`${width}: no recaptcha or mail handler`, await page.locator('[src*="recaptcha"],.g-recaptcha,[href^="mailto:"]').count()===0)
   const csp=response.headers()['content-security-policy'] || ''
-  ok(`${width}: transport guard`, csp.includes("connect-src 'none'") && csp.includes("form-action 'none'") && csp.includes("frame-src 'none'"))
+  ok(`${width}: transport guard`, csp.includes("connect-src https://analytics.ilyamedve.dev") && csp.includes("form-action 'none'") && csp.includes("frame-src 'none'"))
   await page.screenshot({ path: `${output}/${width}-registration.png` })
   // Background follows expanded content and a viewport resize without navigation.
   await page.locator('.question-card label').first().click(); await page.waitForTimeout(400)
@@ -108,7 +109,7 @@ try {
  if (!baseline) {
   ok('no browser errors', errors.length===0)
   ok('no network errors', failed.length===0)
-  ok('only same-origin GET/HEAD resources', requests.every(r=>['GET','HEAD'].includes(r.method) && new URL(r.url).origin===new URL(base).origin))
+  ok('only local resources and approved analytics', requests.every(r=>isAnalytics(r) || (['GET','HEAD'].includes(r.method) && new URL(r.url).origin===new URL(base).origin)))
  }
  console.log(JSON.stringify({result:'passed',checks:checks.length,base,baseline,layouts,errors,failed,requests:requests.length},null,2))
  writeFileSync(`${output}/result.json`,JSON.stringify({result:'passed',checks,layouts,errors,failed,requests},null,2)+'\n')

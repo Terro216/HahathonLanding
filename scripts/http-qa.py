@@ -28,7 +28,7 @@ def get(path, code=200, method='GET'):
 html, h = get('')
 assert 'CreativeHack 2022' in html.decode()
 assert 'Регистрация прошла успешно' not in html.decode()
-for v in ["connect-src 'none'", "form-action 'none'", "frame-src 'none'"]:
+for v in ["connect-src https://analytics.ilyamedve.dev", "form-action 'none'", "frame-src 'none'"]:
     assert v in h['Content-Security-Policy']
 assert h['X-Content-Type-Options'] == 'nosniff'
 assert h['Referrer-Policy'] == 'no-referrer'
